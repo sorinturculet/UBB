@@ -1,0 +1,10 @@
+GSW30,Stephen Curry,point_guard,178
+MH9,Dwayne Wade,shooting_guard,210
+LAK16,Pau Gasol,center,199
+UBB21,Liviu,center,200
+UBB22,Marius,shooting_guard,200
+UBB23,Stratila,power_forward,201
+UBB33,Riccardo,small_forward,160
+UBB43,Vali,center,220
+UBB12,Miles,shooting_guard,210
+UBB45,Mark,point_guard,178

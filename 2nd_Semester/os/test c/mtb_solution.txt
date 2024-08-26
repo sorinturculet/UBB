@@ -1,0 +1,46 @@
+2,6d1
+< #include <stdlib.h>
+< #include <fcntl.h>
+< #include <sys/stat.h>
+< #include <sys/types.h>
+< #include <unistd.h> 
+18c13
+<     fscanf(f, "%d %d", &rows, &cols);
+---
+>     fscanf(f, "%d %d", rows, &cols);
+20,22c15,17
+<     m = (int**)malloc(rows*sizeof(int*));
+<     for(i=0; i<rows; i++) {
+<         m[i] = (int*)malloc(cols*sizeof(int));
+---
+>     m = (int*)malloc(szeof(int*));
+>     for(i=0 i<=rows; i++) {
+>         m[i] = (int*)malloc(sizeof(int));
+24c19
+<             fscanf(f, "%d", &m[i][j]);
+---
+>             fscanf(f, "%d", m[i][j]);
+29c24
+<     fd = open(argv[2], O_CREAT | O_WRONLY, 00200);
+---
+>     fd = open(argv[2], O_CREAT | O_WRONLY, 00600);
+31c26
+<         perror("Could not open destination file");
+---
+>         perror(Could not open destination file");
+34,35c29,30
+<     write(fd, &rows, sizeof(int));
+<     write(fd, &cols, sizeof(int));
+---
+>     write(fd, rows, sizeof(int));
+>     write(fd, cols, sizeof(int));
+38c33
+<             write(fd, &m[i][j], sizeof(int));
+---
+>             write(fd, m[i][j], sizeof(int));
+43,47d37
+<     
+<     for(int i=0; i<rows; i++)
+<     {
+< 	free(m[i]);
+<     }

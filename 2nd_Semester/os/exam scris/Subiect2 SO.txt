@@ -1,0 +1,82 @@
+1:42
+
+1. grep -E '\<[01]{3,}00\>' a.txt (daca consideram si 00000 valid)
+grep -E '\<[01]*1[01]{2,}00\>' a.txt (daca trebuie sa aiba macar un 1 de la pozitia 5 in sus)
+
+2. sed -r 's/([13579])([aeiou])/\2\1/gi'
+
+3. sort a.txt | uniq
+
+4. for user in `who | awk '{print $1}'`; do echo $user has `ps -u ''$user'' | head -n -2 | wc -l`; done;
+
+5. #!/bin/bash
+
+SUMA=0
+NRD=1
+for F in `ls`
+do
+   if [ -d $F ]
+   then
+	NRD=$(($NRD+1))
+	NRF=`ls ./$F | grep -o -E '.txt$' | wc -l`
+	SUMA=$(($SUMA+$NRF))
+   elif `echo $F | grep -q -E '.txt$'`
+   then
+	SUMA=$(($SUMA+1))
+   fi
+done
+echo Media: $(($SUMA/$NRD))
+
+6. 6
+
+7. P--F0--F1--F2
+
+8. A B C
+
+9. Apelul write va scrie oricum, intrucat el asteapta doar "niste" spatiu, adica ca bufferul sa nu fie plin. Altfel, el va scrie cat va putea, iar restul va ramane nescris si programul isi va continua cursul.
+
+10. Nu va tipari nimic pentru ca va astepta la operatia de open ca alt program sa deschida FIFO-ul cu read, lucru care nu se intampla.
+
+11. Devin fii ai procesului 1.
+
+12.
+int n = 0;
+pthread_mutex_t mtx;
+
+void* f(void* p) {
+    pthread_mutex_lock(&mtx);
+    n++;
+    pthread_mutex_unlock(&mtx);
+    return NULL;
+}
+
+13. C B A
+
+14. AVANTAJ: Cache-urile set asociative previn "thrashing-ul" la coliziunea intre valori care sunt "hash-uite" pe aceeasi pozitie, stocand cat de multe poate in loc de a le schimba la intre ele la fiecare accesare.
+DEZAVANTAJ: La datele hash-uite pe aceeasi pozitie dureaza mai mult cautarea, intrucat stocam datele care ar ajunge pe aceeasi pozitie intr-o lista in care trebuie cautate, in timp ce la cache direct fie este pe prima pozitie, fie nu este deloc, deci nu trebuie cautate.
+
+15. NRU alege cu prioritatea cea mai mare din paginile cu biti 0 0, care nu au fost nici citite, nici modificate de curand.
+
+16. inainte de creeare thread-uri:
+pthread_mutex_lock(&m[0]);
+pthread_mutex_lock(&m[2]);
+
+17.
+Primul cache
+0: 14 16 16 14
+1: 23 1 1 23
+
+Al doilea cache
+0: 16 16
+1: 1 1
+2: 14 14
+3: 23 23
+
+Al doilea cache va da rezultate mai bune pentru ca datele sunt mai bine distribuite, iar cautarea dureaza mai putin, pentru orice valoare am cauta. La primul am avea cautare intr-o lista de 4 valori, in timp ce in al doilea am a vea intr-o lista de maxim 2 valori.
+Ambele cache-uri reusesc sa stocheze toate datele, deci nu consideram acest aspect.
+
+18. Tripla indirectare pentru un i-nod poate referi: (B/A) * (B/A) * (B/A) blocuri de date adica B^3/A^3 blocuri de date adica B^4/A^3 date
+
+19. Daca fisierul este sters, dar inca exista link hard care pointeaza catre el, linkul hard inca va functiona, intrucat zona de memorie nu a fost marcata ca goala, ci doar a fost decrementat nr de linkuri hard care pointeaza catre ea.
+
+20. Pentru a preveni deadlock-ul putem bloca mereu in aceeasi ordine resursele critice, astfel prevenim circular wait-ul si nu se va mai ajunge la deadlock. Acest lucru se aplica si in cazul deschiderii de fisiere FIFO de exemplu, cat si la mutexi, daca mereu deschidem/blocam in aceeasi ordine, de ex crescator, este imposibil sa ajungem la deadlock.

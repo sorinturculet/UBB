@@ -1,0 +1,42 @@
+sed -n '/7/!p' file - sed care afiseaza liniile care nu au 7 (!p)
+
+sed '/7/d' file -asa sterge cele cu 7 de pe ecran
+
+Cate fifo poate sa deschida un proces daca capetele acelor fifo nu vor fi accesate?
+1
+cate fifo poate sa deschida un proces dac toate celelalte procese il deschid tot in citire?
+1, ca asteapta perechea.
+
+Ce efect produce bariera daca este initializata cu 1?
+trece direct, nu produce un efect.
+
+Desenati 
+for(int i=0;i<3;i++)
+{
+fork()
+execlp("ls","ls,"-l",NULL);
+}
+P--C, execlp schimba procesele in ls
+
+inod- nr natural care identifica un fisier
+
+hardlink/softlink
+
+ln -hardlink, pointeaza catre un inode, referinta directa
+ln -s -softlink , e doar un shortcut, catre NUME
+
+5 comenzi grep A/a
+grep -e 'a' - e 'A'
+grep -i 'a' file
+grep -E '[aA]' file
+grep -E '(a|A)' file
+grep -E -i 'a{1, }'
+grep -E -i 'a+'
+
+awk '{sum=$(NF-1)} END{print sum}'  afiseaza suma la toate field
+
+grep -E '^$' | wc -l  - linie goala
+grep -v '.'-invers, de orice caracter.
+sed -n '/^$/p' file		
+awk '/^$S/{print}' file
+

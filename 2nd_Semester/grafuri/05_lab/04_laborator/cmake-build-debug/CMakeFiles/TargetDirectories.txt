@@ -1,0 +1,7 @@
+C:/eu/ubb/2nd_Semester/grafuri/05_lab/04_laborator/cmake-build-debug/CMakeFiles/04_laborator.dir
+C:/eu/ubb/2nd_Semester/grafuri/05_lab/04_laborator/cmake-build-debug/CMakeFiles/04_laborator2.dir
+C:/eu/ubb/2nd_Semester/grafuri/05_lab/04_laborator/cmake-build-debug/CMakeFiles/04_laborator3.dir
+C:/eu/ubb/2nd_Semester/grafuri/05_lab/04_laborator/cmake-build-debug/CMakeFiles/04_laborator4.dir
+C:/eu/ubb/2nd_Semester/grafuri/05_lab/04_laborator/cmake-build-debug/CMakeFiles/04_laborator5.dir
+C:/eu/ubb/2nd_Semester/grafuri/05_lab/04_laborator/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/eu/ubb/2nd_Semester/grafuri/05_lab/04_laborator/cmake-build-debug/CMakeFiles/rebuild_cache.dir

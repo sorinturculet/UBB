@@ -1,0 +1,8 @@
+# ninja log v5
+5	88	7326332795426519	CMakeFiles/TAD_Matrice.dir/Proiect_C++/Matrice.cpp.obj	8e6d86d287fa185a
+0	314	7326332797686515	CMakeFiles/TAD_Matrice.dir/Proiect_C++/App.cpp.obj	93f71c12bda9877
+8	324	7326332797796541	CMakeFiles/TAD_Matrice.dir/Teste/TestScurt.cpp.obj	bd4b2d94cc3960f1
+12	338	7326332797936503	CMakeFiles/TAD_Matrice.dir/Teste/TestExtins.cpp.obj	60154dd58dbd04ef
+338	433	7326332798856507	TAD_Matrice.exe	d5c1b91c09bf2442
+2	298	7326332934833317	CMakeFiles/TAD_Matrice.dir/Proiect_C++/App.cpp.obj	93f71c12bda9877
+299	373	7326332935563318	TAD_Matrice.exe	d5c1b91c09bf2442

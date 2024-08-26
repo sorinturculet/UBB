@@ -1,0 +1,58 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     9                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    10                                  
+    11                                  ; our data is declared here (the variables needed by our program)
+    12                                  segment data use32 class=data
+    13 00000000 07563412153C2B1A            sir DD 12345607h, 1A2B3C15h
+    14                                      ls equ ($-sir)
+    15 00000008 00<rept>                    d times ls db 0
+    16                                  ;Se da un sir S de dublucuvinte.
+    17                                  ;Sa se obtina sirul D format din octetii dublucuvintelor din sirul D sortati in ordine descrescatoare in interpretarea fara semn.
+    18                                  
+    19                                  ; our code starts here
+    20                                  segment code use32 class=code
+    21                                      start:
+    22 00000000 BE[00000000]                    mov esi,sir
+    23 00000005 BF[08000000]                    mov edi,d
+    24 0000000A B908000000                      mov ecx,ls
+    25 0000000F FC                              cld; mergem de la stanga la dreapta
+    26                                          repeta:
+    27 00000010 A4                                  movsb
+    28 00000011 E2FD                            loop repeta
+    29                                          ;am mutat octetii din sirul sursa in sirul destinatie
+    30                                          
+    31 00000013 BE00000000                      mov esi,0
+    32 00000018 BF01000000                      mov edi,1
+    33                                          transf:
+    34 0000001D 8A96[08000000]                      mov dl,[d+esi]
+    35 00000023 8AB7[08000000]                      mov dh,[d+edi]
+    36 00000029 38F2                                cmp dl,dh   
+    37 0000002B 720C                                jb maimic
+    38 0000002D 88B6[08000000]                          mov [d+esi],dh
+    39 00000033 8897[08000000]                          mov [d+edi],dl
+    40                                              maimic:
+    41                                              
+    42 00000039 47                                  inc edi
+    43 0000003A 83FF08                              cmp edi,ls
+    44 0000003D 7402                                jz incrementare2
+    45 0000003F EB04                                    jmp finalloop
+    46                                              incrementare2:
+    47 00000041 46                                      inc esi
+    48 00000042 89F7                                    mov edi,esi
+    49 00000044 47                                      inc edi
+    50                                              finalloop:
+    51 00000045 83FE07                              cmp esi,ls-1
+    52 00000048 7402                                jz stoploop
+    53 0000004A EBD1                            jmp transf;reluam bucla
+    54                                          
+    55                                          stoploop:
+    56                                          ; exit(0)
+    57 0000004C 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    58 0000004E FF15[00000000]                  call    [exit]       ; call exit to terminate the program

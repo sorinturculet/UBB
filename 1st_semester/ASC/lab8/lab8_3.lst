@@ -1,0 +1,82 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit, fopen, fclose,fprintf
+     8                                  import exit msvcrt.dll  
+     9                                  import fopen msvcrt.dll  
+    10                                  import fclose msvcrt.dll
+    11                                  import fprintf msvcrt.dll
+    12                                  
+    13                                  ; our data is declared here (the variables needed by our program)
+    14                                  segment data use32 class=data
+    15 00000000 766F63696C652E7478-        nume_fisier db "vocile.txt",0
+    15 00000009 7400               
+    16 0000000B 7700                       mod_acces db "w", 0          ; modul de deschidere a fisierului - 
+    17                                                                   ; w - pentru scriere. daca fiserul nu exista, se va crea                                   
+    18 0000000D FFFFFFFF                    descriptor_fis dd -1         ; variabila in care vom salva descriptorul fisierului - necesar pentru a putea face referire la fisier
+    19                                     
+    20 00000011 257300                     format db "%s",0
+    21                                     
+    22 00000014 4176624D693F2E6D64-        text db "AvbMi?.mdw(24?/)*",0
+    22 0000001D 772832343F2F292A00 
+    23 00000026 11                         len db $-text-1
+    24                                  ;Se dau un nume de fisier si un text (definite in segmentul de date). Textul contine litere mici, litere mari, cifre si caractere speciale. Sa se inlocuiasca toate caracterele speciale din textul dat cu caracterul '
+    25                                  ; our code starts here
+    26                                  segment code use32 class=code
+    27                                      start:
+    28                                          ; apelam fopen pentru a crea fisierul
+    29                                          ; functia va returna in EAX descriptorul fisierului sau 0 in caz de eroare
+    30                                          ; eax = fopen(nume_fisier, mod_acces)
+    31 00000000 68[0B000000]                    push dword mod_acces     
+    32 00000005 68[00000000]                    push dword nume_fisier
+    33 0000000A FF15[00000000]                  call [fopen]
+    34 00000010 83C408                          add esp,4*2
+    35                                          
+    36 00000013 A3[0D000000]                    mov [descriptor_fis], eax
+    37                                          ; verificam daca functia fopen a creat cu succes fisierul (daca EAX != 0)
+    38 00000018 83F800                          cmp eax, 0
+    39 0000001B 7453                            je final
+    40                                          
+    41 0000001D 8B0D[26000000]                  mov ecx,[len]
+    42 00000023 BE[14000000]                    mov esi,text
+    43 00000028 BF[14000000]                    mov edi,text
+    44                                          repeta:
+    45 0000002D AC                                  lodsb
+    46 0000002E 3C30                                cmp al,'0'
+    47 00000030 7216                                    jb change
+    48 00000032 3C39                                cmp al,'9'
+    49 00000034 7614                                    jbe nochange
+    50 00000036 3C41                                cmp al,'A'
+    51 00000038 720E                                    jb change
+    52 0000003A 3C5A                                cmp al,'Z'
+    53 0000003C 760C                                    jbe nochange
+    54 0000003E 3C61                                cmp al,'a'
+    55 00000040 7206                                    jb change
+    56 00000042 3C7A                                cmp al,'z'
+    57 00000044 7204                                    jb nochange
+    58 00000046 7200                                jb change
+    59                                          change:
+    60 00000048 B058                                mov al,'X'
+    61                                          nochange:
+    62 0000004A AA                                  stosb
+    63 0000004B E2E0                            loop repeta
+    64                                          
+    65                                          ; apelam functia fclose pentru a inchide fisierul
+    66                                          ; fclose(descriptor_fis)
+    67 0000004D 68[14000000]                    push text
+    68 00000052 FF35[0D000000]                  push dword [descriptor_fis]
+    69 00000058 FF15[00000000]                  call [fprintf]
+    70 0000005E 83C404                          add esp,4*1
+    71                                          
+    72 00000061 FF35[0D000000]                  push dword [descriptor_fis]
+    73 00000067 FF15[00000000]                  call [fclose]
+    74 0000006D 83C404                          add esp, 4
+    75                                          
+    76                                          
+    77                                          ; exit(0)
+    78                                          final:
+    79 00000070 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    80 00000072 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

@@ -1,0 +1,32 @@
+2,5d1
+< #include <stdlib.h>
+< #include <unistd.h>
+< #include <fcntl.h>
+< #include <sys/stat.h>
+22c18
+<     if(read(fd, &rows, sizeof(int)) <= 0) {
+---
+>     if(reaad(fd, rows, sizeof(int)) <= 0) {
+27c23
+<     if(read(fd, &cols, sizeof(int)) <= 0) {
+---
+>     if(read(fd, cols, sieof(int)) <= 0) {
+32,35c28,31
+<     m = (int**)malloc(rows*sizeof(int*));
+<     for(i=0; i<rows; i++) {
+<         m[i] = (int*)malloc(cols*sizeof(int));
+<         //read(fd, m[i], sizeof(int));
+---
+>     m = (int*)malloc(sizeof(int));
+>     for(i=0; i<rows; i++ {
+>         m[i] = (int*)malloc(sizeof(int));
+37,38c33
+>         read(fd, m[i], sizeof(int));
+<         read(fd, &m[i][j], sizeof(int));  
+  
+< 	printf("%2d ", m[i][j]);
+---
+>             printf("%2d , &m[i][j]);
+42,43d36
+<     for(int i=0;i<rows; i++)
+< 	    free(m[i]);

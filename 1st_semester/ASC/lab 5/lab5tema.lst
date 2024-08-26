@@ -1,0 +1,49 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     9                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    10                                  
+    11                                  ; our data is declared here (the variables needed by our program)
+    12                                  segment data use32 class=data
+    13 00000000 02010303040206              a db 2, 1, 3, 3, 4, 2, 6
+    14                                      la equ $-a
+    15 00000007 040507060201                b db 4, 5, 7, 6, 2, 1
+    16                                      lb equ $-b
+    17 0000000D 00<rept>                    d times la+lb db 0
+    18                                  ;Se dau 2 siruri de octeti A si B. Sa se construiasca sirul R care sa contina elementele lui B in ordine inversa urmate de elementele impare ale lui A.
+    19                                  ;
+    20                                  ; our code starts here
+    21                                  segment code use32 class=code
+    22                                      start:
+    23 00000000 B906000000                      mov ecx,lb ;punem in ecx lungimea lui b pt face bucla
+    24 00000005 BE00000000                      mov esi,0 
+    25 0000000A E30F                            jecxz Sfarsit
+    26                                          Repeta:
+    27 0000000C 8A81[06000000]                      mov al,[b-1+ecx] ;am calculat folosind de lungimea sirului ecx practic pozitia elementului din coada si in timp ce ecx scade vine spre inceputul sirului
+    28 00000012 8886[0D000000]                      mov [d+esi],al ; mutam in d elementul
+    29 00000018 46                                  inc esi
+    30 00000019 E2F1                            loop Repeta
+    31                                          Sfarsit:
+    32                                          
+    33 0000001B B907000000                      mov ecx,la  ; punem in ecx lungimea lui a pt a face bucla
+    34 00000020 BE00000000                      mov esi,0 ;folosim esi index pentru sirul nostru
+    35 00000025 BB00000000                      mov ebx,0; folosim ebx index pentru elementele noi din d si il incrementam doar cand adaugam in d
+    36 0000002A E31A                            jecxz Sfarsit2
+    37                                          Repeta2:
+    38 0000002C 8A86[00000000]                      mov al,[a+esi]
+    39 00000032 D0D8                                rcr al,1 ; verificam in carry flag daca al este impar/par
+    40 00000034 730D                                jae par   ;se pare ca al este impar deci il adaugam la d
+    41 00000036 8A86[00000000]                          mov al,[a+esi]
+    42 0000003C 8883[13000000]                          mov [d+lb+ebx],al
+    43 00000042 43                                      inc ebx
+    44                                             par:
+    45 00000043 46                                 inc esi
+    46 00000044 E2E6                            loop Repeta2
+    47                                          Sfarsit2:
+    48 00000046 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    49 00000048 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

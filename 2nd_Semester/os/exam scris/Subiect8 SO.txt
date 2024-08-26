@@ -1,0 +1,146 @@
+1. Write a sed command which duplicates the numbers in a file and prints it to the output
+
+sed -r 's/(\<[0-9]+\>)/\1\1/gi'
+sed -r 's/([0-9])/\1\1/gi' numbers.txt //easier
+
+
+2. Print the lines from a.txt which ends in vowels
+
+grep -E '[aeiou]$' a.txt
+grep -E '[aeiouAEIOU]$' words
+
+3. In a.txt each row has 3 numbers separated by ":". Write an awk script which prints the sum of the numbers from the 2nd position
+
+awk -F: 'BEGIN{sum=0} {sum=sum+$2} END{print sum}' a.txt
+
+4. Print the path of the current, parent's and root directory
+
+pwd; cd ..; pwd; cd /; pwd;
+
+5. How many processes will be created? fork(); fork(); fork(); wait(0); wait(0); wait(0); (dont count the root process)
+
+Raspuns: 7
+
+6. Write a shell script which prints all its arguments which are not files or directories. (No valiadation needed)
+
+#!/bin/bash
+versiunea 1:
+for ARG in $@
+do
+    if ! ([ -d $ARG ] || [ -f $ARG ])
+    then
+	echo $ARG
+    fi
+done
+
+sau versiunea 2 pt fraieri ca mine:
+for FILE in $@
+do
+        if( [ -f $FILE ])
+        then
+        ok=0
+        elif ([ -d $FILE ])
+        then
+        ok=0
+        else echo $FILE
+        fi
+done
+
+7. Write a shell script which takes 2 numbers as arguments and prints the greater one (No valiadtion needed)
+
+#!/bin/bash
+
+if [ $1 -gt $2 ]
+then
+    echo $1
+else
+    echo $2
+fi
+
+8. A shell script takes as argument the numbers "1 2 3 4 5". Write a script, which prints the sum of the numbers from the odd positions.(9)
+
+#!/bin/bash
+
+CNT=0
+SUM=0
+for ARG in $@
+do
+    PAR=$(($CNT%2))
+    if [ $PAR -eq 1 ]
+    then
+	SUM=$(($SUM+$ARG))
+    fi
+    CNT=$(($CNT+1))
+done
+echo $SUM
+
+9. Explain why the parent process can't use a pipe, which has been created in the child process.
+
+The parent process can't use a pipe created in the child process because the child process creates a copy of all the variables and environment context in the parent, so no changes made in the child's environment reflect in the parent. Thus, the parent cannot acces a pipe created in the child process directly.
+
+10. What is the logical value of a shell script which terminates whith return value of 5
+
+False. (0 - true, everything else - false)
+
+11. Explain a case when the state of a process is changed from RUN to SWAP
+
+When the RAM fills up with processes and the computer will run all of them, it has to choose a process to sacrifice in order to keep running all the processes. Thus, it will choose a program and put it in the SWAP state.
+
+12. Explain the roles of V and P in Semaphores. (short answers)
+
+Post opreation on semaphore increases its internal counter, allowing any other process that calls wait later through that semaphore to pass through it, decrementing its internal counter.
+Wait operation on semaphore decreases its internal counter. If it reaches 0, all the programs that wish to pass through the semaphore with wait will wait there until the internal counter is increased.
+
+13. Explain a technique to prevent deadlocks
+
+Blocking the resources in the same order, for example ascending, preventing the circular wait problem. ...
+
+14. Add 2 examples of the 3 possible, real memory allocation techniques
+
+Single tasking system.
+Multi tasking System with absolute fixed partitions.
+
+15. Which unix c function creates a new pipe
+
+int p[2];
+pipe(p);
+
+16. What happens when we run the next commands at the same time. 
+(Note that fifos are created and can be used): 
+open("a2b", O_RDONLY); open("b2a",O_RDWR); ||| open("b2a", O_RDONLY); open("a2b",O_RDWR);
+
+We will encounter a deadlock, as the first command will wait for the corresponding "write" end to be opened for "a2b" FIFO, while the second command will wait for the "write" end of the "b2a" FIFO to be opened, which will never happend if we run only these two commands.
+
+Restul au fost exemple cu coduri si a trebuit sa le completez (adica sa scriu 2-3 randuri in plus) 
+dupa intrebarea din problema: unul cu threaduri, am pus mutex in cod, 
+altul o intrebare daca vreau sa eliberez memoria alocata in for (cu malloc), unde trebuie sa pun functia "free()".
+A mai fost o intrebare cu semaphors, in pseudocod.
+
+Semaphor pseudocod:
+
+clasa semafor:
+    counter: int
+    mtx: mutex
+    cnd: variabila conditionala
+
+    subalgoritm init(int cnt) {
+	blocheaza(mtx)
+	counter<-cnt
+	deblocheaza(mtx)
+    }
+
+    subalgoritm wait {
+	blocheaza(mtx)
+	cat timp cnt = 0 atunci
+	    asteapta(cnd, mtx);
+	SfCatTimp
+	cnt <- cnt-1
+	deblocheaza(mtx)
+    }
+
+    subalgoritm post {
+	blocheaza(mtx)
+	cnt <- cnt + 1
+	semnaleaza(cnd)
+	deblocheaza(mtx)
+    }

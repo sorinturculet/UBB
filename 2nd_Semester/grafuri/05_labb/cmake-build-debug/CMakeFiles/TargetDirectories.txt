@@ -1,0 +1,5 @@
+C:/eu/ubb/2nd_Semester/grafuri/05_labb/cmake-build-debug/CMakeFiles/05_labb.dir
+C:/eu/ubb/2nd_Semester/grafuri/05_labb/cmake-build-debug/CMakeFiles/05_labb2.dir
+C:/eu/ubb/2nd_Semester/grafuri/05_labb/cmake-build-debug/CMakeFiles/05_labb3.dir
+C:/eu/ubb/2nd_Semester/grafuri/05_labb/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/eu/ubb/2nd_Semester/grafuri/05_labb/cmake-build-debug/CMakeFiles/rebuild_cache.dir

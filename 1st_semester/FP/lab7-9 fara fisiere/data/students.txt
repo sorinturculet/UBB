@@ -1,0 +1,6 @@
+1;Mihai
+2;Medeea
+3;Mirel
+4;Carmen
+5;Valeria
+6;Dominic

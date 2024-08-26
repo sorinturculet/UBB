@@ -1,0 +1,10 @@
+COM1,The Good Place,fantasy comedy,53
+THR1,Mindhunter,psychological thriller,19
+FAN4,The Witcher,fantasy drama,9
+CD32,The Marvelous,comedy-drama,26
+SF1,The Avengers,science-fiction,33
+SF2,The Amazing Spiderman,science drama,40
+FD32,Cooldown,fantasy drama,40
+FD10, The Runner,fantasy drama,32
+CD22,Lockdown,comedy-drama,26
+THR2,Home sweet home,psychological thriller,22

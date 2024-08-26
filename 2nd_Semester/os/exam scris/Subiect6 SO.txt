@@ -1,0 +1,118 @@
+1. Write a regular expression that accepts lines that contain the letter “a” but do not
+contain the letter “b”.
+
+grep -E "^[^b]*a[^b]*$"
+
+2. What is the maximum number of child processes, created by the code fragment
+below, that can coexist simultaneously?
+
+for(i = 0; i < 7; i++) {
+    if(fork() == 0) {
+	sleep(rand() % 10);
+	exit(0);
+    }
+    if(i % 3 == 0) {
+	wait(0);
+    }
+}
+
+RASPUNS: 3
+
+
+3. Processes A, B and C communicate through FIFOs X, Y, Z according to the
+diagram below. Sketch the code fragments that open the FIFOs in the 3 processes.
+A -- X --> B
+B -- Y --> C
+C -- Z --> A
+
+A:
+...
+open(X, O_WRONLY);
+open(Z, O_RDONLY);
+...
+
+B:
+...
+open(X, O_RDONLY);
+open(Y, O_WRONLY);
+...
+
+C:
+...
+open(Y, O_RDONLY);
+open(Z, O_WRONLY);
+...
+
+4. How many threads would you use for processing a million files? Justify your
+choice.
+
+I would use a number of threads that is adequate for my processor, depending on the number of cores that my processor has.
+I would do this such that the threads run parralel to one another and there doesn't exist any dead time. The addition of extra threads would bring no benefits to the time in which the files are processed.
+
+5. Give a set of values for T, N1, N2 and N3 for which the program will end.
+
+pthread_barrier_t b1, b2, b3;
+void* f1(void* a) {
+pthread_barrier_wait(&b1);
+return NULL;
+}
+void* f2(void* a) {
+pthread_barrier_wait(&b2);
+
+return NULL;
+}
+
+void* f3(void* a) {
+pthread_barrier_wait(&b3);
+return NULL;
+}
+
+int main() {
+int i;
+pthread_t t[T][3];
+pthread_barrier_init(&b1, N1);
+pthread_barrier_init(&b2, N2);
+pthread_barrier_init(&b3, N3);
+for(i = 0; i < T; i++) {
+pthread_create(&t[i][0], NULL, f1, NULL);
+pthread_create(&t[i][1], NULL, f2, NULL);
+pthread_create(&t[i][2], NULL, f3, NULL);
+}
+for(i = 0; i < T; i++) {
+pthread_join(t[i][0], NULL);
+pthread_ join (t[i][1], NULL);
+pthread_ join (t[i][2], NULL);
+}
+pthread_barrier_destroy(&b1);
+pthread_barrier_destroy (&b2);
+
+pthread_barrier_destroy (&b3);
+return NULL;
+}
+
+O optiune ar fi: T=2, N1=1, N2=1, N3=2
+
+6. Why I/O operations cause a process to move from the state RUN to the state
+WAIT?
+
+I/O operations may cause a program to enter wait, such in the case of opening a FIFO, because the program would have no reason to run if there isn't somone to read the data written or write the data waiting to be read. That is the reason for which the open operation waits for another end of the opposite type to be opened. Otherwise the FIFO would fill up or we would endlessly wait for data to be written which never will, because no one opened another end.
+
+7. HOW is the address calculation done in the absolute fixed partition allocation?
+
+Each partition has an address and each program has a specified partition on which to run. So when we start the program, it looks for its partition by its physical address and checks that it is empty. If its not empty, it signals that it cannot start. Otherwise the program starts.
+
+8. Give an advantage and a disadvantage of the First-Fit placement policy versus
+the Worst-Fit.
+
+ADVANTAGE: First-Fit finds the place where it can place the data faster than Worst-Fit
+DISADVANTAGE: First-Fit leads to fragmentation, wheareas Worst-Fit reduces the fragmentation, but is slower.
+
+9. What is the most prioritary memory page that rhe NRU replacement policy
+chooses as victim page?
+
+The NRU choses with the biggest priority the memory page which hasn't been read or written in recently, which has the bits set to 0 0.
+
+10. Considering that the size of a block is B and the size of an address is A, how
+many data blocks are addressed by the triple indirect addressing of an i-node?
+
+(B/A)*(B/A)*(B/A) data blocks can be accessed through triple indirection

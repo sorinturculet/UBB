@@ -1,0 +1,155 @@
+5:28
+
+1. Write a UNIX command that displays from file a.txt all lines containing  at least 3 vowels next to each other.
+
+grep -E ".*[aeiou]{3,}.*" a.txt
+grep -E '[AEIOUaeiou]{3,}' a.txt
+
+2. Write a UNIX command that displays all lines from a file a.txt duplicating every letter that is followed by a digit.
+
+sed -r 's/([a-z])([0-9])/\1\1\2/gi' a.txt
+
+3. Consider file a.txt containing on each line 3 numbers separated by ":". Write an awk program that displays the 
+sum of all the third numbers on each line where the first number is greater than the second.
+
+awk -F: 'BEGIN{sum=0} $1>$2{sum=sum+$3} END{print sum}' a.txt
+
+4. Write a UNIX Shell script that displays only those of its arguments that are executable files.
+
+ 
+
+for ARG in $@
+do
+    if `ls -l $ARG | grep -q -E '^.*x.* '`
+    then
+	echo $ARG
+    fi
+done
+
+5. Write a UNIX Shell script that gets only numbers as arguments and displays those that are even.
+
+#!/bin/bash
+
+for ARG in $@
+do
+    PAR=$((ARG%2))
+    if  [ $PAR -eq 0 ]
+    then
+	echo $ARG
+    fi
+done
+
+
+6. How many processes are created by: fork();fork();fork();fork();
+
+15 created processes. 16 in total with parent
+
+7. If the user home directory is /home/scs/abie/1234, what will the following command print?
+        cd ~/../.././xyz; pwd
+
+/home/scs/xyz/
+
+8. What's the truth value of 0?
+
+In bash its True, in other languages its false
+
+9. Write a UNIX Shell script program that displays the sum of its arguments on positions multiple of 3.
+
+#!/bin/bash
+
+SUM=0
+CNT=0
+for ARG in $@
+do
+    TREI=$(($CNT%3))
+    if  [ $TREI -eq 0 ]
+    then
+	SUM=$(($SUM+$ARG))
+    fi
+    CNT=$(($CNT+1))
+done
+echo $SUM
+
+10. What is the effect of an "exec" call on the process that executes it, considering that "exec" executes successfully.
+
+When exec executes successfully it overrides the code of the program, replacing it with his own. Thus, any instruction written after the successful exec call will not be carried out by the program.
+
+11. What UNIX C function can you use to create a fifo?
+
+int mkfifo(const char *pathname, mode_t mode);
+
+12. What is the behavior of a "read" system call on an empty pipe without O_NDELAY.
+
+With O_NDELAY the read system call won't wait for data to appear in the pipe. If there is no data, it will simply read nothing and return 0.
+
+13. One reason for which the OS scheduler may change the status of a process from RUN to WAIT.
+
+For example, the process calls pthread_barrier_wait(&bar), but not enough processes have called the wait on barrier function for it to pass through, so it has to wait at the barrier until more processes come and wait and the barrier unlocks.
+
+14. Between which lines would you insert a call to free the space allocated on lines 8 and 10?
+ 
+                void* f(void* p){
+                        printf("%d\n",*(int*)p);
+                        return NULL;
+                }
+ 
+                int main(){
+                        int i;
+                        pthread_t t[3];
+                        int* x,z;
+ 
+                        z = (int*) malloc(15*sizeof(int));
+                        for (i = 0 ; i < 3; i++){
+                                 x = (int*) malloc(sizeof(int));
+                                *x = i;
+                                pthread_create(&t[i],NULL,f,x);
+ 
+                        }
+ 
+                        for (i = 0; i < 3; i++){
+                                pthread_join(t[i],NULL);
+                        }
+ 
+                return 0;
+                }
+
+I would free space allocated for z right after it was allocated, as it is never used after.
+Space allocated for x in the for I would free in the f function, after printing.
+
+15. Add the necessary code so that the sum is calculated correctly.
+		pthread_mutex_t mtx = PTHREAD_MUTEX_INITIALIZER;
+                int sum = 0;
+                void *f(void * arg){
+			pthread_mutex_lock(&mtx);
+                        sum++;
+			pthread_mutex_unlock(&mtx);
+                }
+ 
+                int main(){
+                                int i;
+                                pthread_t t[10];
+                               
+                                for(i = 0 ; i < 10; i++){
+                                                                pthread_create(&t[i],NULL,f,NULL);
+                                }
+                               
+                                for (i = 0 ; i < 10; i++)
+                                                                pthread_join(t[i],NULL);
+                                }
+ 
+                                return 0;
+                        }
+
+
+
+La 16 parca trebuia sa dai 2 exemple de alocare de memorie virtuala.
+
+Paginata si segmentata.
+
+La 17 din cate imi amintesc trebuia sa scrii componentele teoretice (in pesudocod) ale semaphorului.
+???
+
+La 18 era o problema cu semaphors.
+La 19 nu sunt sigur.
+La 20 trebuia sa dai o metoda care rezolva deadlock.
+Blocatul in aceeasi ordine.

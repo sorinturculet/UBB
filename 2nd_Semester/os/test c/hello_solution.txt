@@ -1,0 +1,35 @@
+2,3c2
+< #include <stdlib.h>
+< #include <string.h>
+---
+> 
+9c8
+< struct node* add(struct node* head, char* name) {
+---
+> struct node* add(struct node head, char* name) {
+14c13
+<     n->name = (char*)malloc(strlen(name)+1);
+---
+>     n->name = (char*)malloc(strlen(name));
+30c29
+< int known(struct node* head, char* name) {
+---
+> int known(struct node* head, char name) {
+34c33
+<     while(p != NULL && strcmp(p->name, name) != 0) {
+---
+>     whilep != NULL && strcmp(p.name, name) != 0) {
+44c43
+<     clear(head->next);
+---
+>     clearhead->next);
+47d45
+<     //return?
+52c50
+<     struct node* head = NULL;
+---
+>     struct node* head;
+54c52
+<     while(scanf("%s", name) == 1) {
+---
+>     while(scanf(%s", name) == 1) {

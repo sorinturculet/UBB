@@ -1,0 +1,3 @@
+C:/eu/ubb/2nd_Semester/grafuri/test/Dijkstra_parinti/cmake-build-debug/CMakeFiles/Dijkstra_parinti.dir
+C:/eu/ubb/2nd_Semester/grafuri/test/Dijkstra_parinti/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/eu/ubb/2nd_Semester/grafuri/test/Dijkstra_parinti/cmake-build-debug/CMakeFiles/rebuild_cache.dir

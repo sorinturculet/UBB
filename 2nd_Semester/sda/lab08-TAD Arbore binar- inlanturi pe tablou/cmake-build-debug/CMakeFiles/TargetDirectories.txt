@@ -1,0 +1,3 @@
+C:/eu/ubb/2nd_Semester/sda/lab08-TAD Arbore binar- inlanturi pe tablou/cmake-build-debug/CMakeFiles/lab08_TAD_Arbore_binar__inlanturi_pe_tablou.dir
+C:/eu/ubb/2nd_Semester/sda/lab08-TAD Arbore binar- inlanturi pe tablou/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/eu/ubb/2nd_Semester/sda/lab08-TAD Arbore binar- inlanturi pe tablou/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,6 @@
+1;Mate
+2;Info
+3;Geografie
+4;Istorie
+5;Romana
+6;Sport

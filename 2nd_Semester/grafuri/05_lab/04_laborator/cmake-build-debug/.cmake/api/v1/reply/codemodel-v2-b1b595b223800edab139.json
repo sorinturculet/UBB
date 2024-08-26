@@ -1,0 +1,96 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "04_laborator",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "04_laborator::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-04_laborator-Debug-61563b7b2e7646e57144.json",
+					"name" : "04_laborator",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "04_laborator2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-04_laborator2-Debug-a6cc03be27eae6565c91.json",
+					"name" : "04_laborator2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "04_laborator3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-04_laborator3-Debug-2fc1a9943a3f6c45b7e5.json",
+					"name" : "04_laborator3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "04_laborator4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-04_laborator4-Debug-6cb654bbd36e193cb230.json",
+					"name" : "04_laborator4",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "04_laborator5::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-04_laborator5-Debug-1cfb931f0cf00523b792.json",
+					"name" : "04_laborator5",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/eu/ubb/2nd_Semester/grafuri/05_lab/04_laborator/cmake-build-debug",
+		"source" : "C:/eu/ubb/2nd_Semester/grafuri/05_lab/04_laborator"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

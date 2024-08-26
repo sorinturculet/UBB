@@ -1,0 +1,9 @@
+1;Mate;sb
+2;Info;Istvanc
+3;Geografie;Leonte
+4;Istorie;Stratila
+5;Romana;Bolog
+6;Sport;BebanTigari
+172;Geografie;Ionut Bormasina
+10;Mate1;SB
+11;Mate2;SB

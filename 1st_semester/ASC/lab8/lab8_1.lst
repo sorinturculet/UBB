@@ -1,0 +1,46 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit,printf,scanf              ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     9                                  import scanf msvcrt.dll
+    10                                  import printf msvcrt.dll                ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    11                                  
+    12                                  ; our data is declared here (the variables needed by our program)
+    13                                  segment data use32 class=data
+    14 00000000 00000000                    a dd 0
+    15 00000004 FF000000                    b dd 0FFh
+    16 00000008 256400                      format db "%d",0
+    17 0000000B 612B623D257800              formatadunare db "a+b=%x",0
+    18                                      
+    19                                  ;Sa se citeasca de la tastatura doua numere a si b (in baza 10) si sa se calculeze a+b. Sa se afiseze rezultatul adunarii in baza 16.
+    20                                  ; our code starts here
+    21                                  segment code use32 class=code
+    22                                      start:
+    23 00000000 68[00000000]                    push dword a
+    24 00000005 68[08000000]                    push dword format
+    25 0000000A FF15[00000000]                  call [scanf]
+    26 00000010 83C408                          add esp,4*2 ; citim a
+    27                                          
+    28 00000013 68[04000000]                    push dword b
+    29 00000018 68[08000000]                    push dword format
+    30 0000001D FF15[00000000]                  call [scanf]
+    31 00000023 83C408                          add esp,4*2; citim b
+    32                                          
+    33 00000026 B800000000                      mov eax,0
+    34 0000002B B400                            mov ah,0
+    35 0000002D A0[00000000]                    mov al,[a]
+    36 00000032 8A1D[04000000]                  mov bl,[b]
+    37 00000038 00D8                            add al,bl
+    38 0000003A 80D400                          adc ah,0        ;adunam a+b in eax
+    39                                          
+    40 0000003D 50                              push dword eax  ;punem pe stiva parametrul (a+b)
+    41 0000003E 68[0B000000]                    push dword formatadunare    ;punem pe stiva adresa stringului
+    42 00000043 FF15[00000000]                  call [printf]   ;afisam a+b=x unde x e suma 
+    43 00000049 83C408                           add esp, 4 * 2; eliberam parametri de pe stiva
+    44                                          ; exit(0)
+    45 0000004C 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    46 0000004E FF15[00000000]                  call    [exit]       ; call exit to terminate the program

@@ -1,0 +1,55 @@
+     1                                  %ifndef __functie__
+     2                                  %define __functie__
+     3                                  
+     4                                      extern scanf
+     5                                      import scanf msvcrt.dll
+     6                                      citirecuvant:
+     7 00000000 66678B442408                     mov eax,[esp+8];textfinal
+     8 00000006 66678B5C240C                     mov ebx,[esp+12];text
+     9 0000000C 66678B4C2404                     mov ecx,[esp+4];formats
+    10 00000012 6689C7                           mov edi,eax
+    11                                           citire:
+    12 00000015 6660                                pushad
+    13                                              
+    14 00000017 6653                                push dword ebx
+    15 00000019 6651                                push dword ecx
+    16 0000001B FF16[0000]                          call[scanf]
+    17 0000001F 6683C408                            add esp,4*2 ;citim primul cuvant
+    18                                              
+    19 00000023 6661                                popad
+    20                                              
+    21 00000025 6689DE                              mov esi,ebx
+    22                                              
+    23 00000028 6651                                push ecx
+    24                                              
+    25 0000002A 66B900000000                        mov ecx,0
+    26                                              finalesi:
+    27 00000030 6641                                inc ecx,
+    28 00000032 6646                                    inc esi
+    29 00000034 67803E00                                cmp [esi],byte 0
+    30 00000038 75F6                                    jnz finalesi
+    31 0000003A 664E                                dec esi; in momentul acesta esi arata inspre ultima litera a cuvantului, si ecx numarul de litere
+    32                                              
+    33 0000003C 67803E2E                            cmp [esi],byte '.'
+    34 00000040 750A                                jnz repeta
+    35 00000042 6649                                    dec ecx
+    36 00000044 664E                                    dec esi
+    37 00000046 66BA2E000000                            mov edx,'.'; daca suntem la ultimul cuvant ii dam lui edx '.'
+    38                                              
+    39                                              repeta:
+    40 0000004C FD                                      std
+    41 0000004D AC                                      lodsb
+    42 0000004E 678807                                  mov [edi],al
+    43 00000051 6647                                    inc edi
+    44 00000053 E2F7                                loop repeta
+    45                                              
+    46 00000055 67C60720                            mov [edi],byte ' '
+    47 00000059 6647                                inc edi
+    48                                              
+    49                                              
+    50 0000005B 6659                                pop ecx
+    51 0000005D 6683FA2E                            cmp edx,'.'
+    52 00000061 75B2                                jnz citire
+    53                                              
+    54 00000063 C20C00                      ret 12
+    55                                  %endif

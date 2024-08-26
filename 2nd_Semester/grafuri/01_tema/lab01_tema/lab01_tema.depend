@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1709275724 source:c:\eu\ubb\grafuri\lab01_tema\lab01_tema\main.cpp
+	<iostream>
+	<fstream>
+	<list>
+
