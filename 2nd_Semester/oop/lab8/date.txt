@@ -1,0 +1,5 @@
+mate,8,mate,berinde
+Analiza,8,Mate,Berinde
+Algebra,8,Mate,Modoi
+FP,10,Mate,Istvanc
+ASC,8,Mate,Kin

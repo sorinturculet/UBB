@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/Lab5_EDUARD.dir/listamea.c.o CMakeFiles/Lab5_EDUARD.dir/Service.c.o CMakeFiles/Lab5_EDUARD.dir/Source.c.o CMakeFiles/Lab5_EDUARD.dir/Teste.c.o -o Lab5_EDUARD 

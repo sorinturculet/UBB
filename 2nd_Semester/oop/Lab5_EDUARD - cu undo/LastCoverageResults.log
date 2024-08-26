@@ -1,0 +1,21 @@
+[2024-03-18 16:58:56] [info] Start Program:
+Path:"D:\Faculta\OOP\Lab3\x64\Debug\Lab3.exe"
+Arguments:
+Working directory: "D:\Faculta\OOP\Lab3\"
+Modules: Selected: D:\Faculta\OOP\Lab3\x64\Debug\Lab3.exe Excluded: 
+Sources: Selected: D:\Faculta\OOP\Lab3 Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\PC\AppData\Local\Temp\ci1g1kpe.cj1 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2024-03-18 16:58:56] [info] Module: D:\Faculta\OOP\Lab3\x64\Debug\Lab3.exe is selected because it matches selected pattern: D:\Faculta\OOP\Lab3\x64\Debug\Lab3.exe
+[2024-03-18 16:58:56] [info] ----------------------------------------------------
+[2024-03-18 16:58:56] [info] Coverage binary generated in file: C:\Users\PC\AppData\Local\Temp\ci1g1kpe.cj1
+[2024-03-18 16:58:56] [info] ----------------------------------------------------

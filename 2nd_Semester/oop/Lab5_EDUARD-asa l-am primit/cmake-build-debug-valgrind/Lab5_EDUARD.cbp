@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Lab5_EDUARD"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Lab5_EDUARD">
+				<Option output="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Lab5_EDUARD" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/."/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 Lab5_EDUARD"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Lab5_EDUARD/fast">
+				<Option output="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Lab5_EDUARD" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/."/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 Lab5_EDUARD/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/Source.c">
+			<Option target="Lab5_EDUARD"/>
+		</Unit>
+		<Unit filename="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/Teste.c">
+			<Option target="Lab5_EDUARD"/>
+		</Unit>
+		<Unit filename="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/Teste.h">
+			<Option target="Lab5_EDUARD"/>
+		</Unit>
+		<Unit filename="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/domain/domain.c">
+			<Option target="Lab5_EDUARD"/>
+		</Unit>
+		<Unit filename="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/domain/domain.h">
+			<Option target="Lab5_EDUARD"/>
+		</Unit>
+		<Unit filename="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/list/listamea.c">
+			<Option target="Lab5_EDUARD"/>
+		</Unit>
+		<Unit filename="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/list/listamea.h">
+			<Option target="Lab5_EDUARD"/>
+		</Unit>
+		<Unit filename="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/service/Service.c">
+			<Option target="Lab5_EDUARD"/>
+		</Unit>
+		<Unit filename="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/service/Service.h">
+			<Option target="Lab5_EDUARD"/>
+		</Unit>
+		<Unit filename="/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

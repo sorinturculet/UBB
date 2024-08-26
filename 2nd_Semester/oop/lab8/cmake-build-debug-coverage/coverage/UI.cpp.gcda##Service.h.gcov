@@ -1,0 +1,82 @@
+        -:    0:Source:C:/eu/ubb/2nd_Semester/oop/lab8/Service.h
+        -:    0:Graph:C:\eu\ubb\2nd_Semester\oop\lab8\cmake-build-debug-coverage\CMakeFiles\lab6.dir\UI.cpp.gcno
+        -:    0:Data:C:\eu\ubb\2nd_Semester\oop\lab8\cmake-build-debug-coverage\CMakeFiles\lab6.dir\UI.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by sorn on 01-Apr-24.
+        -:    3://
+        -:    4:#include<string>
+        -:    5:#include<vector>
+        -:    6:#ifndef LAB6_SERVICE_H
+        -:    7:#define LAB6_SERVICE_H
+        -:    8:#include "Repository.h"
+        -:    9:#include "validator.h"
+        -:   10:#include "Undo.h"
+        -:   11:#include <unordered_map>
+        -:   12:#include<map>
+        -:   13:class DisciplinaService{
+        -:   14:    private:
+        -:   15:        DisciplinaRepository& repo;
+        -:   16:        DisciplinaValidator val;
+        -:   17:        vector<Disciplina> contract;
+        -:   18:
+        -:   19:        vector<UndoAction*> undoActions;
+        -:   20:    public:
+        -:   21:        DisciplinaService(DisciplinaRepository& disciRepo,DisciplinaValidator& disciVal): repo{disciRepo},val{disciVal}{};
+        -:   22:        DisciplinaService(const DisciplinaService& ot)=delete;
+        -:   23:        ~DisciplinaService(){
+        -:   24:            for(auto act:undoActions)
+        -:   25:                delete act;
+        -:   26:        };
+        -:   27:            //adauga o disciplina
+        -:   28:            //param denumire:string
+        -:   29:            //param ore:int
+        -:   30:            //param tip:string
+        -:   31:            //param cadruDidactic:string
+        -:   32:            void addDisciplina(string denumire,int ore,string tip,string cadruDidactic);
+        -:   33:            //modifica o disciplina
+        -:   34:            //param denumire:string
+        -:   35:            //param ore:int
+        -:   36:            //param tip:string
+        -:   37:            //param cadruDidactic:string
+        -:   38:            void modifyDisciplina(const string& denumire,int ore,const string& tip,const string& cadruDidactic);
+        -:   39:            //findDisciplina o disciplina
+        -:   40:            //param denumire:string
+        -:   41:            //param cadruDidactic:string
+        -:   42:            const Disciplina& findDisciplina(const string& denumire,const string& cadruDidactic);
+        -:   43:            //sterge o disciplina
+        -:   44:            //param denumire:string
+        -:   45:            //param cadruDidactic:string
+        -:   46:            void deleteDisciplina(const string& denumire,const string& cadruDidactic);
+        -:   47:            //returneaza un vector cu toate disciplinele
+function _ZN17DisciplinaService16getAllDisciplineEv called 11 returned 100% blocks executed 100%
+       11:   48:            const vector<Disciplina>& getAllDiscipline(){
+       11:   49:                return this->repo.getAllDiscipline();
+       11:   49-block  0
+call    0 returned 11
+        -:   50:            }
+        -:   51:            //sorteaza disciplinele dupa criteriu
+        -:   52:            vector<Disciplina> sort(const string& crt);
+        -:   53:            //filtreaza disciplinele dupa cadru didactic sau numarul de ore
+        -:   54:            vector<Disciplina> filter(string cadru,int ore);
+        -:   55:
+        -:   56:            //adauga o materie la contract
+        -:   57:            void addContract(const string& denumire,const string& cadruDidactic);
+        -:   58:            //sterge tot din contract
+        -:   59:            void emptyContract();
+        -:   60:            //genereaza un nou contract
+        -:   61:            void generateContract(int n);
+        -:   62:            //returneaza toate disciplinele din contract
+function _ZN17DisciplinaService18getAllFromContractEv called 3 returned 100% blocks executed 100%
+        3:   63:            const vector<Disciplina>& getAllFromContract() {
+        3:   64:                return this->contract;
+        3:   64-block  0
+        -:   65:            }
+        -:   66:            //returneaza disctionarul
+        -:   67:            std::map<string,int> get_map();
+        -:   68:
+        -:   69:            void undo();
+        -:   70:};
+        -:   71:void testeService();
+        -:   72:
+        -:   73:#endif //LAB6_SERVICE_H

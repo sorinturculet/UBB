@@ -1,0 +1,1 @@
+Disci 1,50,type 1,teacher 1

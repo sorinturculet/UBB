@@ -1,0 +1,106 @@
+        -:    0:Source:C:/eu/ubb/2nd_Semester/oop/Lab5_EDUARD - Copy(before undo)/list/listamea.c
+        -:    0:Graph:C:\eu\ubb\2nd_Semester\oop\Lab5_EDUARD - Copy(before undo)\cmake-build-debug-mingw-coverage\CMakeFiles\Lab5_EDUARD.dir\list\listamea.c.gcno
+        -:    0:Data:C:\eu\ubb\2nd_Semester\oop\Lab5_EDUARD - Copy(before undo)\cmake-build-debug-mingw-coverage\CMakeFiles\Lab5_EDUARD.dir\list\listamea.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "listamea.h"
+        -:    2:#include <stdlib.h>
+        -:    3:
+function addToList called 114 returned 100% blocks executed 100%
+      114:    4:void addToList(MyList* lista, ElemType p)
+        -:    5:{
+      114:    6:	if (lista->lungime == lista->capacitate) redim(lista);
+      114:    6-block  0
+branch  0 taken 57 (fallthrough)
+branch  1 taken 57
+       57:    6-block  1
+call    2 returned 57
+        -:    7:
+      114:    8:	lista->v[lista->lungime] = p;
+      114:    9:	if(lista->v[lista->lungime] != NULL)
+      114:    9-block  0
+branch  0 taken 114 (fallthrough)
+branch  1 taken 0
+      114:   10:		lista->v[lista->lungime] = p;
+      114:   10-block  0
+        -:   11:	
+      114:   12:	lista->lungime++;
+      114:   13:}
+        -:   14:
+        -:   15:			
+function destroyList called 59 returned 100% blocks executed 100%
+       59:   16:void destroyList(MyList* l)
+        -:   17:{
+      166:   18:	for (int i = 0; i < l->lungime; i++)
+       59:   18-block  0
+      166:   18-block  1
+branch  0 taken 107
+branch  1 taken 59 (fallthrough)
+        -:   19:	{
+      107:   20:        l->destroyElement(l->v[i]);
+      107:   20-block  0
+call    0 returned 107
+        -:   21:	}
+       59:   22:	eliberator(l);
+       59:   22-block  0
+call    0 returned 59
+        -:   23:
+       59:   24:}
+function eliberator called 66 returned 100% blocks executed 100%
+       66:   25:void eliberator(MyList* l)
+        -:   26:{
+       66:   27:    free(l->v);
+       66:   28:    l->lungime = 0;
+       66:   29:    l->capacitate = 0;
+       66:   30:    free(l);
+       66:   31:}
+        -:   32:
+function redim called 61 returned 100% blocks executed 100%
+       61:   33:void redim(MyList* l)
+        -:   34:{
+       61:   35:    int new_cap = l->capacitate * 2;
+       61:   36:    ElemType * aux = malloc(sizeof(ElemType ) * new_cap);
+      141:   37:    for (int i = 0; i < l->lungime; ++i) {
+       61:   37-block  0
+      141:   37-block  1
+branch  0 taken 80
+branch  1 taken 61 (fallthrough)
+       80:   38:        aux[i] = l->v[i];
+       80:   38-block  0
+        -:   39:    }
+       61:   40:    free(l->v);
+       61:   41:    l->v = aux;
+       61:   42:    l->capacitate = new_cap;
+        -:   43:
+       61:   44:}
+        -:   45:
+function createList called 66 returned 100% blocks executed 100%
+       66:   46:MyList* createList(void (*destroyElement)(void*))
+        -:   47:{
+       66:   48:    MyList* lista=(MyList*)malloc(sizeof (MyList));
+       66:   49:	lista->lungime = 0;
+       66:   50:	lista->capacitate = 1;
+       66:   51:	lista->v = (ElemType *)malloc(sizeof(ElemType ) * lista->capacitate);
+       66:   52:    lista->destroyElement=destroyElement;
+       66:   53:    return lista;
+       66:   53-block  0
+        -:   54:}
+        -:   55:#include<stdio.h>
+function copyList called 34 returned 100% blocks executed 100%
+       34:   56:MyList* copyList(MyList* l)
+        -:   57:{
+       34:   58:    MyList* copy= createList(l->destroyElement);
+       34:   58-block  0
+call    0 returned 34
+       71:   59:    for(int i=0;i<l->lungime;i++)
+       71:   59-block  0
+branch  0 taken 37
+branch  1 taken 34 (fallthrough)
+        -:   60:    {
+       37:   61:        addToList(copy, duplicatePr(l->v[i]));
+       37:   61-block  0
+call    0 returned 37
+call    1 returned 37
+        -:   62:    }
+       34:   63:    return copy;
+       34:   63-block  0
+        -:   64:}

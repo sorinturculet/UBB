@@ -1,3 +1,0 @@
-C:/Desktop/Grafuri/testA/cmake-build-debug/CMakeFiles/testA.dir
-C:/Desktop/Grafuri/testA/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Desktop/Grafuri/testA/cmake-build-debug/CMakeFiles/rebuild_cache.dir

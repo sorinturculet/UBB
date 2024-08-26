@@ -1,0 +1,38 @@
+        -:    0:Source:C:/eu/ubb/2nd_Semester/oop/lab6-2iteratie/Service.h
+        -:    0:Graph:C:\eu\ubb\2nd_Semester\oop\lab6-2iteratie\cmake-build-debug-coverage\CMakeFiles\lab6.dir\UI.cpp.gcno
+        -:    0:Data:C:\eu\ubb\2nd_Semester\oop\lab6-2iteratie\cmake-build-debug-coverage\CMakeFiles\lab6.dir\UI.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by sorn on 01-Apr-24.
+        -:    3://
+        -:    4:#include<string>
+        -:    5:#include"vector.h"
+        -:    6:#ifndef LAB6_SERVICE_H
+        -:    7:#define LAB6_SERVICE_H
+        -:    8:#include "Repository.h"
+        -:    9:#include "validator.h"
+        -:   10:class DisciplinaService{
+        -:   11:    private:
+        -:   12:        DisciplinaRepository& repo;
+        -:   13:        DisciplinaValidator val;
+        -:   14:    public:
+        -:   15:        DisciplinaService(DisciplinaRepository& disciRepo,DisciplinaValidator& disciVal): repo{disciRepo},val{disciVal}{};
+        -:   16:        DisciplinaService(const DisciplinaService& ot)=delete;
+        -:   17:
+        -:   18:            void addDisciplina(string denumire,int ore,string tip,string cadruDidactic);
+        -:   19:            void modifyDisciplina(string denumire,int ore,string tip,string cadruDidactic);
+        -:   20:            const Disciplina& findDisciplina(string denumire,string cadruDidactic);
+        -:   21:            void deleteDisciplina(string denumire,string cadruDidactic);
+function _ZN17DisciplinaService11getAllSongsEv called 5 returned 100% blocks executed 100%
+        5:   22:            const MyVector<Disciplina>& getAllSongs() {
+        5:   23:                return this->repo.getAllDiscipline();
+        5:   23-block  0
+call    0 returned 5
+        -:   24:            }
+        -:   25:            MyVector<Disciplina> sort(const string crt);
+        -:   26:            MyVector<Disciplina> filter(const string cadru,const int ore);
+        -:   27:
+        -:   28:};
+        -:   29:void testeService();
+        -:   30:
+        -:   31:#endif //LAB6_SERVICE_H

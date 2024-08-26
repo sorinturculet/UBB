@@ -1,0 +1,13 @@
+# ninja log v5
+11	243	7370388096991896	lab6_autogen/timestamp	3507b05ac359d4e7
+11	243	7370388096991896	lab6_autogen/mocs_compilation.cpp	3507b05ac359d4e7
+11	243	7370388096991896	C:/eu/ubb/2nd_Semester/oop/lab8/cmake-build-qt/lab6_autogen/timestamp	3507b05ac359d4e7
+11	243	7370388096991896	C:/eu/ubb/2nd_Semester/oop/lab8/cmake-build-qt/lab6_autogen/mocs_compilation.cpp	3507b05ac359d4e7
+244	341	7370388098461756	CMakeFiles/lab6.dir/lab6_autogen/mocs_compilation.cpp.obj	a2371d28b69c507b
+269	1056	7370388105632693	CMakeFiles/lab6.dir/Domain.cpp.obj	303038ba02a528f
+258	1361	7370388108677797	CMakeFiles/lab6.dir/Repository.cpp.obj	11508e56aa4d8cb6
+274	1419	7370388109255731	CMakeFiles/lab6.dir/RepoLab.cpp.obj	6e4a9560645f7cb6
+254	1449	7370388109555331	CMakeFiles/lab6.dir/UI.cpp.obj	615f954a5a1a9ec2
+249	1633	7370388111399722	CMakeFiles/lab6.dir/main.cpp.obj	1f766bb5ad1e4bcd
+263	2235	7370388117405593	CMakeFiles/lab6.dir/Service.cpp.obj	79dcf3290f91af14
+2236	2443	7370388119459250	lab6.exe	236869322ed6dbb3

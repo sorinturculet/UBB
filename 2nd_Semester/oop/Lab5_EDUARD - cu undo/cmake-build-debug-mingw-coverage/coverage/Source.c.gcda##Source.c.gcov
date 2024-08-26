@@ -1,0 +1,517 @@
+        -:    0:Source:C:/eu/ubb/2nd_Semester/oop/Lab5_EDUARD - Copy(before undo)/Source.c
+        -:    0:Graph:C:\eu\ubb\2nd_Semester\oop\Lab5_EDUARD - Copy(before undo)\cmake-build-debug-mingw-coverage\CMakeFiles\Lab5_EDUARD.dir\Source.c.gcno
+        -:    0:Data:C:\eu\ubb\2nd_Semester\oop\Lab5_EDUARD - Copy(before undo)\cmake-build-debug-mingw-coverage\CMakeFiles\Lab5_EDUARD.dir\Source.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <stdio.h>
+        -:    2:#include "service/Service.h"
+        -:    3:#include "Teste.h"
+        -:    4:#include "list/listamea.h"
+        -:    5://Problema 6
+        -:    6:
+function adaugare called 0 returned 0% blocks executed 0%
+    #####:    7:void adaugare(ManagerLists* store) {
+    #####:    8:	int ok = 1;
+    #####:    9:	while (ok) {
+    %%%%%:    9-block  0
+    %%%%%:    9-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:   10:		printf("Introduceti numele materiei prime: ");
+    %%%%%:   10-block  0
+call    0 never executed
+        -:   11:		char nume[256];
+    #####:   12:		scanf("%s", nume);
+call    0 never executed
+    #####:   13:		if (!validare_nume(nume)) {
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   14:			printf("Numele materiei prime trebuie sa contina minim 3 litere!\n");
+    %%%%%:   14-block  0
+call    0 never executed
+    #####:   15:			continue;
+    %%%%%:   15-block  0
+        -:   16:		}
+    #####:   17:		printf("Introduceti numele producatorului: ");
+    %%%%%:   17-block  0
+call    0 never executed
+        -:   18:		char prod[256];
+    #####:   19:		scanf("%s", prod);
+call    0 never executed
+    #####:   20:		if (!validare_producator(prod)) {
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   21:			printf("Numele producatorului trebuie sa contina minim 3 litere!\n");
+    %%%%%:   21-block  0
+call    0 never executed
+    #####:   22:			continue;
+        -:   23:		}
+    #####:   24:		printf("Introduceti cantitatea: ");
+    %%%%%:   24-block  0
+call    0 never executed
+        -:   25:		int cant;
+    #####:   26:		scanf("%d", &cant);
+call    0 never executed
+    #####:   27:		if (!validare_cantitate(cant)) {
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   28:			printf("Cantitate insuficienta!\n");
+    %%%%%:   28-block  0
+call    0 never executed
+    #####:   29:			continue;
+        -:   30:		}
+    #####:   31:		int index = cauta(store, nume);
+    %%%%%:   31-block  0
+call    0 never executed
+    #####:   32:		if (index == -1)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:   33:		{
+    #####:   34:			add(store, nume, prod, cant);
+    %%%%%:   34-block  0
+call    0 never executed
+    #####:   35:			printf("Adaugarea a avut loc cu succes!\n");
+call    0 never executed
+        -:   36:		}
+        -:   37:		else {
+    #####:   38:			update(store, cant, index);
+    %%%%%:   38-block  0
+call    0 never executed
+    #####:   39:			printf("Produsul exista deja in baza de date, stocul a fost actualizat\n");
+call    0 never executed
+        -:   40:		}
+    #####:   41:		ok = 0;
+    %%%%%:   41-block  0
+        -:   42:	}
+    #####:   43:}
+        -:   44:
+function modificare1 called 0 returned 0% blocks executed 0%
+    #####:   45:void modificare1(ManagerLists* store) {
+    #####:   46:	int ok = 1;
+    #####:   47:	while (ok) {
+    %%%%%:   47-block  0
+    %%%%%:   47-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:   48:		printf("Introduceti numele produsului care doriti sa modificat din baza de date: ");
+    %%%%%:   48-block  0
+call    0 never executed
+        -:   49:		char nume[256];
+    #####:   50:		scanf("%s", nume);
+call    0 never executed
+    #####:   51:		if (!validare_nume(nume)) {
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   52:			printf("Numele materiei prime trebuie sa contina minim 3 litere!\n");
+    %%%%%:   52-block  0
+call    0 never executed
+    #####:   53:			continue;
+        -:   54:		}
+    #####:   55:		int index = cauta(store, nume);
+    %%%%%:   55-block  0
+call    0 never executed
+    #####:   56:		if (index != -1) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   57:			printf("Introduceti cantitatea noua: ");
+    %%%%%:   57-block  0
+call    0 never executed
+        -:   58:			int cant;
+    #####:   59:			scanf("%d", &cant);
+call    0 never executed
+    #####:   60:			modificare(store, index, cant);
+call    0 never executed
+    #####:   61:			ok = 0;
+    #####:   62:			printf("Modificarea a avut loc cu succes!");
+call    0 never executed
+        -:   63:		}
+        -:   64:		else {
+    #####:   65:			printf("Materia prima nu a fost gasita!");
+    %%%%%:   65-block  0
+call    0 never executed
+        -:   66:		}
+        -:   67:		
+        -:   68:	}
+    #####:   69:}
+        -:   70:
+function stergere called 0 returned 0% blocks executed 0%
+    #####:   71:void stergere(ManagerLists* store) {
+    #####:   72:	int ok = 1;
+    #####:   73:	while (ok) {
+    %%%%%:   73-block  0
+    %%%%%:   73-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:   74:		printf("Introduceti numele produsului care doriti sa fie sters din baza de date: ");
+    %%%%%:   74-block  0
+call    0 never executed
+        -:   75:		char nume[256];
+    #####:   76:		scanf("%s", nume);
+call    0 never executed
+    #####:   77:		if (!validare_nume(nume)) {
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   78:			printf("Numele materiei prime trebuie sa contina minim 3 litere!\n");
+    %%%%%:   78-block  0
+call    0 never executed
+    #####:   79:			continue;
+        -:   80:		}
+    #####:   81:		int index = cauta(store, nume);
+    %%%%%:   81-block  0
+call    0 never executed
+    #####:   82:		if (index != -1) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   83:			remove_prod(store,index);
+    %%%%%:   83-block  0
+call    0 never executed
+    #####:   84:			ok = 0;
+    #####:   85:			printf("Produsul a fost sters cu succes!\n");
+call    0 never executed
+        -:   86:		}
+        -:   87:		else {
+    #####:   88:			printf("Materia prima nu a fost gasita!\n");
+    %%%%%:   88-block  0
+call    0 never executed
+        -:   89:		}
+        -:   90:	}
+    #####:   91:}
+        -:   92:
+function vizualizare called 0 returned 0% blocks executed 0%
+    #####:   93:void vizualizare(ManagerLists* store) {
+    #####:   94:	printf("1) Nume \n2) Cantitate \n0) Iesire\n");
+    %%%%%:   94-block  0
+call    0 never executed
+        -:   95:	int optiune;
+    #####:   96:	scanf("%d", &optiune);
+call    0 never executed
+        -:   97:
+    #####:   98:	printf("1) Crescator \n2) Descrescator \n0) Iesire\n");
+call    0 never executed
+        -:   99:	int monotonie;
+    #####:  100:	scanf("%d", &monotonie);
+call    0 never executed
+    #####:  101:	if ((optiune == 1 || optiune == 2) && (monotonie == 1 || monotonie == 2)) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  101-block  0
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    %%%%%:  101-block  1
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    %%%%%:  101-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    #####:  102:		MyList* lista= createList((void (*)(void *)) destroyPr);
+    %%%%%:  102-block  0
+call    0 never executed
+    #####:  103:		if(optiune == 1 && monotonie == 1)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  103-block  0
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    #####:  104:			ordonare(store, lista, criteriu_nume_cresc);
+    %%%%%:  104-block  0
+call    0 never executed
+    #####:  105:		else if (optiune == 1 && monotonie == 2)
+    %%%%%:  105-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  105-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    #####:  106:			ordonare(store, lista, criteriu_nume_descr);
+    %%%%%:  106-block  0
+call    0 never executed
+    #####:  107:		else if (optiune == 2 && monotonie == 1)
+    %%%%%:  107-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  107-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    #####:  108:			ordonare(store, lista, criteriu_cant_cresc);
+    %%%%%:  108-block  0
+call    0 never executed
+    #####:  109:		else if (optiune == 2 && monotonie == 2)
+    %%%%%:  109-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  109-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    #####:  110:			ordonare(store, lista, criteriu_cant_descr);
+    %%%%%:  110-block  0
+call    0 never executed
+    #####:  111:		for (int j = 0; j < lista->lungime; j++)
+    %%%%%:  111-block  0
+    %%%%%:  111-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:  112:			printf("%s -- %s -- %d\n", ((Produs*)lista->v[j])->denumire, ((Produs*)lista->v[j])->producator, ((Produs*)lista->v[j])->cantitate);
+    %%%%%:  112-block  0
+call    0 never executed
+    #####:  113:		eliberator(lista);
+    %%%%%:  113-block  0
+call    0 never executed
+        -:  114:	}
+    #####:  115:	else printf("Introduceti valori adecvate!\n");
+    %%%%%:  115-block  0
+call    0 never executed
+    #####:  116:}
+        -:  117:
+function filtrare called 0 returned 0% blocks executed 0%
+    #####:  118:void filtrare(ManagerLists* store)
+        -:  119:{
+    #####:  120:	printf("1) Filtrare dupa prima litera \n2) Filtrare dupa cantitate mai mica decat un numar dat \n0) Iesire\n");
+    %%%%%:  120-block  0
+call    0 never executed
+        -:  121:	int optiune;
+    #####:  122:	scanf("%d", &optiune);
+call    0 never executed
+    #####:  123:	if (optiune == 1)
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  124:	{
+        -:  125:		char litera[20];
+    #####:  126:		printf("Introduceti litera: ");
+    %%%%%:  126-block  0
+call    0 never executed
+    #####:  127:		scanf("%s", litera);
+call    0 never executed
+    #####:  128:		MyList* lista= createList((void (*)(void *)) destroyPr);
+call    0 never executed
+    #####:  129:		filtr_litera(store, lista, litera);
+call    0 never executed
+    #####:  130:		for (int j = 0; j < lista->lungime; j++)
+    %%%%%:  130-block  0
+branch  0 never executed
+branch  1 never executed (fallthrough)
+        -:  131:		{
+    #####:  132:            printf("%s -- %s -- %d\n", ((Produs*)lista->v[j])->denumire, ((Produs*)lista->v[j])->producator, ((Produs*)lista->v[j])->cantitate);
+    %%%%%:  132-block  0
+call    0 never executed
+        -:  133:		}
+    #####:  134:		eliberator(lista);
+    %%%%%:  134-block  0
+call    0 never executed
+        -:  135:	}
+    #####:  136:	else if (optiune == 2) {
+    %%%%%:  136-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  137:		int cant;
+    #####:  138:		printf("Introduceti cantitatea: ");
+    %%%%%:  138-block  0
+call    0 never executed
+    #####:  139:		scanf("%d", &cant);
+call    0 never executed
+    #####:  140:		MyList* lista= createList((void (*)(void *)) destroyPr);
+call    0 never executed
+    #####:  141:		filtr_cantitate(store, lista, cant);
+call    0 never executed
+    #####:  142:		for (int j = 0; j < lista->lungime; j++)
+    %%%%%:  142-block  0
+branch  0 never executed
+branch  1 never executed (fallthrough)
+        -:  143:		{
+    #####:  144:            printf("%s -- %s -- %d\n", ((Produs*)lista->v[j])->denumire, ((Produs*)lista->v[j])->producator, ((Produs*)lista->v[j])->cantitate);
+    %%%%%:  144-block  0
+call    0 never executed
+        -:  145:		}
+    #####:  146:		eliberator(lista);
+    %%%%%:  146-block  0
+call    0 never executed
+        -:  147:	}
+    #####:  148:}
+function filtrare_2 called 0 returned 0% blocks executed 0%
+    #####:  149:void filtrare_2(ManagerLists* store)
+        -:  150:{
+    #####:  151:    printf("Introduceti numele producatorului dupa care vreti sa filtrati.");
+    %%%%%:  151-block  0
+call    0 never executed
+        -:  152:    char prod[200];
+    #####:  153:    scanf("%s", prod);
+call    0 never executed
+    #####:  154:    puts("HERE");
+call    0 never executed
+    #####:  155:    MyList* lista= createList((void (*)(void *)) destroyPr);
+call    0 never executed
+    #####:  156:    filtr_producator(store, lista, prod);
+call    0 never executed
+    #####:  157:    for (int j = 0; j < lista->lungime; j++)
+    %%%%%:  157-block  0
+branch  0 never executed
+branch  1 never executed (fallthrough)
+        -:  158:    {
+    #####:  159:        printf("%s -- %s -- %d\n", ((Produs*)lista->v[j])->denumire, ((Produs*)lista->v[j])->producator, ((Produs*)lista->v[j])->cantitate);
+    %%%%%:  159-block  0
+call    0 never executed
+        -:  160:    }
+    #####:  161:    eliberator(lista);
+    %%%%%:  161-block  0
+call    0 never executed
+    #####:  162:}
+function undoOption called 0 returned 0% blocks executed 0%
+    #####:  163:void undoOption(ManagerLists* store){
+    #####:  164:    undoFunction(store);
+    %%%%%:  164-block  0
+call    0 never executed
+    #####:  165:}
+function load called 0 returned 0% blocks executed 0%
+    #####:  166:void load(ManagerLists* store){
+        -:  167:
+    #####:  168:    add(store, "Zahar", "Tarom", 100);
+    %%%%%:  168-block  0
+call    0 never executed
+    #####:  169:    add(store, "Sare", "Wizz", 200);
+call    0 never executed
+    #####:  170:    add(store,"Miere", "Asus", 300);
+call    0 never executed
+    #####:  171:}
+function printAll called 0 returned 0% blocks executed 0%
+    #####:  172:void printAll(MyList* lista){
+    #####:  173:    for (int j = 0; j < lista->lungime; j++)
+    %%%%%:  173-block  0
+    %%%%%:  173-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:  174:        printf("%s -- %s -- %d\n", ((Produs*)lista->v[j])->denumire, ((Produs*)lista->v[j])->producator, ((Produs*)lista->v[j])->cantitate);
+    %%%%%:  174-block  0
+call    0 never executed
+        -:  175:
+    #####:  176:}
+function start called 0 returned 0% blocks executed 0%
+    #####:  177:void start()
+        -:  178:{
+    #####:  179:    ManagerLists store=createManagerList();
+    %%%%%:  179-block  0
+call    0 never executed
+        -:  180:
+    #####:  181:	int n = 1;
+    #####:  182:	while (n != 0) {
+    %%%%%:  182-block  0
+branch  0 never executed
+branch  1 never executed (fallthrough)
+        -:  183:		//system("cls");
+    #####:  184:		printf("1) adaugare de materie prima (daca exista deja in stoc se actualizeaza cantitatea) \n2) modificare materie prima \n3) stergere  materie prima \n4) Vizualizare materii prime care satisfac un criteriu (numele incepe cu o litera data, cantitatea disponibila e mai mica decat un numar dat) \n5) Vizualizare materii prime din stoc ordonat dupa nume sau cantitate disponibila(crescator / descrescator) \n6)Undo 7)Filtrare Producator 0) Iesire\n");
+    %%%%%:  184-block  0
+call    0 never executed
+    #####:  185:		scanf("%d", &n);
+call    0 never executed
+    #####:  186:			switch (n) {
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+branch  5 never executed
+branch  6 never executed
+branch  7 never executed
+branch  8 never executed
+branch  9 never executed
+branch 10 never executed
+    #####:  187:			case 1:
+    #####:  188:				adaugare(&store);
+    %%%%%:  188-block  0
+call    0 never executed
+    #####:  189:				break;
+    #####:  190:			case 2:
+    #####:  191:				modificare1(&store);
+    %%%%%:  191-block  0
+call    0 never executed
+    #####:  192:				break;
+    #####:  193:			case 3:
+    #####:  194:				stergere(&store);
+    %%%%%:  194-block  0
+call    0 never executed
+    #####:  195:				break;
+    #####:  196:			case 4:
+    #####:  197:				filtrare(&store);
+    %%%%%:  197-block  0
+call    0 never executed
+    #####:  198:				break;
+    #####:  199:			case 5:
+    #####:  200:				vizualizare(&store);
+    %%%%%:  200-block  0
+call    0 never executed
+    #####:  201:				break;
+    #####:  202:            case 6:
+    #####:  203:                undoOption(&store);
+    %%%%%:  203-block  0
+call    0 never executed
+    #####:  204:                break;
+    #####:  205:            case 7:filtrare_2(&store);
+    %%%%%:  205-block  0
+call    0 never executed
+    #####:  206:                break;
+    #####:  207:            case 11:
+    #####:  208:                load(&store);
+    %%%%%:  208-block  0
+call    0 never executed
+    #####:  209:                break;
+    #####:  210:            case 10:
+    #####:  211:                printAll(store.l);
+    %%%%%:  211-block  0
+call    0 never executed
+    #####:  212:                break;
+    #####:  213:			case 0:
+    #####:  214:				n = 0;
+    #####:  215:                    destroyManagerList(&store);
+    %%%%%:  215-block  0
+call    0 never executed
+    #####:  216:				break;
+    #####:  217:            default:
+    #####:  218:                printf("Optiune invalid\n");
+    %%%%%:  218-block  0
+call    0 never executed
+    #####:  219:                break;
+        -:  220:			}
+        -:  221:	}
+    #####:  222:}
+        -:  223:
+function test_all called 1 returned 100% blocks executed 100%
+        1:  224:void test_all()
+        -:  225:{
+        1:  226:	test_adaugare();
+        1:  226-block  0
+call    0 returned 1
+        1:  227:	test_cautare();
+call    0 returned 1
+        1:  228:	test_update();
+call    0 returned 1
+        1:  229:	test_remove();
+call    0 returned 1
+        1:  230:    test_ordonare();
+call    0 returned 1
+        1:  231:	test_modificare();
+call    0 returned 1
+        1:  232:	test_filtrLit();
+call    0 returned 1
+        1:  233:    test_filtrCant();
+call    0 returned 1
+        1:  234:    test_filtrProd();
+call    0 returned 1
+        1:  235:    test_validare();
+call    0 returned 1
+        1:  236:    test_liste_liste();
+call    0 returned 1
+        1:  237:    test_undo();
+call    0 returned 1
+        1:  238:}
+        -:  239:
+function main called 1 returned 100% blocks executed 100%
+        1:  240:int main()
+        -:  241:{
+        1:  242:	test_all();
+        1:  242-block  0
+call    0 returned 1
+        -:  243:	//start();
+        1:  244:	return 0;
+        -:  245:}

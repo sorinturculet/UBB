@@ -1,0 +1,13 @@
+1 eroilor 3 3 XXXXXXXXX
+2 mircesti 2 3 XXX---
+3 voievod 3 2 XX----
+4 jilavei 4 4 -XXXX--XX--XXXX-
+5 privatia 1 1 -
+29 MIL 3 3 XXX---XXX
+123 nefowe 1 1 X
+12 miudw 2 3 ------
+12 miudw 2 3 XXX---
+12 miudw 2 3 XXX---
+66 biancai 2 2 XXX-
+89 iasi 2 3 X--XX-
+125 bacau 2 2 ---X

@@ -1,0 +1,48 @@
+        -:    0:Source:C:/eu/ubb/2nd_Semester/oop/Lab5_EDUARD - Copy(before undo)/domain/domain.c
+        -:    0:Graph:C:\eu\ubb\2nd_Semester\oop\Lab5_EDUARD - Copy(before undo)\cmake-build-debug-mingw-coverage\CMakeFiles\Lab5_EDUARD.dir\domain\domain.c.gcno
+        -:    0:Data:C:\eu\ubb\2nd_Semester\oop\Lab5_EDUARD - Copy(before undo)\cmake-build-debug-mingw-coverage\CMakeFiles\Lab5_EDUARD.dir\domain\domain.c.gcda
+        -:    0:Runs:1
+        -:    1:#include"domain.h"
+        -:    2:#include<malloc.h>
+        -:    3:#include<string.h>
+        -:    4:
+function crearePr called 79 returned 100% blocks executed 100%
+       79:    5:extern Produs* crearePr(char* nume, char* producator, int cantitate)
+        -:    6:{
+       79:    7:    Produs* material=malloc(sizeof (Produs));
+        -:    8:    //size_t in loc de int pentru a scapa de warning
+       79:    9:    size_t nrc= strlen(nume)+1;
+       79:   10:    material->denumire = malloc(nrc*sizeof(char));
+       79:   11:    if(material->denumire != NULL)
+       79:   11-block  0
+branch  0 taken 79 (fallthrough)
+branch  1 taken 0
+       79:   12:        strcpy(material->denumire, nume);
+       79:   12-block  0
+        -:   13:
+       79:   14:    nrc=strlen(producator) + 1;
+       79:   15:    material->producator = malloc(nrc*sizeof (char));
+       79:   16:    if (material->producator != NULL)
+       79:   16-block  0
+branch  0 taken 79 (fallthrough)
+branch  1 taken 0
+       79:   17:        strcpy(material->producator, producator);
+       79:   17-block  0
+        -:   18:
+       79:   19:    material->cantitate = cantitate;
+       79:   20:    return material;
+       79:   20-block  0
+        -:   21:}
+function duplicatePr called 49 returned 100% blocks executed 100%
+       49:   22:extern Produs* duplicatePr(Produs* Pr){
+       49:   23:    Produs* duplicat= crearePr(Pr->denumire,Pr->producator,Pr->cantitate);
+       49:   23-block  0
+call    0 returned 49
+       49:   24:    return duplicat;
+        -:   25:}
+function destroyPr called 77 returned 100% blocks executed 100%
+       77:   26:void destroyPr(Produs * tr){
+       77:   27:    free(tr->denumire);
+       77:   28:    free(tr->producator);
+       77:   29:    free(tr);
+       77:   30:}

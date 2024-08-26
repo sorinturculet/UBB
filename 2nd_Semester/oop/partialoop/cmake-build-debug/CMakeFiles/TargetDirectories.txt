@@ -1,0 +1,5 @@
+C:/eu/ubb/2nd_Semester/oop/practicoop/cmake-build-debug/CMakeFiles/practicoop.dir
+C:/eu/ubb/2nd_Semester/oop/practicoop/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/eu/ubb/2nd_Semester/oop/practicoop/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/eu/ubb/2nd_Semester/oop/practicoop/cmake-build-debug/CMakeFiles/practicoop_autogen_timestamp_deps.dir
+C:/eu/ubb/2nd_Semester/oop/practicoop/cmake-build-debug/CMakeFiles/practicoop_autogen.dir

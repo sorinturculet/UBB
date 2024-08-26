@@ -1,0 +1,315 @@
+        -:    0:Source:C:/eu/ubb/2nd_Semester/oop/Lab5_EDUARD - Copy(before undo)/service/Service.c
+        -:    0:Graph:C:\eu\ubb\2nd_Semester\oop\Lab5_EDUARD - Copy(before undo)\cmake-build-debug-mingw-coverage\CMakeFiles\Lab5_EDUARD.dir\service\Service.c.gcno
+        -:    0:Data:C:\eu\ubb\2nd_Semester\oop\Lab5_EDUARD - Copy(before undo)\cmake-build-debug-mingw-coverage\CMakeFiles\Lab5_EDUARD.dir\service\Service.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "Service.h"
+        -:    2:#include <string.h>
+        -:    3:#include <stdlib.h>
+        -:    4:
+        -:    5:#pragma warning(disable: 6001)
+        -:    6:
+function createManagerList called 10 returned 100% blocks executed 100%
+       10:    7:ManagerLists createManagerList()
+        -:    8:{
+        -:    9:    ManagerLists store;
+       10:   10:    store.l= createList((void (*)(void *)) destroyPr);
+       10:   10-block  0
+call    0 returned 10
+       10:   11:    store.undo=createList((void (*)(void *)) destroyList);
+call    0 returned 10
+       10:   12:    return store;
+        -:   13:
+        -:   14:}
+        -:   15:
+function destroyManagerList called 10 returned 100% blocks executed 100%
+       10:   16:void destroyManagerList(ManagerLists* store)
+        -:   17:{
+        -:   18:
+       10:   19:    destroyList(store->l);
+       10:   19-block  0
+call    0 returned 10
+       10:   20:    destroyList(store->undo);
+call    0 returned 10
+       10:   21:}
+        -:   22:
+function add called 29 returned 100% blocks executed 100%
+       29:   23:void add(ManagerLists* store, char nume[], char prod[], int cant)
+        -:   24:{
+       29:   25:    ElemType p = crearePr(nume, prod, cant);
+       29:   25-block  0
+call    0 returned 29
+       29:   26:    addToList(store->undo, copyList(store->l));
+call    0 returned 29
+call    1 returned 29
+        -:   27:
+       29:   28:    addToList(store->l, p);
+call    0 returned 29
+        -:   29:
+       29:   30:}
+        -:   31:
+function cauta called 8 returned 100% blocks executed 100%
+        8:   32:int cauta(ManagerLists* store, char nume[]) {
+       13:   33:    for (int j = 0; j < store->l->lungime; j++) {
+        8:   33-block  0
+        5:   33-block  1
+       13:   33-block  2
+branch  0 taken 12
+branch  1 taken 1 (fallthrough)
+       12:   34:        if (strcmp(nume,((Produs*) store->l->v[j])->denumire) == 0) return j;
+       12:   34-block  0
+branch  0 taken 7 (fallthrough)
+branch  1 taken 5
+        7:   34-block  1
+        -:   35:    }
+        1:   36:    return -1;
+        1:   36-block  0
+        -:   37:}
+        -:   38:
+function update called 2 returned 100% blocks executed 100%
+        2:   39:void update(ManagerLists* store, int cant, int index) {
+        2:   40:    addToList(store->undo, copyList(store->l));
+        2:   40-block  0
+call    0 returned 2
+call    1 returned 2
+        2:   41:    ((Produs*)store->l->v[index])->cantitate += cant;
+        2:   42:}
+        -:   43:
+function remove_prod called 2 returned 100% blocks executed 100%
+        2:   44:void remove_prod(ManagerLists* store, int index) {
+        2:   45:    addToList(store->undo, copyList(store->l));
+        2:   45-block  0
+call    0 returned 2
+call    1 returned 2
+        2:   46:    free(((Produs*)store->l->v[index])->denumire);
+        2:   47:    free(((Produs*)store->l->v[index])->producator);
+        2:   48:    free(((Produs*)store->l->v[index]));
+        4:   49:    for (int i = index; i < store->l->lungime-1; i++)
+        4:   49-block  0
+branch  0 taken 2
+branch  1 taken 2 (fallthrough)
+        -:   50:    {
+        2:   51:        store->l->v[i] = store->l->v[i + 1];
+        2:   51-block  0
+        -:   52:    }
+        2:   53:    store->l->lungime--;
+        2:   54:}
+        -:   55:
+function undoFunction called 5 returned 100% blocks executed 100%
+        5:   56:int undoFunction(ManagerLists* store)
+        -:   57:{
+        5:   58:    if(store->undo->lungime>0) {
+        5:   58-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 1
+        4:   59:        destroyList(store->l);
+        4:   59-block  0
+call    0 returned 4
+        4:   60:        store->l = store->undo->v[store->undo->lungime - 1];
+        4:   61:        store->undo->lungime--;
+        4:   62:        return 0;
+        -:   63:    }
+        1:   64:    return 1;
+        1:   64-block  0
+        -:   65:}
+function ordonare called 4 returned 100% blocks executed 100%
+        4:   66:void ordonare(ManagerLists* store,MyList * aux,int(*func)(Produs , Produs)) {
+        -:   67:    //initializam aux
+       16:   68:    for(int i=0;i<store->l->lungime;i++)
+        4:   68-block  0
+       16:   68-block  1
+branch  0 taken 12
+branch  1 taken 4 (fallthrough)
+       12:   69:        addToList(aux, duplicatePr(store->l->v[i]));
+       12:   69-block  0
+call    0 returned 12
+call    1 returned 12
+        -:   70:
+        4:   71:    int ok = 1;
+       12:   72:    while (ok)
+        4:   72-block  0
+       12:   72-block  1
+branch  0 taken 8
+branch  1 taken 4 (fallthrough)
+        -:   73:    {
+        8:   74:        ok = 0;
+       24:   75:        for(int j = 0; j < aux->lungime - 1; j++)
+        8:   75-block  0
+       16:   75-block  1
+       24:   75-block  2
+branch  0 taken 16
+branch  1 taken 8 (fallthrough)
+       16:   76:            if (func( *(Produs*)aux->v[j], *(Produs*)aux->v[j + 1]) > 0)
+       16:   76-block  0
+call    0 returned 16
+branch  1 taken 6 (fallthrough)
+branch  2 taken 10
+        -:   77:            {
+        6:   78:                Produs *temp = aux->v[j];
+        6:   79:                aux->v[j] = aux->v[j + 1];
+        6:   80:                aux->v[j + 1] = temp;
+        6:   81:                ok = 1;
+        6:   81-block  0
+        -:   82:            }
+        -:   83:    }
+        4:   84:}
+        -:   85:
+function modificare called 1 returned 100% blocks executed 100%
+        1:   86:void modificare(ManagerLists* store, int index, int cant) {
+        1:   87:    addToList(store->undo, copyList(store->l));
+        1:   87-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   88:    ((Produs*)store->l->v[index])->cantitate = cant;
+        1:   89:}
+        -:   90:
+function filtr_litera called 2 returned 100% blocks executed 100%
+        2:   91:void filtr_litera(ManagerLists* store, MyList* aux, const char litera[]) {
+        2:   92:    int i = 0;
+       10:   93:    for (int j = 0; j < store->l->lungime; j++)
+        2:   93-block  0
+        8:   93-block  1
+       10:   93-block  2
+branch  0 taken 8
+branch  1 taken 2 (fallthrough)
+        -:   94:    {
+        8:   95:        if (((Produs *)store->l->v[j])->denumire[0] == litera[0]) {
+        8:   95-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 6
+        2:   96:            if (i == aux->capacitate)
+        2:   96-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        -:   97:            {
+        1:   98:                redim(aux);
+        1:   98-block  0
+call    0 returned 1
+        -:   99:            }
+        2:  100:            aux->v[i] = store->l->v[j];
+        2:  101:            i++;
+        2:  101-block  0
+        -:  102:        }
+        -:  103:    }
+        2:  104:    aux->lungime = i;
+        2:  105:}
+        -:  106:
+function filtr_cantitate called 2 returned 100% blocks executed 100%
+        2:  107:void filtr_cantitate(ManagerLists* store, MyList* aux, int cant) {
+        2:  108:    int i = 0;
+        8:  109:    for (int j = 0; j < store->l->lungime; j++)
+        2:  109-block  0
+        6:  109-block  1
+        8:  109-block  2
+branch  0 taken 6
+branch  1 taken 2 (fallthrough)
+        -:  110:    {
+        6:  111:        if ( ((Produs*)store->l->v[j])->cantitate < cant) {
+        6:  111-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 3
+        3:  112:            if(i == aux->capacitate)
+        3:  112-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        -:  113:            {
+        2:  114:                redim(aux);
+        2:  114-block  0
+call    0 returned 2
+        -:  115:            }
+        3:  116:            aux->v[i] = store->l->v[j];
+        3:  117:            i++;
+        3:  117-block  0
+        -:  118:        }
+        -:  119:    }
+        2:  120:    aux->lungime = i;
+        2:  121:}
+function filtr_producator called 2 returned 100% blocks executed 100%
+        2:  122:void filtr_producator(ManagerLists* store, MyList* aux, char prod[]) {
+        -:  123:
+        2:  124:    int i = 0;
+        8:  125:    for (int j = 0; j < store->l->lungime; j++)
+        2:  125-block  0
+        6:  125-block  1
+        8:  125-block  2
+branch  0 taken 6
+branch  1 taken 2 (fallthrough)
+        -:  126:    {
+        6:  127:        if ( strcmp(((Produs*)store->l->v[j])->producator,prod)==0) {
+        6:  127-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 4
+        2:  128:            if(i == aux->capacitate)
+        2:  128-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        -:  129:            {
+        1:  130:                redim(aux);
+        1:  130-block  0
+call    0 returned 1
+        -:  131:            }
+        2:  132:            aux->v[i] = store->l->v[j];
+        2:  133:            i++;
+        2:  133-block  0
+        -:  134:        }
+        -:  135:    }
+        2:  136:    aux->lungime = i;
+        2:  137:}
+function validare_cantitate called 2 returned 100% blocks executed 100%
+        2:  138:int validare_cantitate(int cantitate)
+        -:  139:{
+        2:  140:    if(cantitate < 0) return 0;
+        2:  140-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  140-block  1
+        1:  141:    return 1;
+        1:  141-block  0
+        -:  142:}
+        -:  143:
+function validare_nume called 2 returned 100% blocks executed 100%
+        2:  144:int validare_nume(char nume[])
+        -:  145:{
+        2:  146:    if (strlen(nume) < 3) return 0;
+        2:  146-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  146-block  1
+        1:  147:    return 1;
+        1:  147-block  0
+        -:  148:}
+        -:  149:
+function validare_producator called 2 returned 100% blocks executed 100%
+        2:  150:int validare_producator(char producator[])
+        -:  151:{
+        2:  152:    if (strlen(producator) < 3) return 0;
+        2:  152-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  152-block  1
+        1:  153:    return 1;
+        1:  153-block  0
+        -:  154:}
+        -:  155:
+function criteriu_nume_cresc called 6 returned 100% blocks executed 100%
+        6:  156:int criteriu_nume_cresc(Produs a, Produs b) {
+        6:  157:    return strcmp(a.denumire, b.denumire) > 0;
+        6:  157-block  0
+        -:  158:}
+        -:  159:
+function criteriu_nume_descr called 2 returned 100% blocks executed 100%
+        2:  160:int criteriu_nume_descr(Produs a, Produs b) {
+        2:  161:    return strcmp(a.denumire, b.denumire) < 0;
+        2:  161-block  0
+        -:  162:}
+        -:  163:
+function criteriu_cant_cresc called 2 returned 100% blocks executed 100%
+        2:  164:int criteriu_cant_cresc(Produs a, Produs b) {
+        2:  165:    return a.cantitate > b.cantitate;
+        2:  165-block  0
+        -:  166:}
+        -:  167:
+function criteriu_cant_descr called 6 returned 100% blocks executed 100%
+        6:  168:int criteriu_cant_descr(Produs a, Produs b) {
+        6:  169:    return a.cantitate < b.cantitate;
+        6:  169-block  0
+        -:  170:}

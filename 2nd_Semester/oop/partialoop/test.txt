@@ -1,0 +1,5 @@
+8,Mihai,Sadoveanu
+10,Darius,Scoala nr 10
+20,Mihaita,Chinteni
+23,Jordan,Scoala Saleziana
+4,Gica,Scoala ta

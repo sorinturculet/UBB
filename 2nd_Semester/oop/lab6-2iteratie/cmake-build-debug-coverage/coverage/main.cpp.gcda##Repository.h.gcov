@@ -1,0 +1,42 @@
+        -:    0:Source:C:/eu/ubb/2nd_Semester/oop/lab6-2iteratie/Repository.h
+        -:    0:Graph:C:\eu\ubb\2nd_Semester\oop\lab6-2iteratie\cmake-build-debug-coverage\CMakeFiles\lab6.dir\main.cpp.gcno
+        -:    0:Data:C:\eu\ubb\2nd_Semester\oop\lab6-2iteratie\cmake-build-debug-coverage\CMakeFiles\lab6.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by sorn on 01-Apr-24.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LAB6_REPOSITORY_H
+        -:    6:#define LAB6_REPOSITORY_H
+        -:    7:#include"Domain.h"
+        -:    8:#include"vector.h"
+        -:    9:class RepoException {
+        -:   10:private:
+        -:   11:    string errorMsg;
+        -:   12:public:
+        -:   13:    RepoException(string errorMsg) :errorMsg{ errorMsg } {};
+        -:   14:    string getErrorMessage() {
+        -:   15:        return this->errorMsg;
+        -:   16:    }
+        -:   17:};
+        -:   18:class DisciplinaRepository{
+        -:   19:    private:
+        -:   20:    MyVector<Disciplina> allDisciplina;
+        -:   21:    public:
+function _ZN20DisciplinaRepositoryC1Ev called 9 returned 100% blocks executed 100%
+        9:   22:    DisciplinaRepository()=default;
+        9:   22-block  0
+call    0 returned 9
+        -:   23:    DisciplinaRepository(const DisciplinaRepository& repo)=delete;
+        -:   24:
+        -:   25:    bool Exists(const Disciplina& disci);
+        -:   26:    void Store(const Disciplina& disci);
+        -:   27:    void Modify(string denumire,int ore,string tip,string cadruDidactic);
+        -:   28:    const Disciplina& find(const string Denumire,const string Profesor);
+        -:   29:    void Delete(Disciplina& disci);
+        -:   30:
+        -:   31:    const MyVector<Disciplina>& getAllDiscipline();
+        -:   32:
+        -:   33:};
+        -:   34:void testeRepo();
+        -:   35:#endif //LAB6_REPOSITORY_H

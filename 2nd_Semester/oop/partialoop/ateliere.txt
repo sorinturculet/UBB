@@ -1,0 +1,5 @@
+Desen,8,10
+Fotografie,20
+Muzica,23
+Informatica,4
+Jurnalism,4,10

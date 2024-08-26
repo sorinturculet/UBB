@@ -1,0 +1,291 @@
+        -:    0:Source:C:/Users/sorn/Desktop/practicoop/Service.cpp
+        -:    0:Graph:C:\Users\sorn\Desktop\practicoop\cmake-build-debug-coverage\CMakeFiles\practicoop.dir\Service.cpp.gcno
+        -:    0:Data:C:\Users\sorn\Desktop\practicoop\cmake-build-debug-coverage\CMakeFiles\practicoop.dir\Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by sorn on 27-Jun-24.
+        -:    3://
+        -:    4:#include<algorithm>
+        -:    5:#include <stdexcept>
+        -:    6:#include <iostream>
+        -:    7:#include "Service.h"
+function _ZN7Service12getAllSortedEv called 3 returned 100% blocks executed 88%
+        3:    8:vector<Parcare> Service::getAllSorted() {
+        3:    9:    vector<Parcare> v=r.getAll();
+        3:    9-block  0
+call    0 returned 3
+function _ZZN7Service12getAllSortedEvENKUlRK7ParcareS2_E_clES2_S2_ called 55 returned 100% blocks executed 100%
+        3:   10:    sort(v.begin(),v.end(),[](const Parcare& p1,const Parcare& p2){
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+branch  3 taken 3 (fallthrough)
+branch  4 taken 0 (throw)
+       55:   11:        return p1.getColoane()*p1.getLinii()<p2.getColoane()*p2.getLinii();
+       55:   11-block  0
+call    0 returned 55
+call    1 returned 55
+call    2 returned 55
+call    3 returned 55
+        -:   12:    });
+        3:   13:    return v;
+        3:   13-block  0
+        3:   13-block  1
+    =====:   14:}
+    $$$$$:   14-block  0
+call    0 never executed
+function _ZN7Service10addParcareEiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiiS5_ called 2 returned 50% blocks executed 69%
+        2:   15:void Service::addParcare(int id, std::string adresa, int linii, int coloane, std::string stare) {
+        2:   16:    Parcare p(id,adresa,linii,coloane,stare);
+        2:   16-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   16-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   16-block  2
+call    6 returned 2
+call    7 returned 2
+call    8 returned 2
+    $$$$$:   16-block  3
+    $$$$$:   16-block  4
+call    9 never executed
+    $$$$$:   16-block  5
+        2:   17:    vector<Parcare> v=r.getAll();
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+       14:   18:    for(const auto& parcare:v){
+        2:   18-block  0
+call    0 returned 2
+call    1 returned 2
+       13:   18-block  1
+call    2 returned 13
+       12:   18-block  2
+call    3 returned 12
+       14:   18-block  3
+call    4 returned 14
+branch  5 taken 13
+branch  6 taken 1 (fallthrough)
+       13:   19:        if(p.getId()==parcare.getId())
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 1 (fallthrough)
+branch  3 taken 12
+        1:   20:            throw std::runtime_error("Id-ul exista deja");
+        1:   20-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   20-block  1
+call    4 returned 1
+    $$$$$:   20-block  2
+call    5 never executed
+        -:   21:    }
+        1:   22:    string errors=p.valideaza();
+        1:   22-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   23:    if(errors!="")
+        1:   23-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   23-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    #####:   24:        throw std::runtime_error(errors);
+    %%%%%:   24-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:   24-block  1
+call    4 never executed
+    $$$$$:   24-block  2
+call    5 never executed
+        1:   25:    r.add(p);
+        1:   25-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   25-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   25-block  2
+call    6 returned 1
+    $$$$$:   25-block  3
+call    7 never executed
+    $$$$$:   25-block  4
+        1:   26:    notify();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   27:}
+        1:   27-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:   27-block  1
+call    3 never executed
+        1:   27-block  2
+call    4 returned 1
+        1:   27-block  3
+call    5 returned 1
+function _ZN7Service13modificaStareEiNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiiS5_ called 2 returned 100% blocks executed 50%
+        2:   28:void Service::modificaStare(int id, std::string adresa, int linii, int coloane, std::string stare) {
+        2:   29:    Parcare p(id,adresa,linii,coloane,stare);
+        2:   29-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   29-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   29-block  2
+call    6 returned 2
+call    7 returned 2
+call    8 returned 2
+    $$$$$:   29-block  3
+    $$$$$:   29-block  4
+call    9 never executed
+    $$$$$:   29-block  5
+        2:   30:    string errors=p.valideaza();
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   31:    if(errors!="")
+        2:   31-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   31-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 2
+    #####:   32:        throw std::runtime_error(errors);
+    %%%%%:   32-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:   32-block  1
+call    4 never executed
+    $$$$$:   32-block  2
+call    5 never executed
+        2:   33:    r.update(p);
+        2:   33-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   33-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   33-block  2
+call    6 returned 2
+    $$$$$:   33-block  3
+call    7 never executed
+    $$$$$:   33-block  4
+        2:   34:    notify();
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   35:}
+        2:   35-block  0
+call    0 returned 2
+call    1 returned 2
+    $$$$$:   35-block  1
+call    2 never executed
+    $$$$$:   35-block  2
+call    3 never executed
+function _ZN7Service16modificaStareLocEiic called 2 returned 100% blocks executed 66%
+        2:   36:void Service::modificaStareLoc(int id,int index,char c){
+       2*:   37:    for(auto& loc:r.getAll())
+        2:   37-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   37-block  1
+call    3 returned 2
+call    4 returned 2
+        2:   37-block  2
+call    5 returned 2
+    %%%%%:   37-block  3
+call    6 never executed
+        2:   37-block  4
+call    7 returned 2
+branch  8 taken 2
+branch  9 taken 0 (fallthrough)
+        2:   38:        if(loc.getId()==id)
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0
+        -:   39:        {
+        2:   40:            string stare=loc.getStare();
+        2:   40-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   41:            stare[index]=c;
+        2:   41-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   42:            Parcare p(loc.getId(),loc.getAdresa(),loc.getLinii(),loc.getColoane(),stare);
+        2:   42-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   42-block  1
+call    3 returned 2
+call    4 returned 2
+call    5 returned 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0 (throw)
+        2:   42-block  2
+call    8 returned 2
+call    9 returned 2
+call   10 returned 2
+call   11 returned 2
+    $$$$$:   42-block  3
+    $$$$$:   42-block  4
+call   12 never executed
+    $$$$$:   42-block  5
+        2:   43:            r.update(p);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   43-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   43-block  1
+call    6 returned 2
+    $$$$$:   43-block  2
+call    7 never executed
+    $$$$$:   43-block  3
+        2:   44:            notify();
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   45:            break;
+        2:   45-block  0
+        4:   46:        }
+        2:   46-block  0
+call    0 returned 2
+call    1 returned 2
+        2:   46-block  1
+call    2 returned 2
+    $$$$$:   46-block  2
+call    3 never executed
+    $$$$$:   46-block  3
+call    4 never executed
+    $$$$$:   46-block  4
+call    5 never executed
+        2:   47:};

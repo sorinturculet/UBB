@@ -1,0 +1,6 @@
+Analiza,8,Mate,Berinde
+Algebra,8,Mate,Modoi
+FP,10,Mate,Istvanc
+OSwdaseaw,7,Info,Boianwda
+mate,8,Mate,berinde
+OS,6,Info,Boian

@@ -1,0 +1,2200 @@
+        -:    0:Source:C:/eu/ubb/2nd_Semester/oop/lab8/Service.cpp
+        -:    0:Graph:C:\eu\ubb\2nd_Semester\oop\lab8\cmake-build-debug-coverage\CMakeFiles\lab6.dir\Service.cpp.gcno
+        -:    0:Data:C:\eu\ubb\2nd_Semester\oop\lab8\cmake-build-debug-coverage\CMakeFiles\lab6.dir\Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by sorn on 01-Apr-24.
+        -:    3://
+        -:    4:#include <algorithm>
+        -:    5:#include <cassert>
+        -:    6:#include<random>
+        -:    7:#include<chrono>
+        -:    8:#include <utility>
+        -:    9:#include "Service.h"
+        -:   10:
+function _ZN17DisciplinaService13addDisciplinaENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiS5_S5_ called 24 returned 96% blocks executed 61%
+       24:   11:void DisciplinaService::addDisciplina(string denumire,int ore,string tip,string cadruDidactic){
+       24:   12:    Disciplina d1(std::move(denumire),ore,std::move(tip),std::move(cadruDidactic));
+       24:   12-block  0
+call    0 returned 24
+call    1 returned 24
+call    2 returned 24
+call    3 returned 24
+call    4 returned 24
+call    5 returned 24
+call    6 returned 24
+branch  7 taken 24 (fallthrough)
+branch  8 taken 0 (throw)
+       24:   12-block  1
+call    9 returned 24
+call   10 returned 24
+call   11 returned 24
+    $$$$$:   12-block  2
+call   12 never executed
+    $$$$$:   12-block  3
+    $$$$$:   12-block  4
+call   13 never executed
+    $$$$$:   12-block  5
+    $$$$$:   12-block  6
+call   14 never executed
+    $$$$$:   12-block  7
+       24:   13:    val.valideaza(d1);
+call    0 returned 24
+branch  1 taken 23 (fallthrough)
+branch  2 taken 1 (throw)
+       23:   14:    UndoAdd* u = new UndoAdd(this->repo, d1);
+       23:   14-block  0
+call    0 returned 23
+branch  1 taken 23 (fallthrough)
+branch  2 taken 0 (throw)
+       23:   14-block  1
+call    3 returned 23
+branch  4 taken 23 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   14-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:   14-block  3
+call    8 never executed
+        -:   15:
+       23:   16:    repo.Store(d1);
+       23:   16-block  0
+call    0 returned 23
+branch  1 taken 23 (fallthrough)
+branch  2 taken 0 (throw)
+       23:   17:    this->undoActions.push_back(u);
+       23:   17-block  0
+call    0 returned 23
+branch  1 taken 23 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   17-block  1
+       24:   18:}
+       23:   18-block  0
+call    0 returned 23
+        1:   18-block  1
+call    1 returned 1
+function _ZN17DisciplinaService16modifyDisciplinaERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiS7_S7_ called 2 returned 100% blocks executed 52%
+        2:   19:void DisciplinaService::modifyDisciplina(const string& denumire,const int ore,const string& tip,const string& cadruDidactic){
+        -:   20:
+        2:   21:    Disciplina d1= findDisciplina(denumire,cadruDidactic);
+        2:   21-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   21-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   22:    UndoUpdate* u = new UndoUpdate(this->repo, d1.getDenumire(),d1.getOre(),d1.getTip(),d1.getCadruDidactic());
+        2:   22-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   22-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   22-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   22-block  3
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0 (throw)
+        2:   22-block  4
+call   12 returned 2
+branch 13 taken 2 (fallthrough)
+branch 14 taken 0 (throw)
+        2:   22-block  5
+call   15 returned 2
+branch 16 taken 2 (fallthrough)
+branch 17 taken 0 (throw)
+        2:   22-block  6
+call   18 returned 2
+call   19 returned 2
+call   20 returned 2
+    $$$$$:   22-block  7
+call   21 never executed
+    $$$$$:   22-block  8
+    $$$$$:   22-block  9
+call   22 never executed
+    $$$$$:   22-block 10
+    $$$$$:   22-block 11
+call   23 never executed
+    $$$$$:   22-block 12
+    $$$$$:   22-block 13
+branch 24 never executed (fallthrough)
+branch 25 never executed
+    $$$$$:   22-block 14
+call   26 never executed
+        2:   23:    repo.Modify(denumire,ore,tip,cadruDidactic) ;
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   24:    this->undoActions.push_back(u);
+        2:   24-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   24-block  1
+        2:   25:}
+        2:   25-block  0
+call    0 returned 2
+    $$$$$:   25-block  1
+call    1 never executed
+function _ZN17DisciplinaService14findDisciplinaERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_ called 6 returned 100% blocks executed 100%
+        6:   26:const Disciplina& DisciplinaService::findDisciplina(const string& denumire,const string& cadruDidactic){
+        6:   27:    return repo.find(denumire,cadruDidactic);
+        6:   27-block  0
+call    0 returned 6
+        -:   28:}
+function _ZN17DisciplinaService16deleteDisciplinaERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_ called 2 returned 100% blocks executed 60%
+        2:   29:void DisciplinaService::deleteDisciplina(const string& denumire,const string& cadruDidactic){
+        2:   30:    Disciplina d1= findDisciplina(denumire,cadruDidactic);
+        2:   30-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   30-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   31:    repo.Delete(d1);
+        2:   31-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   32:    UndoRemove* u = new UndoRemove(this->repo, d1);
+        2:   32-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   32-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   32-block  2
+branch  6 never executed (fallthrough)
+branch  7 never executed
+    $$$$$:   32-block  3
+call    8 never executed
+        -:   33:
+        2:   34:    undoActions.push_back(u);
+        2:   34-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   34-block  1
+        2:   35:}
+        2:   35-block  0
+call    0 returned 2
+    $$$$$:   35-block  1
+call    1 never executed
+function _ZN17DisciplinaService6filterENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi called 2 returned 100% blocks executed 93%
+        2:   36:vector<Disciplina> DisciplinaService::filter(const string cadru, const int valo) {
+        2:   37:    vector<Disciplina> v;
+        2:   37-block  0
+call    0 returned 2
+        2:   38:    auto& discipline = repo.getAllDiscipline();
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   39:    if (valo != 0) {
+        2:   39-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:   40:        std::copy_if(discipline.begin(), discipline.end(), std::back_inserter(v),
+        1:   40-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   40-block  1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+function _ZZN17DisciplinaService6filterENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiENKUlRK10DisciplinaE_clES8_ called 4 returned 100% blocks executed 100%
+        4:   41:                     [&](const Disciplina& disci) {
+        4:   42:                         return disci.getOre() == valo;
+        4:   42-block  0
+call    0 returned 4
+        -:   43:                     });
+        -:   44:    } else {
+        1:   45:        std::copy_if(discipline.begin(), discipline.end(), std::back_inserter(v),
+        1:   45-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   45-block  1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+function _ZZN17DisciplinaService6filterENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiENKUlRK10DisciplinaE0_clES8_ called 4 returned 100% blocks executed 100%
+        4:   46:                     [&](const Disciplina& disci) {
+        4:   47:                         return disci.getCadruDidactic() == cadru;
+        4:   47-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   47-block  1
+call    3 returned 4
+call    4 returned 4
+        4:   47-block  2
+        -:   48:                     });
+        -:   49:    }
+        2:   50:    return v;
+        2:   50-block  0
+        2:   50-block  1
+    =====:   51:}
+    $$$$$:   51-block  0
+call    0 never executed
+function _ZN17DisciplinaService4sortERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 4 returned 100% blocks executed 96%
+        4:   52:vector<Disciplina> DisciplinaService::sort(const string& crt){
+        4:   53:    vector<Disciplina> v=repo.getAllDiscipline();
+        4:   53-block  0
+call    0 returned 4
+call    1 returned 4
+        4:   54:    if(crt=="denumire")
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   54-block  0
+branch  3 taken 1 (fallthrough)
+branch  4 taken 3
+function _ZZN17DisciplinaService4sortERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK10DisciplinaSA_E_clESA_SA_ called 5 returned 100% blocks executed 73%
+        6:   55:        std::sort(v.begin(), v.end(), [](const Disciplina &a, const Disciplina &b){ return (a.getDenumire() < b.getDenumire());});
+        1:   55-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        5:   55-block  1
+call    5 returned 5
+branch  6 taken 5 (fallthrough)
+branch  7 taken 0 (throw)
+        5:   55-block  2
+call    8 returned 5
+branch  9 taken 5 (fallthrough)
+branch 10 taken 0 (throw)
+        5:   55-block  3
+call   11 returned 5
+call   12 returned 5
+call   13 returned 5
+        5:   55-block  4
+    $$$$$:   55-block  5
+    $$$$$:   55-block  6
+call   14 never executed
+        3:   56:    else if(crt=="ore")
+        3:   56-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   56-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 2
+function _ZZN17DisciplinaService4sortERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK10DisciplinaSA_E0_clESA_SA_ called 5 returned 100% blocks executed 100%
+        6:   57:        std::sort(v.begin(), v.end(), [](const Disciplina &a, const Disciplina &b){ return (a.getOre() < b.getOre());});
+        1:   57-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        5:   57-block  1
+call    5 returned 5
+call    6 returned 5
+        2:   58:    else if(crt=="tip")
+        2:   58-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   58-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 1
+function _ZZN17DisciplinaService4sortERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK10DisciplinaSA_E1_clESA_SA_ called 4 returned 100% blocks executed 73%
+        5:   59:        std::sort(v.begin(), v.end(), [](const Disciplina &a, const Disciplina &b){ return (a.getTip() < b.getTip());});
+        1:   59-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        4:   59-block  1
+call    5 returned 4
+branch  6 taken 4 (fallthrough)
+branch  7 taken 0 (throw)
+        4:   59-block  2
+call    8 returned 4
+branch  9 taken 4 (fallthrough)
+branch 10 taken 0 (throw)
+        4:   59-block  3
+call   11 returned 4
+call   12 returned 4
+call   13 returned 4
+        4:   59-block  4
+    $$$$$:   59-block  5
+    $$$$$:   59-block  6
+call   14 never executed
+        -:   60:    else
+function _ZZN17DisciplinaService4sortERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK10DisciplinaSA_E2_clESA_SA_ called 9 returned 100% blocks executed 73%
+       10:   61:        std::sort(v.begin(), v.end(), [](const Disciplina &a, const Disciplina &b){ return (a.getCadruDidactic() < b.getCadruDidactic());});
+        1:   61-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        9:   61-block  1
+call    5 returned 9
+branch  6 taken 9 (fallthrough)
+branch  7 taken 0 (throw)
+        9:   61-block  2
+call    8 returned 9
+branch  9 taken 9 (fallthrough)
+branch 10 taken 0 (throw)
+        9:   61-block  3
+call   11 returned 9
+call   12 returned 9
+call   13 returned 9
+        9:   61-block  4
+    $$$$$:   61-block  5
+    $$$$$:   61-block  6
+call   14 never executed
+        4:   62:    return v;
+        4:   62-block  0
+        4:   62-block  1
+    =====:   63:}
+    $$$$$:   63-block  0
+call    0 never executed
+function _ZN17DisciplinaService11addContractERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_ called 2 returned 100% blocks executed 75%
+        2:   64:void DisciplinaService::addContract(const string& denumire,const string& cadruDidactic){
+        2:   65:    Disciplina d= findDisciplina(denumire,cadruDidactic);
+        2:   65-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   65-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   66:    contract.push_back(d);
+        2:   66-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   67:}
+        2:   67-block  0
+call    0 returned 2
+    $$$$$:   67-block  1
+call    1 never executed
+function _ZN17DisciplinaService13emptyContractEv called 3 returned 100% blocks executed 100%
+        3:   68:void DisciplinaService::emptyContract(){
+        3:   69:    contract.clear();
+        3:   69-block  0
+call    0 returned 3
+        3:   70:}
+function _ZN17DisciplinaService16generateContractEi called 2 returned 50% blocks executed 71%
+        2:   71:void DisciplinaService::generateContract(const int n){
+        2:   72:    emptyContract();
+        2:   72-block  0
+call    0 returned 2
+        2:   73:    if(n>repo.getAllDiscipline().size())
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   73-block  0
+call    3 returned 2
+branch  4 taken 1 (fallthrough)
+branch  5 taken 1
+        3:   74:        throw RepoException("Nu avem destule discipline");
+        1:   74-block  0
+call    0 returned 1
+        1:   74-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   74-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   74-block  3
+call    7 returned 1
+call    8 returned 1
+    $$$$$:   74-block  4
+call    9 never executed
+    $$$$$:   74-block  5
+    $$$$$:   74-block  6
+    $$$$$:   74-block  7
+call   10 never executed
+        1:   75:    auto seed=std::chrono::system_clock::now().time_since_epoch().count();
+        1:   75-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        1:   76:    vector<Disciplina> v=repo.getAllDiscipline();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   76-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   77:    std::shuffle(v.begin(),v.end(),std::default_random_engine(seed));
+        1:   77-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   77-block  1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+    $$$$$:   77-block  2
+        1:   78:    std::copy(v.begin(), v.begin() + n, std::back_inserter(contract));
+        1:   78-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   78-block  1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+    $$$$$:   78-block  2
+        1:   79:}
+        1:   79-block  0
+call    0 returned 1
+    $$$$$:   79-block  1
+call    1 never executed
+function _ZN17DisciplinaService7get_mapB5cxx11Ev called 1 returned 100% blocks executed 62%
+        1:   80:std::map<string,int> DisciplinaService::get_map(){
+        1:   81:    vector<Disciplina> v=repo.getAllDiscipline();
+        1:   81-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   81-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   82:    std::map<string,int> map;
+        1:   82-block  0
+call    0 returned 1
+        5:   83:    for(const auto& disci:v){
+call    0 returned 1
+call    1 returned 1
+        4:   83-block  0
+call    2 returned 4
+        4:   83-block  1
+call    3 returned 4
+        5:   83-block  2
+call    4 returned 5
+branch  5 taken 4
+branch  6 taken 1 (fallthrough)
+        4:   84:        auto it=map.find(disci.getTip());
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   84-block  0
+call    3 returned 4
+branch  4 taken 4 (fallthrough)
+branch  5 taken 0 (throw)
+        4:   84-block  1
+call    6 returned 4
+    $$$$$:   84-block  2
+call    7 never executed
+    $$$$$:   84-block  3
+        4:   85:        if(it==map.end()) {
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 3 (fallthrough)
+branch  3 taken 1
+        3:   86:            map.insert({disci.getTip(), 1});
+        3:   86-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   86-block  1
+call    3 returned 3
+call    4 returned 3
+branch  5 taken 3 (fallthrough)
+branch  6 taken 0 (throw)
+        3:   86-block  2
+call    7 returned 3
+call    8 returned 3
+    $$$$$:   86-block  3
+call    9 never executed
+    $$$$$:   86-block  4
+    $$$$$:   86-block  5
+call   10 never executed
+    $$$$$:   86-block  6
+    $$$$$:   86-block  7
+    $$$$$:   86-block  8
+        -:   87:        }
+        -:   88:        else {
+        1:   89:            (*it).second++;
+        1:   89-block  0
+call    0 returned 1
+        -:   90:        }
+        -:   91:    }
+        2:   92:    return map;
+        1:   92-block  0
+        1:   92-block  1
+        1:   93:}
+        1:   93-block  0
+call    0 returned 1
+    $$$$$:   93-block  1
+call    1 never executed
+    $$$$$:   93-block  2
+call    2 never executed
+        -:   94:
+function _ZN17DisciplinaService4undoEv called 4 returned 75% blocks executed 71%
+        4:   95:void DisciplinaService::undo(){
+        4:   96:    if (undoActions.empty())
+        4:   96-block  0
+call    0 returned 4
+branch  1 taken 1 (fallthrough)
+branch  2 taken 3
+        3:   97:        throw RepoException("Nu se poate face undo");
+        1:   97-block  0
+call    0 returned 1
+        1:   97-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   97-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   97-block  3
+call    7 returned 1
+call    8 returned 0
+    $$$$$:   97-block  4
+call    9 never executed
+    $$$$$:   97-block  5
+    $$$$$:   97-block  6
+    $$$$$:   97-block  7
+call   10 never executed
+        3:   98:    UndoAction* undo_elem=undoActions.back();
+        3:   98-block  0
+call    0 returned 3
+        3:   99:    undo_elem->doUndo();
+call    0 returned 3
+        3:  100:    undoActions.pop_back();
+call    0 returned 3
+        3:  101:    delete undo_elem;
+branch  0 taken 3 (fallthrough)
+branch  1 taken 0
+        3:  101-block  0
+call    2 returned 3
+        3:  102:}
+        3:  102-block  0
+function _Z17testAddDisciplinav called 1 returned 100% blocks executed 65%
+        1:  103:void testAddDisciplina(){
+        1:  104:    DisciplinaRepository testRepo;
+        1:  104-block  0
+call    0 returned 1
+        -:  105:    DisciplinaValidator testVal;
+        1:  106:    DisciplinaService testService{testRepo,testVal};
+call    0 returned 1
+        5:  107:    testService.addDisciplina("Analiza",4 ,"Obligatorie","Berinde");
+        1:  107-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  107-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  107-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  107-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  107-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  107-block  5
+call   15 never executed
+    $$$$$:  107-block  6
+    $$$$$:  107-block  7
+    $$$$$:  107-block  8
+call   16 never executed
+    $$$$$:  107-block  9
+    $$$$$:  107-block 10
+    $$$$$:  107-block 11
+call   17 never executed
+    $$$$$:  107-block 12
+    $$$$$:  107-block 13
+       1*:  108:    assert(testService.getAllDiscipline().size()==1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  108-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  108-block  1
+call    6 never executed
+        1:  108-block  2
+        -:  109:    try{
+       6*:  110:        testService.addDisciplina("a",-1,"b","c");
+        1:  110-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  110-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  110-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  110-block  3
+call    9 returned 1
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1 (throw)
+    %%%%%:  110-block  4
+call   12 never executed
+call   13 never executed
+call   14 never executed
+        1:  110-block  5
+call   15 returned 1
+        1:  110-block  6
+        1:  110-block  7
+        1:  110-block  8
+call   16 returned 1
+        1:  110-block  9
+        1:  110-block 10
+        1:  110-block 11
+call   17 returned 1
+        1:  110-block 12
+        1:  110-block 13
+        -:  111:    }
+        1:  112:    catch (ValidatorException&){
+        1:  112-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  112-block  1
+call    2 returned 1
+        -:  113:        assert(true);
+        1:  114:    }
+call    0 returned 1
+        -:  115:
+        1:  116:}
+        1:  116-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  116-block  1
+call    2 never executed
+    $$$$$:  116-block  2
+call    3 never executed
+function _Z20testModifyDisciplinav called 1 returned 100% blocks executed 53%
+        1:  117:void testModifyDisciplina(){
+        1:  118:    DisciplinaRepository testRepo;
+        1:  118-block  0
+call    0 returned 1
+        -:  119:    DisciplinaValidator testVal;
+        1:  120:    DisciplinaService testService{testRepo,testVal};
+call    0 returned 1
+        6:  121:    testService.addDisciplina("Analiza",4 ,"Obligatorie","Berinde");
+        1:  121-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  121-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  121-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  121-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  121-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  121-block  5
+call   15 never executed
+    $$$$$:  121-block  6
+    $$$$$:  121-block  7
+    $$$$$:  121-block  8
+call   16 never executed
+    $$$$$:  121-block  9
+    $$$$$:  121-block 10
+    $$$$$:  121-block 11
+call   17 never executed
+    $$$$$:  121-block 12
+    $$$$$:  121-block 13
+        5:  122:    testService.modifyDisciplina("Analiza",7,"OK","Berinde");
+        1:  122-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  122-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  122-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  122-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  122-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  122-block  5
+call   15 never executed
+    $$$$$:  122-block  6
+    $$$$$:  122-block  7
+    $$$$$:  122-block  8
+call   16 never executed
+    $$$$$:  122-block  9
+    $$$$$:  122-block 10
+    $$$$$:  122-block 11
+call   17 never executed
+    $$$$$:  122-block 12
+    $$$$$:  122-block 13
+       1*:  123:    assert(testService.getAllDiscipline()[0].getOre()==7);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  123-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  123-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  123-block  2
+call    9 never executed
+        1:  123-block  3
+       1*:  124:    assert(testService.getAllDiscipline()[0].getTip()=="OK");
+        1:  124-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  124-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  124-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:  124-block  3
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    %%%%%:  124-block  4
+call   12 never executed
+        1:  124-block  5
+        1:  124-block  6
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0
+        1:  124-block  7
+call   15 returned 1
+    $$$$$:  124-block  8
+branch 16 never executed (fallthrough)
+branch 17 never executed
+    $$$$$:  124-block  9
+call   18 never executed
+    $$$$$:  124-block 10
+        1:  125:}
+        1:  125-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  125-block  1
+call    2 never executed
+    $$$$$:  125-block  2
+call    3 never executed
+function _Z20testDeleteDisciplinav called 1 returned 100% blocks executed 53%
+        1:  126:void testDeleteDisciplina(){
+        1:  127:    DisciplinaRepository testRepo;
+        1:  127-block  0
+call    0 returned 1
+        -:  128:    DisciplinaValidator testVal;
+        1:  129:    DisciplinaService testService{testRepo,testVal};
+call    0 returned 1
+        5:  130:    testService.addDisciplina("Analiza",4 ,"Obligatorie","Berinde");
+        1:  130-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  130-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  130-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  130-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  130-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  130-block  5
+call   15 never executed
+    $$$$$:  130-block  6
+    $$$$$:  130-block  7
+    $$$$$:  130-block  8
+call   16 never executed
+    $$$$$:  130-block  9
+    $$$$$:  130-block 10
+    $$$$$:  130-block 11
+call   17 never executed
+    $$$$$:  130-block 12
+    $$$$$:  130-block 13
+       1*:  131:    assert(testService.getAllDiscipline().size()==1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  131-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  131-block  1
+call    6 never executed
+        1:  131-block  2
+        3:  132:    testService.deleteDisciplina("Analiza","Berinde");
+        1:  132-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  132-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  132-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  132-block  3
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  132-block  4
+call   11 never executed
+    $$$$$:  132-block  5
+    $$$$$:  132-block  6
+    $$$$$:  132-block  7
+call   12 never executed
+    $$$$$:  132-block  8
+    $$$$$:  132-block  9
+       1*:  133:    assert(testService.getAllDiscipline().empty());
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  133-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  133-block  1
+call    6 never executed
+        1:  133-block  2
+        1:  134:}
+        1:  134-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  134-block  1
+call    2 never executed
+    $$$$$:  134-block  2
+call    3 never executed
+function _Z10testFilterv called 1 returned 100% blocks executed 49%
+        1:  135:void testFilter(){
+        1:  136:    DisciplinaRepository testRepo;
+        1:  136-block  0
+call    0 returned 1
+        -:  137:    DisciplinaValidator testVal;
+        1:  138:    DisciplinaService testService{testRepo,testVal};
+call    0 returned 1
+        6:  139:    testService.addDisciplina("ZAnaliza",10,"Mate","Berinde");
+        1:  139-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  139-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  139-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  139-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  139-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  139-block  5
+call   15 never executed
+    $$$$$:  139-block  6
+    $$$$$:  139-block  7
+    $$$$$:  139-block  8
+call   16 never executed
+    $$$$$:  139-block  9
+    $$$$$:  139-block 10
+    $$$$$:  139-block 11
+call   17 never executed
+    $$$$$:  139-block 12
+    $$$$$:  139-block 13
+        6:  140:    testService.addDisciplina("Malgebra",5,"Mate","Modoi");
+        1:  140-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  140-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  140-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  140-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  140-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  140-block  5
+call   15 never executed
+    $$$$$:  140-block  6
+    $$$$$:  140-block  7
+    $$$$$:  140-block  8
+call   16 never executed
+    $$$$$:  140-block  9
+    $$$$$:  140-block 10
+    $$$$$:  140-block 11
+call   17 never executed
+    $$$$$:  140-block 12
+    $$$$$:  140-block 13
+        6:  141:    testService.addDisciplina("ZASC",8,"Infor","King");
+        1:  141-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  141-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  141-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  141-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  141-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  141-block  5
+call   15 never executed
+    $$$$$:  141-block  6
+    $$$$$:  141-block  7
+    $$$$$:  141-block  8
+call   16 never executed
+    $$$$$:  141-block  9
+    $$$$$:  141-block 10
+    $$$$$:  141-block 11
+call   17 never executed
+    $$$$$:  141-block 12
+    $$$$$:  141-block 13
+        6:  142:    testService.addDisciplina("FP",8,"AInfo","Istvanc");
+        1:  142-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  142-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  142-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  142-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  142-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  142-block  5
+call   15 never executed
+    $$$$$:  142-block  6
+    $$$$$:  142-block  7
+    $$$$$:  142-block  8
+call   16 never executed
+    $$$$$:  142-block  9
+    $$$$$:  142-block 10
+    $$$$$:  142-block 11
+call   17 never executed
+    $$$$$:  142-block 12
+    $$$$$:  142-block 13
+        1:  143:    vector<Disciplina> v=testService.filter("Berinde",0);
+        1:  143-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  143-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  143-block  2
+call    6 returned 1
+    $$$$$:  143-block  3
+call    7 never executed
+    $$$$$:  143-block  4
+    $$$$$:  143-block  5
+       1*:  144:    assert(v.size()==1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  144-block  0
+call    3 never executed
+        1:  144-block  1
+        1:  145:    vector<Disciplina> v2=testService.filter("",8);
+        1:  145-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  145-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  145-block  2
+call    6 returned 1
+    $$$$$:  145-block  3
+call    7 never executed
+    $$$$$:  145-block  4
+    $$$$$:  145-block  5
+       1*:  146:    assert(v2.size()==2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  146-block  0
+call    3 never executed
+        1:  146-block  1
+        1:  147:}
+        1:  147-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:  147-block  1
+call    4 never executed
+    $$$$$:  147-block  2
+call    5 never executed
+    $$$$$:  147-block  3
+call    6 never executed
+    $$$$$:  147-block  4
+call    7 never executed
+function _Z8testSortv called 1 returned 100% blocks executed 50%
+        1:  148:void testSort(){
+        1:  149:    DisciplinaRepository testRepo;
+        1:  149-block  0
+call    0 returned 1
+        -:  150:    DisciplinaValidator testVal;
+        1:  151:    DisciplinaService testService{testRepo,testVal};
+call    0 returned 1
+        6:  152:    testService.addDisciplina("ZAnaliza",10,"Mate","Berinde");
+        1:  152-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  152-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  152-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  152-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  152-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  152-block  5
+call   15 never executed
+    $$$$$:  152-block  6
+    $$$$$:  152-block  7
+    $$$$$:  152-block  8
+call   16 never executed
+    $$$$$:  152-block  9
+    $$$$$:  152-block 10
+    $$$$$:  152-block 11
+call   17 never executed
+    $$$$$:  152-block 12
+    $$$$$:  152-block 13
+        6:  153:    testService.addDisciplina("Malgebra",5,"Mate","Modoi");
+        1:  153-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  153-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  153-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  153-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  153-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  153-block  5
+call   15 never executed
+    $$$$$:  153-block  6
+    $$$$$:  153-block  7
+    $$$$$:  153-block  8
+call   16 never executed
+    $$$$$:  153-block  9
+    $$$$$:  153-block 10
+    $$$$$:  153-block 11
+call   17 never executed
+    $$$$$:  153-block 12
+    $$$$$:  153-block 13
+        6:  154:    testService.addDisciplina("ZASC",2,"Infor","King");
+        1:  154-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  154-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  154-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  154-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  154-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  154-block  5
+call   15 never executed
+    $$$$$:  154-block  6
+    $$$$$:  154-block  7
+    $$$$$:  154-block  8
+call   16 never executed
+    $$$$$:  154-block  9
+    $$$$$:  154-block 10
+    $$$$$:  154-block 11
+call   17 never executed
+    $$$$$:  154-block 12
+    $$$$$:  154-block 13
+        6:  155:    testService.addDisciplina("FP",8,"AInfo","Istvanc");
+        1:  155-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  155-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  155-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  155-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  155-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  155-block  5
+call   15 never executed
+    $$$$$:  155-block  6
+    $$$$$:  155-block  7
+    $$$$$:  155-block  8
+call   16 never executed
+    $$$$$:  155-block  9
+    $$$$$:  155-block 10
+    $$$$$:  155-block 11
+call   17 never executed
+    $$$$$:  155-block 12
+    $$$$$:  155-block 13
+        1:  156:    vector<Disciplina> v=testService.sort("denumire");
+        1:  156-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  156-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  156-block  2
+call    6 returned 1
+    $$$$$:  156-block  3
+call    7 never executed
+    $$$$$:  156-block  4
+    $$$$$:  156-block  5
+       1*:  157:    assert(v[0].getDenumire()=="FP");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  157-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  157-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  157-block  2
+call    9 never executed
+        1:  157-block  3
+        1:  157-block  4
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  157-block  5
+call   12 returned 1
+        1:  157-block  6
+    $$$$$:  157-block  7
+branch 13 never executed (fallthrough)
+branch 14 never executed
+    $$$$$:  157-block  8
+call   15 never executed
+    $$$$$:  157-block  9
+        1:  158:    vector<Disciplina> v2=testService.sort("ore");
+        1:  158-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  158-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  158-block  2
+call    6 returned 1
+    $$$$$:  158-block  3
+call    7 never executed
+    $$$$$:  158-block  4
+    $$$$$:  158-block  5
+       1*:  159:    assert(v2[0].getOre()==2);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  159-block  0
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  159-block  1
+call    6 never executed
+        1:  159-block  2
+        1:  160:    vector<Disciplina> v3=testService.sort("tip");
+        1:  160-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  160-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  160-block  2
+call    6 returned 1
+    $$$$$:  160-block  3
+call    7 never executed
+    $$$$$:  160-block  4
+    $$$$$:  160-block  5
+       1*:  161:    assert(v3[0].getTip()=="AInfo");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  161-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  161-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  161-block  2
+call    9 never executed
+        1:  161-block  3
+        1:  161-block  4
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  161-block  5
+call   12 returned 1
+        1:  161-block  6
+    $$$$$:  161-block  7
+branch 13 never executed (fallthrough)
+branch 14 never executed
+    $$$$$:  161-block  8
+call   15 never executed
+    $$$$$:  161-block  9
+        1:  162:    vector<Disciplina> v4=testService.sort("cadrudidactic");
+        1:  162-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  162-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  162-block  2
+call    6 returned 1
+    $$$$$:  162-block  3
+call    7 never executed
+    $$$$$:  162-block  4
+    $$$$$:  162-block  5
+       1*:  163:    assert(v4[0].getCadruDidactic()=="Berinde");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  163-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  163-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  163-block  2
+call    9 never executed
+        1:  163-block  3
+        1:  163-block  4
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0
+        1:  163-block  5
+call   12 returned 1
+    $$$$$:  163-block  6
+branch 13 never executed (fallthrough)
+branch 14 never executed
+    $$$$$:  163-block  7
+call   15 never executed
+    $$$$$:  163-block  8
+        -:  164:
+        1:  165:}
+        1:  165-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+    $$$$$:  165-block  1
+call    6 never executed
+    $$$$$:  165-block  2
+call    7 never executed
+    $$$$$:  165-block  3
+call    8 never executed
+    $$$$$:  165-block  4
+call    9 never executed
+    $$$$$:  165-block  5
+call   10 never executed
+    $$$$$:  165-block  6
+call   11 never executed
+function _Z12testContractv called 1 returned 100% blocks executed 52%
+        1:  166:void testContract(){
+        1:  167:    DisciplinaRepository testRepo;
+        1:  167-block  0
+call    0 returned 1
+        -:  168:    DisciplinaValidator testVal;
+        1:  169:    DisciplinaService testService{testRepo,testVal};
+call    0 returned 1
+        6:  170:    testService.addDisciplina("ZAnaliza",10,"Mate","Berinde");
+        1:  170-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  170-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  170-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  170-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  170-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  170-block  5
+call   15 never executed
+    $$$$$:  170-block  6
+    $$$$$:  170-block  7
+    $$$$$:  170-block  8
+call   16 never executed
+    $$$$$:  170-block  9
+    $$$$$:  170-block 10
+    $$$$$:  170-block 11
+call   17 never executed
+    $$$$$:  170-block 12
+    $$$$$:  170-block 13
+        6:  171:    testService.addDisciplina("Malgebra",5,"Mate","Modoi");
+        1:  171-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  171-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  171-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  171-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  171-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  171-block  5
+call   15 never executed
+    $$$$$:  171-block  6
+    $$$$$:  171-block  7
+    $$$$$:  171-block  8
+call   16 never executed
+    $$$$$:  171-block  9
+    $$$$$:  171-block 10
+    $$$$$:  171-block 11
+call   17 never executed
+    $$$$$:  171-block 12
+    $$$$$:  171-block 13
+        6:  172:    testService.addDisciplina("ZASC",2,"Infor","King");
+        1:  172-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  172-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  172-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  172-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  172-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  172-block  5
+call   15 never executed
+    $$$$$:  172-block  6
+    $$$$$:  172-block  7
+    $$$$$:  172-block  8
+call   16 never executed
+    $$$$$:  172-block  9
+    $$$$$:  172-block 10
+    $$$$$:  172-block 11
+call   17 never executed
+    $$$$$:  172-block 12
+    $$$$$:  172-block 13
+        6:  173:    testService.addDisciplina("FP",8,"AInfo","Istvanc");
+        1:  173-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  173-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  173-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  173-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  173-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  173-block  5
+call   15 never executed
+    $$$$$:  173-block  6
+    $$$$$:  173-block  7
+    $$$$$:  173-block  8
+call   16 never executed
+    $$$$$:  173-block  9
+    $$$$$:  173-block 10
+    $$$$$:  173-block 11
+call   17 never executed
+    $$$$$:  173-block 12
+    $$$$$:  173-block 13
+        3:  174:    testService.addContract("ZAnaliza","Berinde");
+        1:  174-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  174-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  174-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  174-block  3
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  174-block  4
+call   11 never executed
+    $$$$$:  174-block  5
+    $$$$$:  174-block  6
+    $$$$$:  174-block  7
+call   12 never executed
+    $$$$$:  174-block  8
+    $$$$$:  174-block  9
+       1*:  175:    assert(testService.getAllFromContract().size()==1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:  175-block  0
+call    4 never executed
+        1:  175-block  1
+        1:  176:    testService.emptyContract();
+        1:  176-block  0
+call    0 returned 1
+       1*:  177:    assert(testService.getAllFromContract().empty());
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:  177-block  0
+call    4 never executed
+        1:  177-block  1
+        -:  178:    try{
+        1:  179:        testService.generateContract(9);
+        1:  179-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        -:  180:    }
+        1:  181:    catch (RepoException&){
+        1:  181-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  181-block  1
+call    2 returned 1
+        -:  182:        assert(true);
+        1:  183:    }
+call    0 returned 1
+        1:  184:    testService.generateContract(4);
+        1:  184-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  185:    assert(testService.getAllFromContract().size()==4);
+        1:  185-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:  185-block  1
+call    4 never executed
+        1:  185-block  2
+        1:  186:}
+        1:  186-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  186-block  1
+call    2 never executed
+    $$$$$:  186-block  2
+call    3 never executed
+function _Z7testMapv called 1 returned 100% blocks executed 49%
+        1:  187:void testMap(){
+        1:  188:    DisciplinaRepository testRepo;
+        1:  188-block  0
+call    0 returned 1
+        -:  189:    DisciplinaValidator testVal;
+        1:  190:    DisciplinaService testService{testRepo,testVal};
+call    0 returned 1
+        6:  191:    testService.addDisciplina("ZAnaliza",10,"Mate","Berinde");
+        1:  191-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  191-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  191-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  191-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  191-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  191-block  5
+call   15 never executed
+    $$$$$:  191-block  6
+    $$$$$:  191-block  7
+    $$$$$:  191-block  8
+call   16 never executed
+    $$$$$:  191-block  9
+    $$$$$:  191-block 10
+    $$$$$:  191-block 11
+call   17 never executed
+    $$$$$:  191-block 12
+    $$$$$:  191-block 13
+        6:  192:    testService.addDisciplina("Malgebra",5,"Mate","Modoi");
+        1:  192-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  192-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  192-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  192-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  192-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  192-block  5
+call   15 never executed
+    $$$$$:  192-block  6
+    $$$$$:  192-block  7
+    $$$$$:  192-block  8
+call   16 never executed
+    $$$$$:  192-block  9
+    $$$$$:  192-block 10
+    $$$$$:  192-block 11
+call   17 never executed
+    $$$$$:  192-block 12
+    $$$$$:  192-block 13
+        6:  193:    testService.addDisciplina("ZASC",2,"Infor","King");
+        1:  193-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  193-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  193-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  193-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  193-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  193-block  5
+call   15 never executed
+    $$$$$:  193-block  6
+    $$$$$:  193-block  7
+    $$$$$:  193-block  8
+call   16 never executed
+    $$$$$:  193-block  9
+    $$$$$:  193-block 10
+    $$$$$:  193-block 11
+call   17 never executed
+    $$$$$:  193-block 12
+    $$$$$:  193-block 13
+        6:  194:    testService.addDisciplina("FP",8,"AInfo","Istvanc");
+        1:  194-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  194-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  194-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  194-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  194-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  194-block  5
+call   15 never executed
+    $$$$$:  194-block  6
+    $$$$$:  194-block  7
+    $$$$$:  194-block  8
+call   16 never executed
+    $$$$$:  194-block  9
+    $$$$$:  194-block 10
+    $$$$$:  194-block 11
+call   17 never executed
+    $$$$$:  194-block 12
+    $$$$$:  194-block 13
+        3:  195:    testService.addContract("ZAnaliza","Berinde");
+        1:  195-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  195-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  195-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  195-block  3
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  195-block  4
+call   11 never executed
+    $$$$$:  195-block  5
+    $$$$$:  195-block  6
+    $$$$$:  195-block  7
+call   12 never executed
+    $$$$$:  195-block  8
+    $$$$$:  195-block  9
+        1:  196:    std::map<string,int> m=testService.get_map();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  197:    assert(m.size()==3);
+        1:  197-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  197-block  1
+call    3 never executed
+        1:  197-block  2
+        1:  198:    auto it=m.find("Mate");
+        1:  198-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  198-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  198-block  2
+call    6 returned 1
+    $$$$$:  198-block  3
+call    7 never executed
+    $$$$$:  198-block  4
+    $$$$$:  198-block  5
+       1*:  199:    assert((*it).second==2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  199-block  0
+call    3 never executed
+        1:  199-block  1
+        1:  200:}
+        1:  200-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:  200-block  1
+call    3 never executed
+    $$$$$:  200-block  2
+call    4 never executed
+    $$$$$:  200-block  3
+call    5 never executed
+function _Z8testUndov called 1 returned 100% blocks executed 53%
+        1:  201:void testUndo(){
+        1:  202:    DisciplinaRepository testRepo;
+        1:  202-block  0
+call    0 returned 1
+        -:  203:    DisciplinaValidator testVal;
+        1:  204:    DisciplinaService testService{testRepo,testVal};
+call    0 returned 1
+        -:  205:    try{
+        1:  206:        testService.undo();
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        -:  207:    }
+        1:  208:    catch (RepoException&){
+        1:  208-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  208-block  1
+call    2 returned 1
+        -:  209:        assert(true);
+        1:  210:    }
+call    0 returned 1
+        6:  211:    testService.addDisciplina("ZAnaliza",10,"Mate","Berinde");
+        1:  211-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  211-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  211-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  211-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  211-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  211-block  5
+call   15 never executed
+    $$$$$:  211-block  6
+    $$$$$:  211-block  7
+    $$$$$:  211-block  8
+call   16 never executed
+    $$$$$:  211-block  9
+    $$$$$:  211-block 10
+    $$$$$:  211-block 11
+call   17 never executed
+    $$$$$:  211-block 12
+    $$$$$:  211-block 13
+        6:  212:    testService.addDisciplina("Malgebra",5,"Mate","Modoi");
+        1:  212-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  212-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  212-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  212-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  212-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  212-block  5
+call   15 never executed
+    $$$$$:  212-block  6
+    $$$$$:  212-block  7
+    $$$$$:  212-block  8
+call   16 never executed
+    $$$$$:  212-block  9
+    $$$$$:  212-block 10
+    $$$$$:  212-block 11
+call   17 never executed
+    $$$$$:  212-block 12
+    $$$$$:  212-block 13
+        6:  213:    testService.addDisciplina("ZASC",2,"Infor","King");
+        1:  213-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  213-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  213-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  213-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  213-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  213-block  5
+call   15 never executed
+    $$$$$:  213-block  6
+    $$$$$:  213-block  7
+    $$$$$:  213-block  8
+call   16 never executed
+    $$$$$:  213-block  9
+    $$$$$:  213-block 10
+    $$$$$:  213-block 11
+call   17 never executed
+    $$$$$:  213-block 12
+    $$$$$:  213-block 13
+        5:  214:    testService.addDisciplina("FP",8,"AInfo","Istvanc");
+        1:  214-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  214-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  214-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  214-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  214-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  214-block  5
+call   15 never executed
+    $$$$$:  214-block  6
+    $$$$$:  214-block  7
+    $$$$$:  214-block  8
+call   16 never executed
+    $$$$$:  214-block  9
+    $$$$$:  214-block 10
+    $$$$$:  214-block 11
+call   17 never executed
+    $$$$$:  214-block 12
+    $$$$$:  214-block 13
+       1*:  215:    assert(testService.getAllDiscipline().size()==4);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  215-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  215-block  1
+call    6 never executed
+        1:  215-block  2
+        1:  216:    testService.undo();
+        1:  216-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  217:    assert(testService.getAllDiscipline().size()==3);
+        1:  217-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  217-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  217-block  2
+call    6 never executed
+        1:  217-block  3
+        3:  218:    testService.deleteDisciplina("ZAnaliza","Berinde");
+        1:  218-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  218-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  218-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  218-block  3
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  218-block  4
+call   11 never executed
+    $$$$$:  218-block  5
+    $$$$$:  218-block  6
+    $$$$$:  218-block  7
+call   12 never executed
+    $$$$$:  218-block  8
+    $$$$$:  218-block  9
+       1*:  219:    assert(testService.getAllDiscipline().size()==2);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  219-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  219-block  1
+call    6 never executed
+        1:  219-block  2
+        1:  220:    testService.undo();
+        1:  220-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  221:    assert(testService.getAllDiscipline().size()==3);
+        1:  221-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  221-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  221-block  2
+call    6 never executed
+        1:  221-block  3
+        5:  222:    testService.modifyDisciplina("ZAnaliza",600,"Mate","Berinde");
+        1:  222-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  222-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  222-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  222-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  222-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  222-block  5
+call   15 never executed
+    $$$$$:  222-block  6
+    $$$$$:  222-block  7
+    $$$$$:  222-block  8
+call   16 never executed
+    $$$$$:  222-block  9
+    $$$$$:  222-block 10
+    $$$$$:  222-block 11
+call   17 never executed
+    $$$$$:  222-block 12
+    $$$$$:  222-block 13
+       1*:  223:    assert(testService.getAllDiscipline()[2].getOre()==600);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  223-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  223-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  223-block  2
+call    9 never executed
+        1:  223-block  3
+        1:  224:    testService.undo();
+        1:  224-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  225:    assert(testService.getAllDiscipline()[2].getOre()==10);
+        1:  225-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  225-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  225-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  225-block  3
+call    9 never executed
+        1:  225-block  4
+        -:  226:
+        1:  227:}
+        1:  227-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  227-block  1
+call    2 never executed
+    $$$$$:  227-block  2
+call    3 never executed
+function _Z12testeServicev called 1 returned 100% blocks executed 100%
+        1:  228:void testeService(){
+        1:  229:    testAddDisciplina();
+        1:  229-block  0
+call    0 returned 1
+        1:  230:    testDeleteDisciplina();
+call    0 returned 1
+        1:  231:    testModifyDisciplina();
+call    0 returned 1
+        1:  232:    testFilter();
+call    0 returned 1
+        1:  233:    testSort();
+call    0 returned 1
+        1:  234:    testContract();
+call    0 returned 1
+        1:  235:    testMap();
+call    0 returned 1
+        1:  236:    testUndo();
+call    0 returned 1
+        1:  237:}

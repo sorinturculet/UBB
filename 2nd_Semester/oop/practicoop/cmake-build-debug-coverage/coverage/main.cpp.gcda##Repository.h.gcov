@@ -1,0 +1,62 @@
+        -:    0:Source:C:/Users/sorn/Desktop/practicoop/Repository.h
+        -:    0:Graph:C:\Users\sorn\Desktop\practicoop\cmake-build-debug-coverage\CMakeFiles\practicoop.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\sorn\Desktop\practicoop\cmake-build-debug-coverage\CMakeFiles\practicoop.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by sorn on 27-Jun-24.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef PRACTICOOP_REPOSITORY_H
+        -:    6:#define PRACTICOOP_REPOSITORY_H
+        -:    7:
+        -:    8:#include "Domain.h"
+        -:    9:#include <utility>
+        -:   10:#include<vector>
+        -:   11:class Repository {
+        -:   12:private:
+        -:   13:    string filename;
+        -:   14:    vector<Parcare> v;
+        -:   15:public:
+        -:   16:    //Constructor Repository
+function _ZN10RepositoryC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 100% blocks executed 67%
+        2:   17:    explicit Repository(string filename):filename{std::move(filename)}{loadFromFile();};
+        2:   17-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   17-block  1
+    $$$$$:   17-block  2
+call    6 never executed
+    $$$$$:   17-block  3
+call    7 never executed
+        -:   18:    /*
+        -:   19:     * Extrage datele din fisier si le adauga in vectorul
+        -:   20:     */
+        -:   21:    void loadFromFile();
+        -:   22:    /*
+        -:   23:     * Salveaza datele in fisier
+        -:   24:     */
+        -:   25:    void saveToFile();
+        -:   26:    /*
+        -:   27:     * Returneaza toate parcarile
+        -:   28:     * returns:vector de Parcare
+        -:   29:     */
+        -:   30:    vector<Parcare> getAll();
+        -:   31:    /*
+        -:   32:     * adauga o parcare
+        -:   33:     * param: p Parcare
+        -:   34:     */
+        -:   35:    void add(Parcare p);
+        -:   36:    /*
+        -:   37:     * updateaza o parcare dupa id
+        -:   38:     * param:p Parcare
+        -:   39:     */
+        -:   40:    void update(Parcare p);
+        -:   41:
+        -:   42:};
+        -:   43:
+        -:   44:
+        -:   45:#endif //PRACTICOOP_REPOSITORY_H

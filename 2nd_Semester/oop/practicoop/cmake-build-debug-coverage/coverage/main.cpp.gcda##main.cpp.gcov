@@ -1,0 +1,23 @@
+        -:    0:Source:C:/Users/sorn/Desktop/practicoop/main.cpp
+        -:    0:Graph:C:\Users\sorn\Desktop\practicoop\cmake-build-debug-coverage\CMakeFiles\practicoop.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\sorn\Desktop\practicoop\cmake-build-debug-coverage\CMakeFiles\practicoop.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <QApplication>
+        -:    2:#include <QPushButton>
+        -:    3:#include "tests.h"
+        -:    4:#include "Service.h"
+        -:    5:#include "GUI.h"
+        -:    6:
+function main called 1 returned 100% blocks executed 100%
+        1:    7:int main(int argc, char *argv[]) {
+        1:    8:    test_all();
+        1:    8-block  0
+call    0 returned 1
+        -:    9:
+        -:   10://    QApplication a(argc, argv);
+        -:   11://    Repository r{"C:\\Users\\sorn\\Desktop\\practicoop\\data.txt"};
+        -:   12://    Service s{r};
+        -:   13://    GUI* g=new GUI{s};
+        -:   14://    g->show();
+        -:   15://    return QApplication::exec();
+        1:   16:}

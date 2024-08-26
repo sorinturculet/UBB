@@ -1,0 +1,698 @@
+        -:    0:Source:C:/eu/ubb/2nd_Semester/oop/lab6-2iteratie/Repository.cpp
+        -:    0:Graph:C:\eu\ubb\2nd_Semester\oop\lab6-2iteratie\cmake-build-debug-coverage\CMakeFiles\lab6.dir\Repository.cpp.gcno
+        -:    0:Data:C:\eu\ubb\2nd_Semester\oop\lab6-2iteratie\cmake-build-debug-coverage\CMakeFiles\lab6.dir\Repository.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by sorn on 01-Apr-24.
+        -:    3://
+        -:    4:
+        -:    5:#include "Repository.h"
+        -:    6:#include <assert.h>
+function _ZN20DisciplinaRepository6ExistsERK10Disciplina called 16 returned 100% blocks executed 94%
+       16:    7:bool DisciplinaRepository::Exists(const Disciplina& disci){
+        -:    8:    try{
+       46:    9:        (find(disci.getDenumire(),disci.getCadruDidactic()));
+       16:    9-block  0
+call    0 returned 16
+branch  1 taken 16 (fallthrough)
+branch  2 taken 0 (throw)
+       16:    9-block  1
+call    3 returned 16
+branch  4 taken 16 (fallthrough)
+branch  5 taken 0 (throw)
+       16:    9-block  2
+call    6 returned 16
+branch  7 taken 1 (fallthrough)
+branch  8 taken 15 (throw)
+        1:    9-block  3
+call    9 returned 1
+call   10 returned 1
+       15:    9-block  4
+call   11 returned 15
+       15:    9-block  5
+       15:    9-block  6
+call   12 returned 15
+       15:    9-block  7
+        1:   10:        return true;
+        -:   11:    }
+       15:   12:    catch (RepoException&){
+       15:   12-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 15
+       15:   12-block  1
+call    2 returned 15
+       15:   13:        return false;
+       15:   14:    }
+        -:   15:
+        -:   16:}
+function _ZN20DisciplinaRepository5StoreERK10Disciplina called 16 returned 94% blocks executed 65%
+       16:   17:void DisciplinaRepository::Store(const Disciplina& disci){
+       16:   18:    if(Exists(disci))
+       16:   18-block  0
+call    0 returned 16
+branch  1 taken 1 (fallthrough)
+branch  2 taken 15
+        3:   19:        throw RepoException("Disciplina exista deja.");
+        1:   19-block  0
+call    0 returned 1
+        1:   19-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   19-block  2
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   19-block  3
+call    7 returned 1
+call    8 returned 0
+    $$$$$:   19-block  4
+call    9 never executed
+    $$$$$:   19-block  5
+    $$$$$:   19-block  6
+    $$$$$:   19-block  7
+call   10 never executed
+       15:   20:    this->allDisciplina.push_back(disci);
+       15:   20-block  0
+call    0 returned 15
+       15:   21:}
+function _ZN20DisciplinaRepository6ModifyENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiS5_S5_ called 2 returned 100% blocks executed 38%
+        2:   22:void DisciplinaRepository::Modify(string denumire,int ore,string tip,string cadruDidactic){
+        -:   23:    try {
+        2:   24:        Disciplina d = find(denumire, cadruDidactic);
+        2:   24-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   24-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   24-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   24-block  3
+call    9 returned 2
+branch 10 taken 2 (fallthrough)
+branch 11 taken 0 (throw)
+        2:   24-block  4
+call   12 returned 2
+call   13 returned 2
+    $$$$$:   24-block  5
+call   14 never executed
+    $$$$$:   24-block  6
+    $$$$$:   24-block  7
+call   15 never executed
+    $$$$$:   24-block  8
+        4:   25:        for (auto it = allDisciplina.begin(); it != allDisciplina.end(); ++it)
+call    0 returned 2
+        2:   25-block  0
+        4:   25-block  1
+call    1 returned 4
+branch  2 taken 2
+branch  3 taken 2 (fallthrough)
+        -:   26:        {
+        2:   27:            if(*it==d)
+        2:   27-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0
+        2:   28:                it->setTip(tip),it->setOre(ore);
+        2:   28-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   28-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   28-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   28-block  3
+call    9 returned 2
+    $$$$$:   28-block  4
+call   10 never executed
+    $$$$$:   28-block  5
+        -:   29:        }
+        2:   30:    }
+        2:   30-block  0
+call    0 returned 2
+    $$$$$:   30-block  1
+call    1 never executed
+    =====:   31:    catch (RepoException&) {
+    $$$$$:   31-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    $$$$$:   31-block  1
+call    2 never executed
+    =====:   32:        throw RepoException("Disciplina nu exista in lista.\n");
+call    0 never executed
+    $$$$$:   32-block  0
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    $$$$$:   32-block  1
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+    $$$$$:   32-block  2
+call    7 never executed
+call    8 never executed
+    $$$$$:   32-block  3
+call    9 never executed
+    $$$$$:   32-block  4
+    $$$$$:   32-block  5
+    $$$$$:   32-block  6
+call   10 never executed
+    =====:   33:    }
+    $$$$$:   33-block  0
+call    0 never executed
+        2:   34:}
+function _ZN20DisciplinaRepository4findENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ called 20 returned 25% blocks executed 65%
+       20:   35:const Disciplina& DisciplinaRepository::find(const string Denumire,const string Profesor){
+       32:   36:    for (const Disciplina& disci : this->allDisciplina){
+       20:   36-block  0
+call    0 returned 20
+call    1 returned 20
+       12:   36-block  1
+       32:   36-block  2
+branch  2 taken 17
+branch  3 taken 15 (fallthrough)
+       17:   37:        if(disci.getDenumire()==Denumire && disci.getCadruDidactic()==Profesor)
+       17:   37-block  0
+call    0 returned 17
+branch  1 taken 17 (fallthrough)
+branch  2 taken 0 (throw)
+       17:   37-block  1
+call    3 returned 17
+branch  4 taken 5 (fallthrough)
+branch  5 taken 12
+        5:   37-block  2
+call    6 returned 5
+branch  7 taken 5 (fallthrough)
+branch  8 taken 0 (throw)
+        5:   37-block  3
+call    9 returned 5
+branch 10 taken 5 (fallthrough)
+branch 11 taken 0
+        5:   37-block  4
+       12:   37-block  5
+       17:   37-block  6
+branch 12 taken 5 (fallthrough)
+branch 13 taken 12
+        5:   37-block  7
+call   14 returned 5
+       17:   37-block  8
+branch 15 taken 17 (fallthrough)
+branch 16 taken 0
+       17:   37-block  9
+call   17 returned 17
+       17:   37-block 10
+branch 18 taken 5 (fallthrough)
+branch 19 taken 12
+    $$$$$:   37-block 11
+branch 20 never executed (fallthrough)
+branch 21 never executed
+    $$$$$:   37-block 12
+call   22 never executed
+    $$$$$:   37-block 13
+    $$$$$:   37-block 14
+branch 23 never executed (fallthrough)
+branch 24 never executed
+    $$$$$:   37-block 15
+call   25 never executed
+    $$$$$:   37-block 16
+call   26 never executed
+        5:   38:            return disci;
+        5:   38-block  0
+        5:   38-block  1
+        -:   39:    }
+       45:   40:    throw RepoException("Disciplina nu exista");
+       15:   40-block  0
+call    0 returned 15
+       15:   40-block  1
+call    1 returned 15
+branch  2 taken 15 (fallthrough)
+branch  3 taken 0 (throw)
+       15:   40-block  2
+call    4 returned 15
+branch  5 taken 15 (fallthrough)
+branch  6 taken 0 (throw)
+       15:   40-block  3
+call    7 returned 15
+call    8 returned 0
+    $$$$$:   40-block  4
+call    9 never executed
+    $$$$$:   40-block  5
+    $$$$$:   40-block  6
+    $$$$$:   40-block  7
+call   10 never executed
+        -:   41:}
+function _ZN20DisciplinaRepository6DeleteER10Disciplina called 2 returned 100% blocks executed 89%
+        2:   42:void DisciplinaRepository::Delete(Disciplina& disci){
+       2*:   43:    for (auto it = allDisciplina.begin(); it != allDisciplina.end(); ++it) {
+        2:   43-block  0
+call    0 returned 2
+    %%%%%:   43-block  1
+        2:   43-block  2
+call    1 returned 2
+branch  2 taken 2
+branch  3 taken 0 (fallthrough)
+        2:   44:        if(*it == disci) {
+        2:   44-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0
+        2:   45:            allDisciplina.erase(it);
+        2:   45-block  0
+call    0 returned 2
+        2:   46:            break;
+        -:   47:        }
+        -:   48:    }
+        2:   49:}
+        -:   50:
+function _ZN20DisciplinaRepository16getAllDisciplineEv called 18 returned 100% blocks executed 100%
+       18:   51:const MyVector<Disciplina>& DisciplinaRepository::getAllDiscipline(){
+       18:   52:    return this->allDisciplina;
+       18:   52-block  0
+        -:   53:}
+function _Z7testAddv called 1 returned 100% blocks executed 56%
+        1:   54:void testAdd(){
+        1:   55:    DisciplinaRepository testRepo;
+        1:   55-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   56:    Disciplina disci1{ "Analiza",4 ,"Obligatorie","Berinde"};
+        1:   56-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   56-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   56-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   56-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   56-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   56-block  5
+call   15 never executed
+    $$$$$:   56-block  6
+    $$$$$:   56-block  7
+    $$$$$:   56-block  8
+call   16 never executed
+    $$$$$:   56-block  9
+    $$$$$:   56-block 10
+    $$$$$:   56-block 11
+call   17 never executed
+    $$$$$:   56-block 12
+    $$$$$:   56-block 13
+        1:   57:    testRepo.Store(disci1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   58:    assert(testRepo.getAllDiscipline().size()==1);
+        1:   58-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:   58-block  1
+call    4 never executed
+        1:   58-block  2
+        -:   59:    try{
+        1:   60:        testRepo.Store(disci1);
+        1:   60-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        -:   61:    }
+        1:   62:    catch (RepoException&){
+        1:   62-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   62-block  1
+call    2 returned 1
+        1:   63:        assert(testRepo.getAllDiscipline().size() == 1);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    $$$$$:   63-block  0
+call    4 never executed
+        1:   63-block  1
+        1:   64:    }
+        1:   64-block  0
+call    0 returned 1
+    $$$$$:   64-block  1
+call    1 never executed
+        1:   65:}
+        1:   65-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   65-block  1
+call    2 never executed
+    $$$$$:   65-block  2
+call    3 never executed
+function _Z10testDeletev called 1 returned 100% blocks executed 56%
+        1:   66:void testDelete(){
+        1:   67:    DisciplinaRepository testRepo;
+        1:   67-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   68:    Disciplina disci1{ "Analiza",4 ,"Obligatorie","Berinde"};
+        1:   68-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   68-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   68-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   68-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   68-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   68-block  5
+call   15 never executed
+    $$$$$:   68-block  6
+    $$$$$:   68-block  7
+    $$$$$:   68-block  8
+call   16 never executed
+    $$$$$:   68-block  9
+    $$$$$:   68-block 10
+    $$$$$:   68-block 11
+call   17 never executed
+    $$$$$:   68-block 12
+    $$$$$:   68-block 13
+        1:   69:    testRepo.Store(disci1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   70:    assert(testRepo.getAllDiscipline().size()==1);
+        1:   70-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:   70-block  1
+call    4 never executed
+        1:   70-block  2
+        1:   71:    testRepo.Delete(disci1);
+        1:   71-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   72:    assert(testRepo.getAllDiscipline().empty());
+        1:   72-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:   72-block  1
+call    4 never executed
+        1:   72-block  2
+        1:   73:}
+        1:   73-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   73-block  1
+call    2 never executed
+    $$$$$:   73-block  2
+call    3 never executed
+function _Z10testModifyv called 1 returned 100% blocks executed 54%
+        1:   74:void testModify(){
+        1:   75:    DisciplinaRepository testRepo;
+        1:   75-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   76:    Disciplina disci1{ "Analiza",4 ,"Obligatorie","Berinde"};
+        1:   76-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   76-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   76-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   76-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   76-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   76-block  5
+call   15 never executed
+    $$$$$:   76-block  6
+    $$$$$:   76-block  7
+    $$$$$:   76-block  8
+call   16 never executed
+    $$$$$:   76-block  9
+    $$$$$:   76-block 10
+    $$$$$:   76-block 11
+call   17 never executed
+    $$$$$:   76-block 12
+    $$$$$:   76-block 13
+        1:   77:    testRepo.Store(disci1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   78:    testRepo.Modify("Analiza",6,"fRATE","Berinde");
+        1:   78-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   78-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   78-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   78-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   78-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   78-block  5
+call   15 never executed
+    $$$$$:   78-block  6
+    $$$$$:   78-block  7
+    $$$$$:   78-block  8
+call   16 never executed
+    $$$$$:   78-block  9
+    $$$$$:   78-block 10
+    $$$$$:   78-block 11
+call   17 never executed
+    $$$$$:   78-block 12
+    $$$$$:   78-block 13
+       1*:   79:    assert(testRepo.getAllDiscipline()[0].getOre()==6);
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   79-block  0
+branch  5 taken 0 (fallthrough)
+branch  6 taken 1
+    %%%%%:   79-block  1
+call    7 never executed
+        1:   79-block  2
+       1*:   80:    assert(testRepo.getAllDiscipline()[0].getTip()=="fRATE");
+        1:   80-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   80-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   80-block  2
+branch  8 taken 0 (fallthrough)
+branch  9 taken 1
+    %%%%%:   80-block  3
+call   10 never executed
+        1:   80-block  4
+        1:   80-block  5
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0
+        1:   80-block  6
+call   13 returned 1
+    $$$$$:   80-block  7
+branch 14 never executed (fallthrough)
+branch 15 never executed
+    $$$$$:   80-block  8
+call   16 never executed
+    $$$$$:   80-block  9
+       1*:   81:    assert(testRepo.getAllDiscipline()[0].getTip()=="fRATE");
+        1:   81-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   81-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   81-block  2
+branch  8 taken 0 (fallthrough)
+branch  9 taken 1
+    %%%%%:   81-block  3
+call   10 never executed
+        1:   81-block  4
+        1:   81-block  5
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0
+        1:   81-block  6
+call   13 returned 1
+    $$$$$:   81-block  7
+branch 14 never executed (fallthrough)
+branch 15 never executed
+    $$$$$:   81-block  8
+call   16 never executed
+    $$$$$:   81-block  9
+        1:   82:}
+        1:   82-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   82-block  1
+call    2 never executed
+    $$$$$:   82-block  2
+call    3 never executed
+function _Z8testFindv called 1 returned 100% blocks executed 51%
+        1:   83:void testFind(){
+        1:   84:    DisciplinaRepository testRepo;
+        1:   84-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   85:    Disciplina disci1{ "Analiza",4 ,"Obligatorie","Berinde"};
+        1:   85-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   85-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   85-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   85-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   85-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   85-block  5
+call   15 never executed
+    $$$$$:   85-block  6
+    $$$$$:   85-block  7
+    $$$$$:   85-block  8
+call   16 never executed
+    $$$$$:   85-block  9
+    $$$$$:   85-block 10
+    $$$$$:   85-block 11
+call   17 never executed
+    $$$$$:   85-block 12
+    $$$$$:   85-block 13
+        1:   86:    testRepo.Store(disci1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   87:    Disciplina disci2=testRepo.find("Analiza","Berinde");
+        1:   87-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   87-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   87-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   87-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   87-block  4
+call   12 returned 1
+call   13 returned 1
+    $$$$$:   87-block  5
+call   14 never executed
+    $$$$$:   87-block  6
+    $$$$$:   87-block  7
+    $$$$$:   87-block  8
+call   15 never executed
+    $$$$$:   87-block  9
+    $$$$$:   87-block 10
+       1*:   88:    assert(disci1==disci2);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   88-block  0
+call    3 never executed
+        1:   88-block  1
+        1:   89:}
+        1:   89-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:   89-block  1
+call    3 never executed
+    $$$$$:   89-block  2
+call    4 never executed
+    $$$$$:   89-block  3
+call    5 never executed
+function _Z9testeRepov called 1 returned 100% blocks executed 100%
+        1:   90:void testeRepo(){
+        1:   91:    testAdd();
+        1:   91-block  0
+call    0 returned 1
+        1:   92:    testDelete();
+call    0 returned 1
+        1:   93:    testModify();
+call    0 returned 1
+        1:   94:    testFind();
+call    0 returned 1
+        1:   95:}

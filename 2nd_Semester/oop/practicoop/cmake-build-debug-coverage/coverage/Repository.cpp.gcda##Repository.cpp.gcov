@@ -1,0 +1,387 @@
+        -:    0:Source:C:/Users/sorn/Desktop/practicoop/Repository.cpp
+        -:    0:Graph:C:\Users\sorn\Desktop\practicoop\cmake-build-debug-coverage\CMakeFiles\practicoop.dir\Repository.cpp.gcno
+        -:    0:Data:C:\Users\sorn\Desktop\practicoop\cmake-build-debug-coverage\CMakeFiles\practicoop.dir\Repository.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by sorn on 27-Jun-24.
+        -:    3://
+        -:    4:
+        -:    5:#include "Repository.h"
+        -:    6:#include <fstream>
+        -:    7:#include <iostream>
+        -:    8:
+function _ZN10Repository12loadFromFileEv called 3 returned 100% blocks executed 70%
+        3:    9:void Repository::loadFromFile() {
+        3:   10:    ifstream fin(filename);
+        3:   10-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   11:    if(!fin.is_open()){
+        3:   11-block  0
+call    0 returned 3
+branch  1 taken 0 (fallthrough)
+branch  2 taken 3
+    #####:   12:        throw std::runtime_error("Fisier nevalid");
+    %%%%%:   12-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:   12-block  1
+call    4 never executed
+    $$$$$:   12-block  2
+call    5 never executed
+        -:   13:    }
+        3:   14:    v.clear();
+        3:   14-block  0
+call    0 returned 3
+        3:   15:    string buffer;
+call    0 returned 3
+       22:   16:    while(getline(fin,buffer)){
+       22:   16-block  0
+call    0 returned 22
+branch  1 taken 22 (fallthrough)
+branch  2 taken 0 (throw)
+       22:   16-block  1
+call    3 returned 22
+branch  4 taken 22 (fallthrough)
+branch  5 taken 0 (throw)
+       22:   16-block  2
+branch  6 taken 19
+branch  7 taken 3 (fallthrough)
+       19:   17:        string id;
+       19:   17-block  0
+call    0 returned 19
+       19:   18:        string adresa;
+call    0 returned 19
+       19:   19:        string linii;
+call    0 returned 19
+       19:   20:        string coloane;
+call    0 returned 19
+       19:   21:        string stare;
+call    0 returned 19
+       19:   22:        int i=0;
+       42:   23:        while(buffer[i]!=' '){
+       42:   23-block  0
+call    0 returned 42
+branch  1 taken 42 (fallthrough)
+branch  2 taken 0 (throw)
+       42:   23-block  1
+branch  3 taken 23
+branch  4 taken 19 (fallthrough)
+       23:   24:            id+=buffer[i];
+       23:   24-block  0
+call    0 returned 23
+branch  1 taken 23 (fallthrough)
+branch  2 taken 0 (throw)
+       23:   24-block  1
+call    3 returned 23
+branch  4 taken 23 (fallthrough)
+branch  5 taken 0 (throw)
+       23:   25:            i++;
+       23:   25-block  0
+        -:   26:        }
+       19:   27:        i++;
+      158:   28:        while(buffer[i]!=' '){
+       19:   28-block  0
+      158:   28-block  1
+call    0 returned 158
+branch  1 taken 158 (fallthrough)
+branch  2 taken 0 (throw)
+      158:   28-block  2
+branch  3 taken 139
+branch  4 taken 19 (fallthrough)
+      139:   29:            adresa+=buffer[i];
+      139:   29-block  0
+call    0 returned 139
+branch  1 taken 139 (fallthrough)
+branch  2 taken 0 (throw)
+      139:   29-block  1
+call    3 returned 139
+branch  4 taken 139 (fallthrough)
+branch  5 taken 0 (throw)
+      139:   30:            i++;
+      139:   30-block  0
+        -:   31:        }
+       19:   32:        i++;
+       38:   33:        while(buffer[i]!=' '){
+       19:   33-block  0
+       38:   33-block  1
+call    0 returned 38
+branch  1 taken 38 (fallthrough)
+branch  2 taken 0 (throw)
+       38:   33-block  2
+branch  3 taken 19
+branch  4 taken 19 (fallthrough)
+       19:   34:            linii+=buffer[i];
+       19:   34-block  0
+call    0 returned 19
+branch  1 taken 19 (fallthrough)
+branch  2 taken 0 (throw)
+       19:   34-block  1
+call    3 returned 19
+branch  4 taken 19 (fallthrough)
+branch  5 taken 0 (throw)
+       19:   35:            i++;
+       19:   35-block  0
+        -:   36:        }
+       19:   37:        i++;
+       38:   38:        while(buffer[i]!=' '){
+       19:   38-block  0
+       38:   38-block  1
+call    0 returned 38
+branch  1 taken 38 (fallthrough)
+branch  2 taken 0 (throw)
+       38:   38-block  2
+branch  3 taken 19
+branch  4 taken 19 (fallthrough)
+       19:   39:            coloane+=buffer[i];
+       19:   39-block  0
+call    0 returned 19
+branch  1 taken 19 (fallthrough)
+branch  2 taken 0 (throw)
+       19:   39-block  1
+call    3 returned 19
+branch  4 taken 19 (fallthrough)
+branch  5 taken 0 (throw)
+       19:   40:            i++;
+       19:   40-block  0
+        -:   41:        }
+       19:   42:        i++;
+      148:   43:        while(i<buffer.size()){
+       19:   43-block  0
+      148:   43-block  1
+call    0 returned 148
+branch  1 taken 129
+branch  2 taken 19 (fallthrough)
+      129:   44:            stare+=buffer[i];
+      129:   44-block  0
+call    0 returned 129
+branch  1 taken 129 (fallthrough)
+branch  2 taken 0 (throw)
+      129:   44-block  1
+call    3 returned 129
+branch  4 taken 129 (fallthrough)
+branch  5 taken 0 (throw)
+      129:   45:            i++;
+      129:   45-block  0
+        -:   46:        }
+       19:   47:        Parcare p(stoi(id),adresa,stoi(linii),stoi(coloane),stare);
+       19:   47-block  0
+call    0 returned 19
+branch  1 taken 19 (fallthrough)
+branch  2 taken 0 (throw)
+       19:   47-block  1
+call    3 returned 19
+branch  4 taken 19 (fallthrough)
+branch  5 taken 0 (throw)
+       19:   47-block  2
+call    6 returned 19
+branch  7 taken 19 (fallthrough)
+branch  8 taken 0 (throw)
+       19:   47-block  3
+call    9 returned 19
+branch 10 taken 19 (fallthrough)
+branch 11 taken 0 (throw)
+       19:   47-block  4
+call   12 returned 19
+branch 13 taken 19 (fallthrough)
+branch 14 taken 0 (throw)
+       19:   47-block  5
+call   15 returned 19
+call   16 returned 19
+call   17 returned 19
+    $$$$$:   47-block  6
+call   18 never executed
+    $$$$$:   47-block  7
+    $$$$$:   47-block  8
+call   19 never executed
+    $$$$$:   47-block  9
+        -:   48:        //cout<<p.getId()<<" "<<p.getAdresa()<<" "<<p.getLinii()<<" "<<p.getColoane()<<" "<<p.getStare()<<"\n";
+       19:   49:        v.push_back(p);
+call    0 returned 19
+branch  1 taken 19 (fallthrough)
+branch  2 taken 0 (throw)
+       19:   50:    }
+       19:   50-block  0
+call    0 returned 19
+call    1 returned 19
+call    2 returned 19
+call    3 returned 19
+call    4 returned 19
+call    5 returned 19
+    $$$$$:   50-block  1
+call    6 never executed
+    $$$$$:   50-block  2
+call    7 never executed
+    $$$$$:   50-block  3
+call    8 never executed
+    $$$$$:   50-block  4
+call    9 never executed
+    $$$$$:   50-block  5
+call   10 never executed
+    $$$$$:   50-block  6
+call   11 never executed
+        -:   51:
+        3:   52:    fin.close();
+        3:   52-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   53:}
+        3:   53-block  0
+call    0 returned 3
+call    1 returned 3
+    $$$$$:   53-block  1
+call    2 never executed
+    $$$$$:   53-block  2
+call    3 never executed
+function _ZN10Repository10saveToFileEv called 7 returned 100% blocks executed 76%
+        7:   54:void Repository::saveToFile() {
+        7:   55:    ofstream fout(filename);
+        7:   55-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+       61:   56:    for(const auto& p:v){
+        7:   56-block  0
+call    0 returned 7
+call    1 returned 7
+       54:   56-block  1
+call    2 returned 54
+       61:   56-block  2
+call    3 returned 61
+branch  4 taken 54
+branch  5 taken 7 (fallthrough)
+       54:   57:        fout<<p.getId()<<" "<<p.getAdresa()<<" "<<p.getLinii()<<" "<<p.getColoane()<<" "<<p.getStare()<<"\n";
+call    0 returned 54
+call    1 returned 54
+branch  2 taken 54 (fallthrough)
+branch  3 taken 0 (throw)
+       54:   57-block  0
+call    4 returned 54
+branch  5 taken 54 (fallthrough)
+branch  6 taken 0 (throw)
+       54:   57-block  1
+call    7 returned 54
+branch  8 taken 54 (fallthrough)
+branch  9 taken 0 (throw)
+       54:   57-block  2
+call   10 returned 54
+branch 11 taken 54 (fallthrough)
+branch 12 taken 0 (throw)
+       54:   57-block  3
+call   13 returned 54
+branch 14 taken 54 (fallthrough)
+branch 15 taken 0 (throw)
+       54:   57-block  4
+call   16 returned 54
+call   17 returned 54
+branch 18 taken 54 (fallthrough)
+branch 19 taken 0 (throw)
+       54:   57-block  5
+call   20 returned 54
+branch 21 taken 54 (fallthrough)
+branch 22 taken 0 (throw)
+       54:   57-block  6
+call   23 returned 54
+call   24 returned 54
+branch 25 taken 54 (fallthrough)
+branch 26 taken 0 (throw)
+       54:   57-block  7
+call   27 returned 54
+branch 28 taken 54 (fallthrough)
+branch 29 taken 0 (throw)
+       54:   57-block  8
+call   30 returned 54
+branch 31 taken 54 (fallthrough)
+branch 32 taken 0 (throw)
+       54:   57-block  9
+call   33 returned 54
+branch 34 taken 54 (fallthrough)
+branch 35 taken 0 (throw)
+       54:   57-block 10
+call   36 returned 54
+branch 37 taken 54 (fallthrough)
+branch 38 taken 0 (throw)
+       54:   57-block 11
+call   39 returned 54
+call   40 returned 54
+call   41 returned 54
+    $$$$$:   57-block 12
+call   42 never executed
+    $$$$$:   57-block 13
+    $$$$$:   57-block 14
+call   43 never executed
+    $$$$$:   57-block 15
+        -:   58:    }
+        7:   59:    fout.close();
+        7:   59-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        7:   60:}
+        7:   60-block  0
+call    0 returned 7
+    $$$$$:   60-block  1
+call    1 never executed
+function _ZN10Repository6getAllEv called 14 returned 100% blocks executed 100%
+       14:   61:vector<Parcare> Repository::getAll() {
+       14:   62:    return v;
+       14:   62-block  0
+call    0 returned 14
+        -:   63:}
+function _ZN10Repository3addE7Parcare called 2 returned 100% blocks executed 100%
+        2:   64:void Repository::add(Parcare p) {
+        2:   65:    v.push_back(p);
+        2:   65-block  0
+call    0 returned 2
+        2:   66:    saveToFile();
+call    0 returned 2
+        2:   67:}
+function _ZN10Repository6updateE7Parcare called 5 returned 100% blocks executed 74%
+        5:   68:void Repository::update(Parcare p) {
+       18:   69:    for(auto &i:v){
+        5:   69-block  0
+call    0 returned 5
+call    1 returned 5
+       18:   69-block  1
+call    2 returned 18
+       13:   69-block  2
+call    3 returned 13
+       18:   69-block  3
+call    4 returned 18
+branch  5 taken 18
+branch  6 taken 0 (fallthrough)
+       18:   70:        if(i.getId()==p.getId()){
+call    0 returned 18
+call    1 returned 18
+branch  2 taken 5 (fallthrough)
+branch  3 taken 13
+        5:   71:            i=p;
+        5:   71-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   72:            saveToFile();
+        5:   72-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   73:            return;
+        5:   73-block  0
+        5:   73-block  1
+        -:   74:        }
+        -:   75:    }
+    #####:   76:    throw std::runtime_error("Parcare inexistenta");
+    %%%%%:   76-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:   76-block  1
+call    4 never executed
+    $$$$$:   76-block  2
+call    5 never executed
+        -:   77:}

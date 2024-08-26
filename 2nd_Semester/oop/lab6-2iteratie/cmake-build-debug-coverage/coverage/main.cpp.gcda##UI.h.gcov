@@ -1,0 +1,30 @@
+        -:    0:Source:C:/eu/ubb/2nd_Semester/oop/lab6-2iteratie/UI.h
+        -:    0:Graph:C:\eu\ubb\2nd_Semester\oop\lab6-2iteratie\cmake-build-debug-coverage\CMakeFiles\lab6.dir\main.cpp.gcno
+        -:    0:Data:C:\eu\ubb\2nd_Semester\oop\lab6-2iteratie\cmake-build-debug-coverage\CMakeFiles\lab6.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by sorn on 01-Apr-24.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LAB6_UI_H
+        -:    6:#define LAB6_UI_H
+        -:    7:#include "Service.h"
+        -:    8:class ConsoleUI{
+        -:    9:    private:
+        -:   10:        DisciplinaService& srv;
+        -:   11:    public:
+function _ZN9ConsoleUIC1ER17DisciplinaService called 0 returned 0% blocks executed 0%
+    #####:   12:        ConsoleUI(DisciplinaService& srv):srv{srv}{};
+        -:   13:        ConsoleUI(const ConsoleUI& ot) = delete;
+        -:   14:        void addui();
+        -:   15:        void modifyui();
+        -:   16:        void deleteui();
+        -:   17:        void findui();
+        -:   18:        void filterui();
+        -:   19:        void sortui();
+        -:   20:        void printall();
+        -:   21:        void run();
+        -:   22:        void load();
+        -:   23:        void printMenu();
+        -:   24:};
+        -:   25:#endif //LAB6_UI_H

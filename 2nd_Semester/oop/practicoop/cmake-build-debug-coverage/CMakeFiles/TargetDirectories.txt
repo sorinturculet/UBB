@@ -1,0 +1,5 @@
+C:/Users/sorn/Desktop/practicoop/cmake-build-debug-coverage/CMakeFiles/practicoop.dir
+C:/Users/sorn/Desktop/practicoop/cmake-build-debug-coverage/CMakeFiles/edit_cache.dir
+C:/Users/sorn/Desktop/practicoop/cmake-build-debug-coverage/CMakeFiles/rebuild_cache.dir
+C:/Users/sorn/Desktop/practicoop/cmake-build-debug-coverage/CMakeFiles/practicoop_autogen_timestamp_deps.dir
+C:/Users/sorn/Desktop/practicoop/cmake-build-debug-coverage/CMakeFiles/practicoop_autogen.dir

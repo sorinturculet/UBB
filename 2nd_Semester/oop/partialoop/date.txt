@@ -1,0 +1,11 @@
+8,Mihai,Sadoveanu
+10,Darius,Scoala nr 10
+20,Mihaita,Chinteni
+23,Jordan,Scoala Saleziana
+4,Gica,Scoala ta
+37,Mariusica,Scoala 22
+89,Andrei,UBB School
+456,Mihnea,Scoala Psihologica
+7,Messi,Scoala de fotbal
+666,Dracula,Scoala de vampiri
+209,Zambori,Scoala Bucuresti

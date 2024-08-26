@@ -1,0 +1,98 @@
+        -:    0:Source:C:/eu/ubb/2nd_Semester/oop/lab8/Domain.h
+        -:    0:Graph:C:\eu\ubb\2nd_Semester\oop\lab8\cmake-build-debug-coverage\CMakeFiles\lab6.dir\Repository.cpp.gcno
+        -:    0:Data:C:\eu\ubb\2nd_Semester\oop\lab8\cmake-build-debug-coverage\CMakeFiles\lab6.dir\Repository.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by sorn on 01-Apr-24.
+        -:    3://
+        -:    4:
+        -:    5:#ifndef LAB6_DOMAIN_H
+        -:    6:#define LAB6_DOMAIN_H
+        -:    7:#include <string>
+        -:    8:#include <iostream>
+        -:    9:using std::string;
+        -:   10:using std::cout;
+        -:   11:using std::endl;
+        -:   12:using std::ostream;
+        -:   13:class Disciplina{
+        -:   14:    private:
+        -:   15:        string denumire{""};
+        -:   16:        int ore{0};
+        -:   17:        string tip{""};
+        -:   18:        string cadruDidactic{""};
+        -:   19:public:
+        -:   20:    //initializator
+        -:   21:    Disciplina()=delete;
+function _ZN10DisciplinaC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiS5_S5_ called 32 returned 100% blocks executed 62%
+       32:   22:    Disciplina(string denumire,int ore, string tip,string cadruDidactic ):denumire{denumire},ore{ore},tip{tip},cadruDidactic{cadruDidactic}{};
+       32:   22-block  0
+call    0 returned 32
+call    1 returned 32
+branch  2 taken 32 (fallthrough)
+branch  3 taken 0 (throw)
+       32:   22-block  1
+call    4 returned 32
+branch  5 taken 32 (fallthrough)
+branch  6 taken 0 (throw)
+       32:   22-block  2
+    $$$$$:   22-block  3
+call    7 never executed
+    $$$$$:   22-block  4
+call    8 never executed
+        -:   23:    //constructor copiere
+function _ZN10DisciplinaC1ERKS_ called 0 returned 0% blocks executed 0%
+    #####:   24:    Disciplina(const Disciplina& disci): denumire{disci.denumire},ore{disci.ore},tip{disci.tip},cadruDidactic{disci.cadruDidactic}{
+    %%%%%:   24-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:   24-block  1
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+    #####:   25:        cout<<" [Disciplina] Copy constructor called.\n";
+    %%%%%:   25-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   26:    };
+    %%%%%:   26-block  0
+    $$$$$:   26-block  1
+call    0 never executed
+    $$$$$:   26-block  2
+call    1 never executed
+    $$$$$:   26-block  3
+call    2 never executed
+        -:   27:    //getter
+        -:   28:    string getDenumire() const;
+        -:   29:    int getOre() const;
+        -:   30:    string getTip() const;
+        -:   31:    string getCadruDidactic() const;
+        -:   32:    //setter
+        -:   33:    void setDenumire(const string newDenumire);
+        -:   34:    void setOre(int newOre);
+        -:   35:    void setTip(const string newTip);
+        -:   36:    void setCadruDidactic(const string newCadruDidactic);
+        -:   37:    //operatorul de egalitate
+function _ZNK10DisciplinaeqERKS_ called 12 returned 100% blocks executed 100%
+       12:   38:    bool operator==(const Disciplina& other) const{
+       12:   39:        return(other.denumire==this->denumire && other.cadruDidactic==this->cadruDidactic);
+       12:   39-block  0
+call    0 returned 12
+branch  1 taken 6 (fallthrough)
+branch  2 taken 6
+        6:   39-block  1
+call    3 returned 6
+branch  4 taken 6 (fallthrough)
+branch  5 taken 0
+        6:   39-block  2
+        6:   39-block  3
+       12:   39-block  4
+        -:   40:    }
+        -:   41:    //operatorul de afisare
+        -:   42:    friend std::ostream& operator<<(std::ostream& stream, const Disciplina& m);
+        -:   43:
+        -:   44:};
+        -:   45:void testeDomain();
+        -:   46:#endif //LAB6_DOMAIN_H

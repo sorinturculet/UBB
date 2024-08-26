@@ -1,0 +1,81 @@
+        -:    0:Source:C:/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/list/listamea.c
+        -:    0:Graph:C:\eu\ubb\2nd_Semester\oop\Lab5_EDUARD\cmake-build-debug-mingw-coverage\CMakeFiles\Lab5_EDUARD.dir\list\listamea.c.gcno
+        -:    0:Data:C:\eu\ubb\2nd_Semester\oop\Lab5_EDUARD\cmake-build-debug-mingw-coverage\CMakeFiles\Lab5_EDUARD.dir\list\listamea.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "listamea.h"
+        -:    2:#include <stdlib.h>
+        -:    3:
+function adauga called 35 returned 100% blocks executed 100%
+       35:    4:void adauga(Lista* lista, Produs* p)
+        -:    5:{
+       35:    6:	if (lista->lungime == lista->capacitate) redim(lista);
+       35:    6-block  0
+branch  0 taken 22 (fallthrough)
+branch  1 taken 13
+       22:    6-block  1
+call    2 returned 22
+        -:    7:
+       35:    8:	lista->v[lista->lungime] = p;
+       35:    9:	if(lista->v[lista->lungime] != NULL)
+       35:    9-block  0
+branch  0 taken 35 (fallthrough)
+branch  1 taken 0
+       35:   10:		lista->v[lista->lungime] = p;
+       35:   10-block  0
+        -:   11:	
+       35:   12:	lista->lungime++;
+       35:   13:}
+        -:   14:
+        -:   15:			
+function distrugator called 12 returned 100% blocks executed 100%
+       12:   16:void distrugator(Lista* l)
+        -:   17:{
+       46:   18:	for (int i = 0; i < l->lungime; i++)
+       12:   18-block  0
+       46:   18-block  1
+branch  0 taken 34
+branch  1 taken 12 (fallthrough)
+        -:   19:	{
+       34:   20:        destroyPr(l->v[i]);
+       34:   20-block  0
+call    0 returned 34
+        -:   21:	}
+       12:   22:	eliberator(l);
+       12:   22-block  0
+call    0 returned 12
+        -:   23:
+       12:   24:}
+function eliberator called 16 returned 100% blocks executed 100%
+       16:   25:void eliberator(Lista* l)
+        -:   26:{
+       16:   27:    free(l->v);
+       16:   28:    l->lungime = 0;
+       16:   29:    l->capacitate = 0;
+       16:   30:    free(l);
+       16:   31:}
+        -:   32:
+function redim called 25 returned 100% blocks executed 100%
+       25:   33:void redim(Lista* l)
+        -:   34:{
+       25:   35:	l->capacitate *= 2;
+       25:   36:	Produs** tmp = (Produs**)realloc(l->v, sizeof(Produs) * l->capacitate);
+       25:   37:	if (tmp != NULL)
+       25:   37-block  0
+branch  0 taken 25 (fallthrough)
+branch  1 taken 0
+        -:   38:	{
+       25:   39:		l->v = tmp;
+       25:   39-block  0
+        -:   40:	}
+       25:   41:}
+        -:   42:
+function creareLi called 16 returned 100% blocks executed 100%
+       16:   43:Lista* creareLi()
+        -:   44:{
+       16:   45:    Lista* lista=(Lista*)malloc(sizeof (Lista));
+       16:   46:	lista->lungime = 0;
+       16:   47:	lista->capacitate = 1;
+       16:   48:	lista->v = (Produs**)malloc(sizeof(Produs*) * lista->capacitate);
+       16:   49:    return lista;
+       16:   49-block  0
+        -:   50:}

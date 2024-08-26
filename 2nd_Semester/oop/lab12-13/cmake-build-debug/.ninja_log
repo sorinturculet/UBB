@@ -1,0 +1,24 @@
+# ninja log v5
+170	1004	7372286401246057	CMakeFiles/lab10_11.dir/Repository.cpp.obj	adc4c5d4bcb57715
+14	122	7385092884993574	lab10_11_autogen/timestamp	14f0f16b4a09fb5b
+14	122	7385092884993574	lab10_11_autogen/mocs_compilation.cpp	14f0f16b4a09fb5b
+179	777	7372286398976047	CMakeFiles/lab10_11.dir/Domain.cpp.obj	ee6cd53a6501f286
+7	2004	7411093515838096	build.ninja	635703ea24777fac
+185	245	7372281958715739	CMakeFiles/lab10_11.dir/lab10_11_autogen/mocs_compilation.cpp.obj	10522bc2f54061f4
+128	3488	7385092918612521	CMakeFiles/lab10_11.dir/main.cpp.obj	ed2e044e72b40939
+3488	4149	7385092923692719	lab10_11.exe	b786da9d0042ec18
+134	1168	7384308415358008	CMakeFiles/lab10_11.dir/UI.cpp.obj	e98e2c76efb8bae8
+156	1602	7384311461131818	CMakeFiles/lab10_11.dir/Service.cpp.obj	ce5e4ee1ee7374c3
+133	2142	7385092905192680	CMakeFiles/lab10_11.dir/CosReadOnlyGUI.cpp.obj	28101ddcd6ca85b7
+41	182	7411162631868522	lab10_11_autogen/timestamp	699138703a9b99b
+41	182	7411162631868522	lab10_11_autogen/mocs_compilation.cpp	699138703a9b99b
+41	182	7411162631868522	C:/eu/ubb/2nd_Semester/oop/lab12-13/cmake-build-debug/lab10_11_autogen/timestamp	699138703a9b99b
+41	182	7411162631868522	C:/eu/ubb/2nd_Semester/oop/lab12-13/cmake-build-debug/lab10_11_autogen/mocs_compilation.cpp	699138703a9b99b
+183	230	7411162632348504	CMakeFiles/lab10_11.dir/lab10_11_autogen/mocs_compilation.cpp.obj	ab4d22443456dc4
+198	643	7411162636478486	CMakeFiles/lab10_11.dir/Domain.cpp.obj	e2a30eb3b2ea04e3
+192	872	7411162638758485	CMakeFiles/lab10_11.dir/Repository.cpp.obj	123fee658ee244c2
+189	982	7411162639828515	CMakeFiles/lab10_11.dir/UI.cpp.obj	e46a5f04ffa5ee3a
+195	1742	7411162647438483	CMakeFiles/lab10_11.dir/Service.cpp.obj	f996677da3dada8e
+201	2046	7411162650508489	CMakeFiles/lab10_11.dir/CosReadOnlyGUI.cpp.obj	579c81802b27a2
+186	3347	7411162663478481	CMakeFiles/lab10_11.dir/main.cpp.obj	ff9634220f5cea9
+3347	4019	7411162668278488	lab10_11.exe	4a1173b8eff8da61

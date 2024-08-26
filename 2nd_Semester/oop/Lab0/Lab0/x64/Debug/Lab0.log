@@ -1,0 +1,2 @@
+﻿lab1.obj : error LNK2005: main already defined in lab0.obj
+C:\eu\ubb\oop\Lab0\x64\Debug\Lab0.exe : fatal error LNK1169: one or more multiply defined symbols found

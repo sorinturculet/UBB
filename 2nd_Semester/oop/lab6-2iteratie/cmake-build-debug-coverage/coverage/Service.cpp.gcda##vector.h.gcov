@@ -1,0 +1,394 @@
+        -:    0:Source:C:/eu/ubb/2nd_Semester/oop/lab6-2iteratie/vector.h
+        -:    0:Graph:C:\eu\ubb\2nd_Semester\oop\lab6-2iteratie\cmake-build-debug-coverage\CMakeFiles\lab6.dir\Service.cpp.gcno
+        -:    0:Data:C:\eu\ubb\2nd_Semester\oop\lab6-2iteratie\cmake-build-debug-coverage\CMakeFiles\lab6.dir\Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#pragma once
+        -:    3:
+        -:    4://template <typename TElem>
+        -:    5://class MyIterator;
+        -:    6:
+        -:    7:
+        -:    8:template <typename TElem>
+        -:    9:class MyVector {
+        -:   10:
+        -:   11:private:
+        -:   12:    int cap;
+        -:   13:    int lg;
+        -:   14:    TElem* elems;
+        -:   15:
+        -:   16:public:
+        -:   17:    //constructor default
+function _ZN8MyVectorI10DisciplinaEC1Ev called 0 returned 0% blocks executed 0%
+    #####:   18:    MyVector() :cap{ 2 }, lg{ 0 }, elems{ new TElem[cap] } {}
+    %%%%%:   18-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   18-block  1
+    %%%%%:   18-block  2
+    %%%%%:   18-block  3
+call    2 never executed
+    %%%%%:   18-block  4
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   18-block  5
+    %%%%%:   18-block  6
+branch  6 never executed
+branch  7 never executed (fallthrough)
+    %%%%%:   18-block  7
+    $$$$$:   18-block  8
+branch  8 never executed (fallthrough)
+branch  9 never executed
+    $$$$$:   18-block  9
+    $$$$$:   18-block 10
+branch 10 never executed (fallthrough)
+branch 11 never executed
+    $$$$$:   18-block 11
+call   12 never executed
+    $$$$$:   18-block 12
+branch 13 never executed (fallthrough)
+branch 14 never executed
+    $$$$$:   18-block 13
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:   18-block 14
+    $$$$$:   18-block 15
+    $$$$$:   18-block 16
+call   17 never executed
+        -:   19:
+        -:   20:
+        -:   21:    //destructor
+        -:   22:    ~MyVector();
+        -:   23:
+        -:   24:
+        -:   25:    //construcotr de copiere
+function _ZN8MyVectorI10DisciplinaEC1ERKS1_ called 4 returned 100% blocks executed 54%
+      20*:   26:    MyVector(const MyVector& other) : cap(other.cap), lg(other.lg), elems(new TElem[cap]) {
+        4:   26-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 0
+        4:   26-block  1
+    %%%%%:   26-block  2
+        4:   26-block  3
+call    2 returned 4
+       16:   26-block  4
+call    3 returned 16
+branch  4 taken 16 (fallthrough)
+branch  5 taken 0 (throw)
+       16:   26-block  5
+       20:   26-block  6
+branch  6 taken 16
+branch  7 taken 4 (fallthrough)
+    $$$$$:   26-block  7
+branch  8 never executed (fallthrough)
+branch  9 never executed
+    $$$$$:   26-block  8
+    $$$$$:   26-block  9
+branch 10 never executed (fallthrough)
+branch 11 never executed
+    $$$$$:   26-block 10
+call   12 never executed
+    $$$$$:   26-block 11
+branch 13 never executed (fallthrough)
+branch 14 never executed
+    $$$$$:   26-block 12
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:   26-block 13
+    $$$$$:   26-block 14
+    $$$$$:   26-block 15
+call   17 never executed
+       20:   27:        for (int i = 0; i < lg; i++) {
+        4:   27-block  0
+       20:   27-block  1
+branch  0 taken 16
+branch  1 taken 4 (fallthrough)
+       16:   28:            elems[i] = other.elems[i];
+       16:   28-block  0
+call    0 returned 16
+        -:   29:        }
+        4:   30:    }
+        4:   30-block  0
+        -:   31:
+        -:   32:    //operator de assignment
+        -:   33:    void operator=(const MyVector& other);
+        -:   34:
+        -:   35:    //adauga un element in vector
+        -:   36:    void push_back(const TElem& element);
+        -:   37:
+        -:   38:    //returneaza numerul de elemente ale vectorului (int)
+        -:   39:    int size() const;
+        -:   40:
+        -:   41:    int empty() const;
+        -:   42:
+        -:   43:    //definiesc operatorul de indexare  - returneaza TElem de pe pozitia index
+        -:   44:    TElem& operator[](int index);
+        -:   45:
+        -:   46:    //definiesc operatorul de indexare constant - returneaza TElem de pe pozitia index
+        -:   47:    const TElem& operator[](int index) const;
+        -:   48:
+        -:   49:
+        -:   50:    //sterge elemetul din vector de pe pozitia index
+        -:   51:    void erase(TElem* position);
+        -:   52:
+        -:   53:
+        -:   54:    TElem* begin() const;
+        -:   55:
+        -:   56:    TElem* end() const;
+        -:   57:
+        -:   58:
+        -:   59:    /*MyVector(std::vector<Book> books) {
+        -:   60:        for (const auto& b : books) {
+        -:   61:            push_back(b);
+        -:   62:        }
+        -:   63:    }*/
+        -:   64:
+        -:   65:    /*std::vector<Book> toStdVector() {
+        -:   66:        std::vector<Book> rez;
+        -:   67:        rez.push_back();
+        -:   68:        return rez;
+        -:   69:    }*/
+        -:   70:
+        -:   71:    //friend class MyIterator<TElem>;
+        -:   72:
+        -:   73:};
+        -:   74:
+        -:   75:
+        -:   76:
+        -:   77:
+        -:   78:
+        -:   79:template <typename TElem>
+function _ZN8MyVectorI10DisciplinaED1Ev called 0 returned 0% blocks executed 0%
+    #####:   80:MyVector<TElem>::~MyVector() {
+    #####:   81:    delete[] elems;
+    %%%%%:   81-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   81-block  1
+    %%%%%:   81-block  2
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    %%%%%:   81-block  3
+call    4 never executed
+    %%%%%:   81-block  4
+call    5 never executed
+    #####:   82:}
+        -:   83:
+        -:   84:template <typename TElem>
+function _ZN8MyVectorI10DisciplinaE9push_backERKS0_ called 0 returned 0% blocks executed 0%
+    #####:   85:void MyVector<TElem>::push_back(const TElem& element) {
+    #####:   86:    if (cap == lg) {
+    %%%%%:   86-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   87:        TElem* aux = new TElem[cap * 2];
+    %%%%%:   87-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   87-block  1
+    %%%%%:   87-block  2
+    %%%%%:   87-block  3
+call    2 never executed
+    %%%%%:   87-block  4
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   87-block  5
+    %%%%%:   87-block  6
+branch  6 never executed
+branch  7 never executed (fallthrough)
+    $$$$$:   87-block  7
+branch  8 never executed (fallthrough)
+branch  9 never executed
+    $$$$$:   87-block  8
+    $$$$$:   87-block  9
+branch 10 never executed (fallthrough)
+branch 11 never executed
+    $$$$$:   87-block 10
+call   12 never executed
+    $$$$$:   87-block 11
+branch 13 never executed (fallthrough)
+branch 14 never executed
+    $$$$$:   87-block 12
+branch 15 never executed (fallthrough)
+branch 16 never executed
+    $$$$$:   87-block 13
+    $$$$$:   87-block 14
+    $$$$$:   87-block 15
+call   17 never executed
+    #####:   88:        for (int i = 0; i < lg; i++) {
+    %%%%%:   88-block  0
+    %%%%%:   88-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:   89:            aux[i] = elems[i];
+    %%%%%:   89-block  0
+call    0 never executed
+        -:   90:        }
+    #####:   91:        delete[] elems;
+    %%%%%:   91-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:   91-block  1
+    %%%%%:   91-block  2
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    %%%%%:   91-block  3
+call    4 never executed
+    %%%%%:   91-block  4
+call    5 never executed
+    #####:   92:        elems = aux;
+    #####:   93:        cap = cap * 2;
+    %%%%%:   93-block  0
+        -:   94:    }
+    #####:   95:    elems[lg++] = element;
+    %%%%%:   95-block  0
+call    0 never executed
+    #####:   96:}
+        -:   97:
+        -:   98:template <typename TElem>
+function _ZNK8MyVectorI10DisciplinaE4sizeEv called 0 returned 0% blocks executed 0%
+    #####:   99:int MyVector<TElem>::size() const {
+    #####:  100:    return lg;
+    %%%%%:  100-block  0
+        -:  101:}
+        -:  102:template <typename TElem>
+function _ZNK8MyVectorI10DisciplinaE5emptyEv called 0 returned 0% blocks executed 0%
+    #####:  103:int MyVector<TElem>::empty() const {
+    #####:  104:    return lg==0;
+    %%%%%:  104-block  0
+        -:  105:}
+        -:  106:template <typename TElem>
+function _ZN8MyVectorI10DisciplinaEixEi called 4 returned 100% blocks executed 100%
+        4:  107:TElem& MyVector<TElem>::operator[](int index) {
+        4:  108:    return elems[index];
+        4:  108-block  0
+        -:  109:}
+        -:  110:
+        -:  111:template <typename TElem>
+function _ZNK8MyVectorI10DisciplinaEixEi called 0 returned 0% blocks executed 0%
+    #####:  112:const TElem& MyVector<TElem>::operator[](int index) const {
+    #####:  113:    return elems[index];
+    %%%%%:  113-block  0
+        -:  114:}
+        -:  115:
+        -:  116:template <typename TElem>
+        -:  117:void MyVector<TElem>::erase(TElem* position) {
+        -:  118:    if (position < elems || position >= elems + lg)
+        -:  119:        return;
+        -:  120:    int index = position - elems;
+        -:  121:
+        -:  122:    for (int i = index; i < lg - 1; i++) {
+        -:  123:        elems[i] = elems[i + 1];
+        -:  124:    }
+        -:  125:    lg--;
+        -:  126:}
+        -:  127:
+        -:  128:template <typename TElem>
+        -:  129:void MyVector<TElem>::operator=(const MyVector& other) {
+        -:  130:    if (this == &other) {
+        -:  131:        return;
+        -:  132:    }
+        -:  133:    delete[] elems;
+        -:  134:    cap = other.cap;
+        -:  135:    lg = other.lg;
+        -:  136:    elems = new TElem[cap];
+        -:  137:    for (int i = 0; i < lg; i++) {
+        -:  138:        elems[i] = other.elems[i];
+        -:  139:    }
+        -:  140:}
+        -:  141:
+        -:  142:template <typename TElem>
+function _ZNK8MyVectorI10DisciplinaE5beginEv called 0 returned 0% blocks executed 0%
+    #####:  143:TElem* MyVector<TElem>::begin() const {
+    #####:  144:    return elems;
+    %%%%%:  144-block  0
+        -:  145:}
+        -:  146:
+        -:  147:template <typename TElem>
+function _ZNK8MyVectorI10DisciplinaE3endEv called 0 returned 0% blocks executed 0%
+    #####:  148:TElem* MyVector<TElem>::end() const {
+    #####:  149:    return elems + lg;
+    %%%%%:  149-block  0
+        -:  150:}
+        -:  151:
+        -:  152:
+        -:  153:
+        -:  154:
+        -:  155:
+        -:  156:
+        -:  157:/*
+        -:  158:template <typename TElem>
+        -:  159:class MyIterator {
+        -:  160:
+        -:  161:private:
+        -:  162:	const MyVector<TElem>& v;
+        -:  163:	int poz = 0;
+        -:  164:public:
+        -:  165:	MyIterator(const MyVector<TElem>& v);
+        -:  166:	MyIterator(const MyVector<TElem>& v, int poz);
+        -:  167:	bool valid() const;
+        -:  168:	TElem& element() const;
+        -:  169:	void next();
+        -:  170:	TElem& operator*();
+        -:  171:	MyIterator& operator++();
+        -:  172:	bool operator==(const MyIterator& other);
+        -:  173:	bool operator!=(const MyIterator& other);
+        -:  174:	MyIterator& operator+(int n);
+        -:  175:};
+        -:  176:
+        -:  177:template <typename TElem>
+        -:  178:MyIterator<TElem>::MyIterator(const MyVector<TElem>& v) : v{v} {}
+        -:  179:
+        -:  180:template <typename TElem>
+        -:  181:MyIterator<TElem>::MyIterator(const MyVector<TElem>& v, int poz) : v{ v }, poz{ poz } {}
+        -:  182:
+        -:  183:template <typename TElem>
+        -:  184:bool MyIterator<TElem>::valid() const {
+        -:  185:	return poz < v.lg;
+        -:  186:}
+        -:  187:
+        -:  188:template <typename TElem>
+        -:  189:TElem& MyIterator<TElem>::element() const {
+        -:  190:	return v.elems[poz];
+        -:  191:}
+        -:  192:
+        -:  193:template <typename TElem>
+        -:  194:void MyIterator<TElem>::next() {
+        -:  195:	poz++;
+        -:  196:}
+        -:  197:
+        -:  198:template <typename TElem>
+        -:  199:TElem& MyIterator<TElem>::operator*() {
+        -:  200:	return element();
+        -:  201:}
+        -:  202:
+        -:  203:template <typename TElem>
+        -:  204:MyIterator<TElem>& MyIterator<TElem>::operator++() {
+        -:  205:	next();
+        -:  206:	return *this;
+        -:  207:}
+        -:  208:
+        -:  209:template <typename TElem>
+        -:  210:bool MyIterator<TElem> :: operator==(const MyIterator& other) {
+        -:  211:	return poz == other.poz;
+        -:  212:}
+        -:  213:
+        -:  214:template <typename TElem>
+        -:  215:bool MyIterator<TElem> :: operator!=(const MyIterator& other) {
+        -:  216:	return !(*this == other);
+        -:  217:}
+        -:  218:
+        -:  219:
+        -:  220:template <typename TElem>
+        -:  221:MyIterator<TElem>& MyIterator<TElem>::operator+(int n) {
+        -:  222:	poz += n;
+        -:  223:	return *this;
+        -:  224:}
+        -:  225:*/
+        -:  226:
+        -:  227:
+        -:  228:
+        -:  229:
+        -:  230:
