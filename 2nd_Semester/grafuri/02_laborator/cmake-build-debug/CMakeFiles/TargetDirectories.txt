@@ -1,7 +1,0 @@
-C:/eu/ubb/2nd_Semester/grafuri/02_laborator/cmake-build-debug/CMakeFiles/main4.dir
-C:/eu/ubb/2nd_Semester/grafuri/02_laborator/cmake-build-debug/CMakeFiles/main3.dir
-C:/eu/ubb/2nd_Semester/grafuri/02_laborator/cmake-build-debug/CMakeFiles/main1.dir
-C:/eu/ubb/2nd_Semester/grafuri/02_laborator/cmake-build-debug/CMakeFiles/main2.dir
-C:/eu/ubb/2nd_Semester/grafuri/02_laborator/cmake-build-debug/CMakeFiles/main5.dir
-C:/eu/ubb/2nd_Semester/grafuri/02_laborator/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/eu/ubb/2nd_Semester/grafuri/02_laborator/cmake-build-debug/CMakeFiles/rebuild_cache.dir

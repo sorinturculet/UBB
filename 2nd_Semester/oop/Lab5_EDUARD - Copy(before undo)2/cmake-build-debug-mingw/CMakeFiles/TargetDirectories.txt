@@ -1,3 +1,0 @@
-C:/eu/ubb/2nd_Semester/oop/Lab5_EDUARD - Copy(before undo)2/cmake-build-debug-mingw/CMakeFiles/Lab5_EDUARD.dir
-C:/eu/ubb/2nd_Semester/oop/Lab5_EDUARD - Copy(before undo)2/cmake-build-debug-mingw/CMakeFiles/edit_cache.dir
-C:/eu/ubb/2nd_Semester/oop/Lab5_EDUARD - Copy(before undo)2/cmake-build-debug-mingw/CMakeFiles/rebuild_cache.dir

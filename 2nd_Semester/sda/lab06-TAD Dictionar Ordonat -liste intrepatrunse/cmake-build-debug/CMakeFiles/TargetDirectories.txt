@@ -1,3 +1,0 @@
-C:/eu/ubb/2nd_Semester/sda/lab06-TAD Dictionar Ordonat -liste intrepatrunse/cmake-build-debug/CMakeFiles/lab06_TAD_Dictionar_Ordonat__liste_intrepatrunse.dir
-C:/eu/ubb/2nd_Semester/sda/lab06-TAD Dictionar Ordonat -liste intrepatrunse/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/eu/ubb/2nd_Semester/sda/lab06-TAD Dictionar Ordonat -liste intrepatrunse/cmake-build-debug/CMakeFiles/rebuild_cache.dir

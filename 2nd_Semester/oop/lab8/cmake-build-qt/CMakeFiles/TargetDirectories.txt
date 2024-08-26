@@ -1,5 +1,0 @@
-C:/eu/ubb/2nd_Semester/oop/lab8/cmake-build-qt/CMakeFiles/lab6.dir
-C:/eu/ubb/2nd_Semester/oop/lab8/cmake-build-qt/CMakeFiles/edit_cache.dir
-C:/eu/ubb/2nd_Semester/oop/lab8/cmake-build-qt/CMakeFiles/rebuild_cache.dir
-C:/eu/ubb/2nd_Semester/oop/lab8/cmake-build-qt/CMakeFiles/lab6_autogen_timestamp_deps.dir
-C:/eu/ubb/2nd_Semester/oop/lab8/cmake-build-qt/CMakeFiles/lab6_autogen.dir

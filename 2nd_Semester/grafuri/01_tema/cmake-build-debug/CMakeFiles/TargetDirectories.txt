@@ -1,3 +1,0 @@
-C:/eu/ubb/grafuri/lab01_tema/cmake-build-debug/CMakeFiles/lab01_tema.dir
-C:/eu/ubb/grafuri/lab01_tema/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/eu/ubb/grafuri/lab01_tema/cmake-build-debug/CMakeFiles/rebuild_cache.dir

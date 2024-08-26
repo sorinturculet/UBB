@@ -1,3 +1,0 @@
-C:/eu/ubb/2nd_Semester/sda/lab03-TAD Dictionar LSI/cmake-build-debug/CMakeFiles/TAD_Dictionar.dir
-C:/eu/ubb/2nd_Semester/sda/lab03-TAD Dictionar LSI/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/eu/ubb/2nd_Semester/sda/lab03-TAD Dictionar LSI/cmake-build-debug/CMakeFiles/rebuild_cache.dir

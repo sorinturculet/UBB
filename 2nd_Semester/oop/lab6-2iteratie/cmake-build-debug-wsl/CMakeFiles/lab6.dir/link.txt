@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/lab6.dir/main.cpp.o CMakeFiles/lab6.dir/UI.cpp.o CMakeFiles/lab6.dir/Repository.cpp.o CMakeFiles/lab6.dir/Service.cpp.o CMakeFiles/lab6.dir/Domain.cpp.o CMakeFiles/lab6.dir/vector.cpp.o -o lab6 

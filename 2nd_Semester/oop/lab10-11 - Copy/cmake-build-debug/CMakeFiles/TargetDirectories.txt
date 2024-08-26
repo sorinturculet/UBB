@@ -1,5 +1,0 @@
-C:/eu/ubb/2nd_Semester/oop/lab10-11 - Copy/cmake-build-debug/CMakeFiles/lab10_11.dir
-C:/eu/ubb/2nd_Semester/oop/lab10-11 - Copy/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/eu/ubb/2nd_Semester/oop/lab10-11 - Copy/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/eu/ubb/2nd_Semester/oop/lab10-11 - Copy/cmake-build-debug/CMakeFiles/lab10_11_autogen_timestamp_deps.dir
-C:/eu/ubb/2nd_Semester/oop/lab10-11 - Copy/cmake-build-debug/CMakeFiles/lab10_11_autogen.dir

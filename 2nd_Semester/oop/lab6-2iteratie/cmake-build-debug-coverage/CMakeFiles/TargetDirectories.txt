@@ -1,3 +1,0 @@
-C:/eu/ubb/2nd_Semester/oop/lab6-2iteratie/cmake-build-debug-coverage/CMakeFiles/lab6.dir
-C:/eu/ubb/2nd_Semester/oop/lab6-2iteratie/cmake-build-debug-coverage/CMakeFiles/edit_cache.dir
-C:/eu/ubb/2nd_Semester/oop/lab6-2iteratie/cmake-build-debug-coverage/CMakeFiles/rebuild_cache.dir

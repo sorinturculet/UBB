@@ -1,7 +1,0 @@
-# ninja log v5
-16	111	7329947500009311	CMakeFiles/Lab5_EDUARD.dir/Teste.c.obj	1592d28447e4796a
-12	121	7329947500129430	CMakeFiles/Lab5_EDUARD.dir/Source.c.obj	1bfc267083ae63d2
-83	175	7329947741889847	Lab5_EDUARD.exe	bd1b9f8104c3a2f9
-21	108	7329947499989279	CMakeFiles/Lab5_EDUARD.dir/domain/domain.c.obj	e3d2823c908a1f9b
-9	94	7329947499839255	CMakeFiles/Lab5_EDUARD.dir/list/listamea.c.obj	94532d22a9306fee
-4	82	7329947740999829	CMakeFiles/Lab5_EDUARD.dir/service/Service.c.obj	d825bcb9bd61a01c

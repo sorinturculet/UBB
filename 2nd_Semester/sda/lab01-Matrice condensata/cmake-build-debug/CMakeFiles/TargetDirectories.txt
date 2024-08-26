@@ -1,3 +1,0 @@
-C:/eu/ubb/2nd_Semester/sda/TAD Matrice/cmake-build-debug/CMakeFiles/TAD_Matrice.dir
-C:/eu/ubb/2nd_Semester/sda/TAD Matrice/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/eu/ubb/2nd_Semester/sda/TAD Matrice/cmake-build-debug/CMakeFiles/rebuild_cache.dir

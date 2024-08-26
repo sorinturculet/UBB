@@ -1,3 +1,0 @@
-/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/CMakeFiles/Lab5_EDUARD.dir
-/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/CMakeFiles/edit_cache.dir
-/mnt/c/eu/ubb/2nd_Semester/oop/Lab5_EDUARD/cmake-build-debug-valgrind/CMakeFiles/rebuild_cache.dir

@@ -1,3 +1,0 @@
-C:/eu/ubb/2nd_Semester/grafuri/07_test/cmake-build-debug/CMakeFiles/07_test.dir
-C:/eu/ubb/2nd_Semester/grafuri/07_test/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/eu/ubb/2nd_Semester/grafuri/07_test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
