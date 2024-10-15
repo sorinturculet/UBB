@@ -1,4 +1,4 @@
-package homework;
+package cz.cuni.mff.turcules.hello.homework;
 
 public class Multiply {
     public static void main(String[] args){

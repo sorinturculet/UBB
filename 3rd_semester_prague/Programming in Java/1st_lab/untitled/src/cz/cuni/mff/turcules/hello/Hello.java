@@ -1,4 +1,4 @@
-package hello;
+package cz.cuni.mff.turcules.hello;
 
 public class Hello {
     public static void main(String[] args){

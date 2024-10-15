@@ -12,7 +12,7 @@ public class DynamicArray {
     public void add(Object i){
         if(length==capacity){
             Object[] b= new Object[capacity*2];
-            for(int j=0;j<a.length;j++){
+            for(int j=0;j<length;j++){
                 b[j]=a[j];
             }
             a=b;
@@ -22,19 +22,25 @@ public class DynamicArray {
         length++;
     }
     public Object get(int i){
+        if(i<0 || i>=length)
+            return null; //out of bounds
         return a[i];
     }
     public void remove(int i){
-        for(int j=i;j<a.length;j++)
+        if(i<0 || i>=length)
+            return;//i is not valid
+        for(int j=i;j<length-1;j++)
             a[j]=a[j+1];
         length--;
     }
     public void remove(Object i){
         int j=0;
-        while(j<a.length && a[j]!=i){
+        while(j<length && a[j]!=i){
             j++;
         }
-        for(;j<a.length;j++)
+        if(j==length)
+            return; //element doesnt exist
+        for(;j<length-1;j++)
             a[j]=a[j+1];
         length--;
     }

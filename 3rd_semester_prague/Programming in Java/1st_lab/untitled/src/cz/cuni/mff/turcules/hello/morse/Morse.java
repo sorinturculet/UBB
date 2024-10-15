@@ -1,4 +1,4 @@
-package morse;
+package cz.cuni.mff.turcules.hello.morse;
 
 public class Morse {
     public static void main(String[] args){
